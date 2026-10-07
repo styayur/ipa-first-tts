@@ -85,7 +85,7 @@ def copy(source, destination):
 
 
 def zip_tree(path, destination):
-    with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
+    with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=6, strict_timestamps=False) as archive:
         for file in sorted(path.rglob('*')):
             if file.is_file(): archive.write(file, str(file.relative_to(path.parent)).replace('\\','/'))
 
@@ -155,7 +155,7 @@ def main():
     source_zip = DIST/f'ipa-first-tts-v{VERSION}-corresponding-source.zip'
     if source_zip.exists(): raise RuntimeError('Source ZIP already exists')
     top = f'ipa-first-tts-v{VERSION}-source/'
-    with zipfile.ZipFile(source_zip,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
+    with zipfile.ZipFile(source_zip,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6,strict_timestamps=False) as archive:
         for name in tracked: archive.write(ROOT/name,top+name)
         for file in sorted(vendor.rglob('*')):
             if file.is_file(): archive.write(file,top+'vendor/'+file.relative_to(vendor).as_posix())
