@@ -55,3 +55,20 @@ Kokoro weights and model data are third-party Apache/GPL materials as supplied
 in their original bundle. No claims of ownership, model training or relicensing
 are made. The included model is copied unchanged; only a runtime temporary copy's
 voice metadata is adjusted, as described in models/README.md.
+
+## Microsoft Visual C++ app-local runtime
+
+Windows release packages also contain unchanged x64 `vcruntime140.dll`,
+`vcruntime140_1.dll` and `msvcp140.dll` from Visual Studio 2022 Build Tools
+14.44.35112's `VC/Redist/MSVC/.../x64/Microsoft.VC143.CRT` directory. They are
+deployed next to the application and independent eSpeak CLI, not installed into
+Windows. Copyright Microsoft Corporation; these proprietary system runtime
+components retain Microsoft's license, not the project's GPL/MPL licenses.
+The original license document is retained as
+`licenses/upstream/msvc/Visual-C-Runtime-2015-2022-License-1.docx`.
+See [Microsoft runtime terms](https://visualstudio.microsoft.com/license-terms/vs2022-cruntime/)
+and [Microsoft's app-local redistribution guidance](https://learn.microsoft.com/en-us/cpp/windows/redistributing-visual-cpp-files?view=msvc-170).
+Runtime file hashes are recorded in `MANIFEST.json`. Package maintainers must
+use a licensed Visual Studio installation's redistributable directory and are
+responsible for shipping runtime security updates. Source code for these system
+runtime components is not provided by Microsoft in this release.

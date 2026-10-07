@@ -103,6 +103,7 @@ def run_stage(stage, args):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--skip-build', action='store_true')
+    parser.add_argument('--vc-redist-dir', type=Path, help='Licensed Visual Studio x64 Microsoft.VC143.CRT directory')
     options = parser.parse_args()
     if os.name != 'nt': raise SystemExit('This package targets Windows x64')
     if not options.skip_build:
@@ -124,6 +125,16 @@ def main():
     for name in ['README.md','LICENSE','NOTICE','THIRD_PARTY_NOTICES.md','licenses']:
         copy(ROOT/name,stage/name)
     copy(ROOT/'tools/espeak-ng',stage/'tools/espeak-ng')
+    redist = options.vc_redist_dir
+    if redist is None:
+        candidates = sorted(Path(os.environ['ProgramFiles(x86)']).glob(
+            'Microsoft Visual Studio/2022/*/VC/Redist/MSVC/*/x64/Microsoft.VC143.CRT'))
+        if not candidates: raise SystemExit('Supply --vc-redist-dir from your licensed Visual Studio installation')
+        redist = candidates[-1]
+    # App-local deployment: retain Microsoft binaries unchanged, never copy System32.
+    for name in ['vcruntime140.dll', 'vcruntime140_1.dll', 'msvcp140.dll']:
+        for destination in [stage/name, stage/'tools/espeak-ng'/name]:
+            copy(redist/name, destination)
     model = ROOT/'models/kokoro-multi-lang-v1_0'
     for name in ['model.onnx','voices.bin','tokens.txt','espeak-ng-data','LICENSE','README.md']:
         copy(model/name,stage/'models/kokoro-multi-lang-v1_0'/name)

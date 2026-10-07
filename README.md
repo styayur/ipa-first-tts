@@ -11,7 +11,7 @@ UI 是 Rust 提供的 loopback 浏览器界面，使用原生 HTML/CSS/JavaScrip
 
 ## 下载并运行 / Windows x64
 
-从 [GitHub Releases](https://github.com/styayur/ipa-first-tts/releases/latest) 下载 `ipa-first-tts-v0.1.0-windows-x64-offline.zip`。完整解压后双击 `Start-IPA-Studio.cmd`，打开终端打印的本地地址。这个包包含 Kokoro 模型、eSpeak-NG 和匹配的 sherpa/ONNX Runtime DLL，无须安装 Rust、Python 或 Node，也无须联网。
+从 [GitHub Releases](https://github.com/styayur/ipa-first-tts/releases/latest) 下载 `ipa-first-tts-v0.1.0-windows-x64-offline.zip`。在 Windows 10/11 x64 上完整解压后双击 `Start-IPA-Studio.cmd`，打开终端打印的本地地址。这个包包含 Kokoro 模型、eSpeak-NG、匹配的 sherpa/ONNX Runtime DLL 和应用目录内的 Microsoft VC++ runtime，无须安装 Rust、Python、Node 或 VC++ Redistributable，也无须联网。
 
 关闭终端或按 Ctrl+C 结束服务器。命令行操作可在解压目录运行：
 
