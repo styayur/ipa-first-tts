@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = ["crates/ipa-core", "crates/g2p-espeak", "crates/tts-core", "crates/tts-kokoro", "crates/alignment-core", "apps/desktop"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MPL-2.0"
+repository = "https://github.com/styayur/ipa-first-tts"
+
+[workspace.dependencies]
+ipa-core = { path = "crates/ipa-core" }
+tts-core = { path = "crates/tts-core" }
+g2p-espeak = { path = "crates/g2p-espeak" }
+tts-kokoro = { path = "crates/tts-kokoro", default-features = false }
+alignment-core = { path = "crates/alignment-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+unicode-normalization = "0.1"
+sherpa-onnx = { version = "=1.13.8", default-features = false, features = ["shared"] }
+tiny_http = "0.12"

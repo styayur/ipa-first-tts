@@ -1,0 +1,21 @@
+[package]
+name = "ipa-desktop"
+version.workspace = true
+edition.workspace = true
+license = "GPL-3.0-or-later"
+repository.workspace = true
+[features]
+default = ["kokoro"]
+kokoro = ["tts-kokoro/sherpa"]
+[dependencies]
+ipa-core.workspace = true
+tts-core.workspace = true
+g2p-espeak.workspace = true
+tts-kokoro.workspace = true
+alignment-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tiny_http.workspace = true
+[[bin]]
+name = "ipa-tts"
+path = "src/main.rs"

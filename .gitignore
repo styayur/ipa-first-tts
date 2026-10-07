@@ -1,0 +1,13 @@
+/target/
+/.cache/
+/models/*
+!/models/README.md
+/tools/
+/espeak-ng/
+/outputs/*
+!/outputs/verification.json
+!/outputs/desktop.png
+!/outputs/quick-brown-fox.wav
+/dist/
+__pycache__/
+*.pyc

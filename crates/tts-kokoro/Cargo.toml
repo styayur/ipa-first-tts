@@ -1,0 +1,13 @@
+[package]
+name = "tts-kokoro"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+[features]
+default = ["sherpa"]
+sherpa = ["dep:sherpa-onnx"]
+[dependencies]
+ipa-core.workspace = true
+tts-core.workspace = true
+sherpa-onnx = { workspace = true, optional = true }

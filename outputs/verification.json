@@ -1,0 +1,42 @@
+{
+  "verified_on": "2026-10-07",
+  "platform": "Windows x64",
+  "rustc": "1.98.1",
+  "sherpa_onnx": "1.13.8",
+  "kokoro_bundle": "kokoro-multi-lang-v1_0",
+  "build_workspace": "passed",
+  "build_workspace_offline_locked": "passed",
+  "clippy_all_targets_deny_warnings": "passed",
+  "unit_tests_passed": 16,
+  "real_integration_tests_passed": 2,
+  "real_integrations_run_explicitly": true,
+  "ipa_core_offline_tests_passed": 6,
+  "no_default_features_offline_espeak_pipeline": "passed",
+  "portable_espeak_setup_script": "passed",
+  "original_model_matches_downloaded_archive": true,
+  "example_text": "The quick brown fox jumps over the lazy dog.",
+  "canonical_ipa": "ðə kwˈɪk bɹˈa͡ʊn fˈɑːks d͡ʒˈʌmps ˌo͡ʊvɚ ðə lˈe͡ɪzi dˈɑːɡ",
+  "audio": {
+    "file": "quick-brown-fox.wav",
+    "backend": "kokoro / sherpa-onnx CPU",
+    "sample_rate": 24000,
+    "channels": 1,
+    "sample_width_bytes": 2,
+    "frames": 144600,
+    "duration_seconds": 6.025,
+    "sha256": "e5f993cc7624a9a4fcc888e490fbc81c9e0e1e13eb208a8bdf5e34b7839c343a"
+  },
+  "ui": {
+    "test": "scripts/test_ui.py",
+    "result": "passed",
+    "real_kokoro_synthesis": true,
+    "playback_started": true,
+    "stop_reset_playhead": true,
+    "ipa_edits_changed_audio": true,
+    "estimated_phoneme_highlight": true,
+    "invalid_ipa_and_model_token_errors": true,
+    "responsive_390px": true,
+    "page_errors": []
+  },
+  "timing_quality": "Estimated; not model-derived or forced alignment"
+}

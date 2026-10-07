@@ -1,0 +1,21 @@
+IPA-first TTS
+Copyright (c) 2026 Stya Yur Open Source Studio
+https://github.com/styayur/ipa-first-tts
+
+First-party license boundaries:
+- apps/desktop/**: GPL-3.0-or-later (complete application and its UI)
+- crates/**: MPL-2.0 (reusable engines and libraries)
+- scripts/** and CI automation: MIT
+- standalone authored documentation: CC-BY-4.0
+
+Third-party code, model weights, datasets, generated eSpeak data and runtime
+binaries retain their original licenses. They are not relicensed by the
+first-party license choices. See LICENSE, licenses/README.md and
+THIRD_PARTY_NOTICES.md for scope, attribution, license texts and source access.
+
+MPL source has not been designated Incompatible With Secondary Licenses;
+MPL-2.0 section 3.3 applies when combined into the GPL application.
+
+The repository's outputs/ audio and screenshots demonstrate this application.
+The audio was generated with the original third-party Kokoro model. Attribution
+does not change upstream asset or model terms.

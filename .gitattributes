@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.wav binary
+*.png binary
+*.zip binary
+*.rtf binary
+# Retain upstream notice bytes and formatting exactly as received.
+licenses/upstream/** -text -whitespace
+licenses/*.txt -whitespace
+crates/*/LICENSE -whitespace

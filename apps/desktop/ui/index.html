@@ -1,0 +1,17 @@
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IPA Studio</title><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<header><div class="mark" aria-hidden="true">/a/</div><div><h1>IPA Studio</h1><p>Edit the pronunciation. Hear the change.</p></div><span class="local">Local audio</span></header>
+<section><div class="section-title"><label for="text">Text</label><select id="language" aria-label="English accent"><option value="en-US">English · US</option><option value="en-GB">English · UK</option></select></div>
+<textarea id="text" rows="3" maxlength="4096" spellcheck="false">The quick brown fox jumps over the lazy dog.</textarea>
+<button id="generate" class="secondary">Generate IPA</button></section>
+<section class="ipa-section"><div class="section-title"><label for="ipa">Pronunciation / IPA</label><span id="validation">Generate IPA or enter it directly</span></div>
+<textarea id="ipa" rows="4" maxlength="8192" spellcheck="false" placeholder="ðə kwˈɪk bɹˈaʊn …" aria-describedby="ipa-help"></textarea>
+<div class="symbols" aria-label="Insert IPA symbol"><button type="button">ˈ</button><button type="button">ˌ</button><button type="button">ː</button><button type="button">ə</button><button type="button">ɹ</button><button type="button">θ</button><button type="button">ð</button><button type="button">ʃ</button><button type="button">ʒ</button><button type="button">ŋ</button><button type="button">ɪ</button><button type="button">ʊ</button><button type="button">æ</button></div>
+<p id="ipa-help" class="hint">Spaces separate words. Stress precedes a phone; length follows it. Unsupported model symbols produce an error.</p>
+<div class="synthesis"><select id="backend" aria-label="TTS backend"><option value="kokoro">Kokoro / sherpa-onnx</option><option value="espeak">eSpeak fallback</option></select><label class="setting">Speaker <input id="speaker" type="number" min="0" max="53" value="0"></label><label class="setting">Speed <input id="speed" type="number" min="0.25" max="4" step="0.05" value="1"></label><button id="synthesize" disabled>Synthesize</button></div></section>
+<section class="listening"><div class="section-title"><h2>Phoneme sequence</h2><span id="timing">No audio yet</span></div><div id="phones" class="phones" aria-label="IPA phoneme sequence"></div>
+<div class="transport"><button id="play" disabled>Play</button><button id="stop" class="secondary" disabled>Stop</button><progress id="progress" value="0" max="1" aria-label="Playback progress"></progress><span id="duration">0:00</span><a id="download" hidden download="ipa-studio.wav">Save WAV</a></div><audio id="audio" preload="auto"></audio></section>
+<div id="status" role="status" aria-live="polite">Ready. Generate IPA to begin.</div><footer>English MVP · Offline after local setup · Timing highlights are estimates<br>© 2026 Stya Yur Open Source Studio · <a href="/license" target="_blank" rel="noopener">GPL-3.0-or-later · License and warranty</a></footer>
+</main><script src="/app.js"></script></body></html>
