@@ -1,0 +1,60 @@
+{
+  "source_commit": "fa8a3ab1e2010122619c791c6ed15fb946ace965",
+  "reviewed_on": "2026-10-09",
+  "diagram_source": "README.md",
+  "sources": [
+    {
+      "path": "apps/desktop/src/server.rs",
+      "anchors": [
+        "expected_host",
+        "UniformAligner.align",
+        "audio_cache.len() > 4"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/lib.rs",
+      "anchors": [
+        "pub fn synthesize",
+        "\"espeak\" =>",
+        "\"kokoro\" =>"
+      ]
+    },
+    {
+      "path": "crates/g2p-espeak/src/lib.rs",
+      "anchors": [
+        "Command::new",
+        "fn generate"
+      ]
+    },
+    {
+      "path": "crates/ipa-core/src/lib.rs",
+      "anchors": [
+        "IpaSequence"
+      ]
+    },
+    {
+      "path": "crates/tts-kokoro/src/lib.rs",
+      "anchors": [
+        "KokoroAdapter"
+      ]
+    },
+    {
+      "path": "crates/tts-kokoro/src/sherpa.rs",
+      "anchors": [
+        "lexicon"
+      ]
+    },
+    {
+      "path": "crates/alignment-core/src/lib.rs",
+      "anchors": [
+        "TimingQuality::Estimated"
+      ]
+    },
+    {
+      "path": "apps/desktop/tests/pipeline.rs",
+      "anchors": [
+        "#[test]"
+      ]
+    }
+  ]
+}

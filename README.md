@@ -46,7 +46,49 @@ cargo run -p ipa-desktop -- serve
 
 若端口冲突，可运行 `cargo run -p ipa-desktop -- serve 17843`。UI 只绑定 `127.0.0.1`，必须使用打印的准确地址；不开放 CORS。
 
+### Actual G2P result
+
+From the extracted Windows offline v0.1.0 package:
+
+```powershell
+.\ipa-tts.exe g2p "The quick brown fox jumps over the lazy dog."
+```
+
+Actual stdout on 2026-10-09 (exit 0, bundled eSpeak-NG):
+
+```text
+ðə kwˈɪk bɹˈa͡ʊn fˈɑːks d͡ʒˈʌmps ˌo͡ʊvɚ ðə lˈe͡ɪzi dˈɑːɡ
+```
+
+This demonstrates text-to-IPA only; it does not claim a new Kokoro synthesis or measured phoneme alignment. The existing real UI screenshot is retained.
+
 ## Architecture
+
+<!-- architecture:overview:start -->
+```mermaid
+flowchart TB
+  UI[Browser UI: text and editable IPA] -->|loopback HTTP; Host / Origin checks| Server[Rust server / Engine]
+  Text[Text] --> G2P[eSpeak-NG child process: G2P]
+  G2P --> IPA[ipa-core: parse / edit / validate IPA]
+  Server -->|g2p endpoint| G2P
+  Server -->|edited IPA endpoint| IPA
+  IPA --> Backend{Explicit backend selection}
+  Backend --> Kokoro[KokoroAdapter / sherpa-onnx FFI]
+  Backend --> Espeak[eSpeak phoneme fallback]
+  Models[(Local Kokoro model / tokens / voices)] --> Kokoro
+  Kokoro --> Audio[PCM audio / WAV]
+  Espeak --> Audio
+  Audio --> Align[UniformAligner: estimated timing]
+  IPA -.-> Align
+  Align --> Result[UI playback and phoneme highlighting]
+```
+<!-- architecture:overview:end -->
+
+The UI runs against a Rust loopback HTTP server, not Tauri. The CLI uses the same Engine directly. G2P invokes eSpeak-NG as a child process; synthesis consumes the edited IpaSequence, not the original text. Kokoro uses a vocabulary adapter, temporary phoneme lexicon and native sherpa-onnx session. eSpeak is an explicitly selected fallback, not an automatic recovery path.
+
+Alignment follows synthesis: UniformAligner divides audio duration uniformly across phones and reports TimingQuality::Estimated. No forced aligner or measured phoneme timestamps are implemented. The server retains at most four WAV results in memory; CLI synthesis writes the selected output file. Host/Origin checks protect the loopback boundary; this is not a public authenticated service.
+
+[Source evidence and diagram verification](docs/architecture/README.md).
 
 ```text
 ipa-first-tts/
