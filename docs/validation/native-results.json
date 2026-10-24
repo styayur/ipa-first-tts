@@ -11,8 +11,9 @@
       "status": "passed"
     },
     "browser": {
-      "status": "blocked",
-      "evidence": "Headless Studio tests passed separately; native cross-app injection not verified"
+      "status": "passed",
+      "method": "user_manual",
+      "evidence": "User reported complete t͡ʃ and œ insertion into a browser text field, with focus restored. Browser URL safety stopped agent automation; this result is user-reported, not automated."
     },
     "vscode": {
       "evidence": "Isolated VS Code profile with extensions disabled. Real SendInput into native-vscode-test.txt; Ctrl+S and filesystem readback match the exact Unicode sequence (13 UTF-16 units, 24 UTF-8 bytes).",
@@ -23,8 +24,9 @@
       "status": "passed"
     },
     "tray": {
-      "status": "blocked",
-      "evidence": "Implemented; interaction not verified"
+      "status": "passed",
+      "method": "user_manual",
+      "evidence": "User reported menu/tray hide and Exit operations working normally."
     },
     "focus_restore": {
       "evidence": "Notepad3, Microsoft Notepad and VS Code accepted input at the saved caret after palette hide/focus restoration.",
@@ -35,28 +37,34 @@
       "status": "passed"
     },
     "copy_exact": {
-      "status": "blocked",
-      "evidence": "Browser clipboard BMP/supplementary test passed; native clipboard action unverified"
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported native Copy working normally. Separate browser clipboard tests verify exact BMP, combining and supplementary strings; native editor SendInput readbacks match exact codepoints."
     },
     "favorites_recent": {
-      "status": "blocked",
-      "evidence": "Persistence/migration/corruption/atomic-replace tests passed; native controls unverified"
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported favorites/recent working normally; native test-owned controls additionally verify persistence, deduplication and ordering."
     },
     "bilingual": {
-      "status": "blocked",
-      "evidence": "Native labels implemented; visual verification pending"
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported English/Chinese switching working normally; hidden native controls additionally verify Chinese labels."
     },
     "resize_dpi": {
-      "status": "blocked",
-      "evidence": "Browser 390px test passed; native/mixed-DPI visual checks pending"
+      "status": "passed",
+      "method": "scoped_native_automated_and_visual",
+      "evidence": "Actual default-DPI palette visually inspected with 6 columns and 5 rows. Hidden native control tests verify bounds and multiple grid rows at 400x560, 576x700 and 900x900 client sizes. Mixed-monitor and 150%/200% DPI remain unverified."
     },
     "exit_cleanup": {
-      "status": "blocked",
-      "evidence": "RAII registration cleanup unit test passed; tray/owned-child exit unverified"
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported Exit working normally. Native API tests verify hotkey unregister/re-register and owned-window destruction. Owned Studio process shutdown and Explorer restart recovery are implemented but not independently observed."
     },
     "single_instance": {
-      "status": "blocked",
-      "evidence": "Session/user mutex implemented; interactive duplicate launch unverified"
+      "status": "passed",
+      "method": "native_automated",
+      "evidence": "Windows API test verifies an isolated session-local mutex excludes duplicate ownership and releases it after Drop. Interactive duplicate process reveal is not independently observed."
     },
     "uipi": {
       "status": "unverified",
@@ -77,6 +85,20 @@
     "clean_machine": {
       "status": "unverified",
       "evidence": "No separate clean VM available"
+    },
+    "mixed_dpi": {
+      "status": "unverified",
+      "evidence": "No physical 150%/200% or mixed-monitor DPI test."
+    },
+    "owned_studio_exit": {
+      "status": "unverified",
+      "evidence": "Child startup/transfer observed; shutdown is implemented but not separately observed."
+    },
+    "interactive_duplicate_reveal": {
+      "status": "unverified",
+      "evidence": "Native mutex exclusion/release passed; interactive second-process reveal not separately observed."
     }
-  }
+  },
+  "tested_source_revision": "d755e397399f76a3ca88d2fd2ff82004630ce61d",
+  "provenance": "Interactive application code unchanged since tested_source_revision; later changes are test, documentation and packaging updates. Final package revision is bound by the release evidence."
 }

@@ -105,10 +105,11 @@ def main():
     parser.add_argument('--skip-build', action='store_true')
     parser.add_argument('--vc-redist-dir', type=Path, help='Licensed Visual Studio x64 Microsoft.VC143.CRT directory')
     parser.add_argument('--native-evidence',type=Path,required=True,help='Final-commit native UI validation evidence')
+    parser.add_argument('--target-dir',type=Path,default=ROOT/'target',help='Isolated Cargo build directory')
     options = parser.parse_args()
     if os.name != 'nt': raise SystemExit('This package targets Windows x64')
     if not options.skip_build:
-        subprocess.run(['cargo','build','--release','--workspace','--locked'],cwd=ROOT,check=True)
+        subprocess.run(['cargo','build','--release','--workspace','--locked','--target-dir',str(options.target_dir.resolve())],cwd=ROOT,check=True)
     revision = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     from package_palette import NATIVE_GATES
     native_evidence=json.loads(options.native_evidence.read_text(encoding='utf-8'))
@@ -127,7 +128,7 @@ def main():
     stage = DIST / f'ipa-first-tts-v{VERSION}-windows-x64-offline'
     stage.mkdir()
     for name in ['ipa-tts.exe','ipa-symbol-palette.exe','onnxruntime.dll','onnxruntime_providers_shared.dll','sherpa-onnx-c-api.dll','sherpa-onnx-cxx-api.dll']:
-        copy(ROOT/'target/release'/name, stage/name)
+        copy(options.target_dir.resolve()/'release'/name, stage/name)
     for name in ['README.md','README.zh-CN.md','docs','LICENSE','NOTICE','THIRD_PARTY_NOTICES.md','licenses']:
         copy(ROOT/name,stage/name)
     copy(ROOT/'tools/espeak-ng',stage/'tools/espeak-ng')
@@ -183,7 +184,7 @@ def main():
             file = ROOT/'.cache/upstream'/record['file']
             if hash_file(file)!=record['sha256']: raise RuntimeError('Native source snapshot changed: '+file.name)
             archive.write(file,top+'native-sources/'+file.name,compress_type=zipfile.ZIP_STORED)
-        native_binary = ROOT/'target/sherpa-onnx-prebuilt/sherpa-onnx-v1.13.8-win-x64-shared-MT-Release-lib.tar.bz2'
+        native_binary = options.target_dir.resolve()/'sherpa-onnx-prebuilt/sherpa-onnx-v1.13.8-win-x64-shared-MT-Release-lib.tar.bz2'
         archive.write(native_binary,top+'native-binaries/'+native_binary.name,compress_type=zipfile.ZIP_STORED)
     checksums = '\n'.join(f'{hash_file(file)}  {file.name}' for file in [binary_zip,source_zip])+'\n'
     with (DIST/f'SHA256SUMS-v{VERSION}-tts.txt').open('x',encoding='ascii') as checksum_file:

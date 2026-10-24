@@ -34,6 +34,7 @@ def main():
     parser.add_argument('--evidence',type=Path,default=ROOT/'docs/validation/native-results.json')
     parser.add_argument('--output',type=Path,default=ROOT/'dist')
     parser.add_argument('--vc-redist-dir',type=Path)
+    parser.add_argument('--target-dir',type=Path,default=ROOT/'target',help='Isolated Cargo build directory, useful while a development EXE is running')
     args=parser.parse_args()
     if os.name!='nt': raise SystemExit('Windows x64 packaging only')
     if subprocess.check_output(['git','status','--porcelain'],cwd=ROOT).strip(): raise SystemExit('Commit source changes before packaging')
@@ -43,8 +44,8 @@ def main():
         for gate in NATIVE_GATES:
             if evidence.get('checks',{}).get(gate,{}).get('status')!='passed': raise SystemExit('Native release gate not passed: '+gate)
         if evidence.get('source_revision')!=revision: raise SystemExit('Native evidence must correspond to packaging HEAD')
-    subprocess.run(['cargo','build','-p','ipa-palette','--release','--locked'],cwd=ROOT,check=True)
-    executable=ROOT/'target/release/ipa-symbol-palette.exe'
+    subprocess.run(['cargo','build','-p','ipa-palette','--release','--locked','--target-dir',str(args.target_dir.resolve())],cwd=ROOT,check=True)
+    executable=args.target_dir.resolve()/'release/ipa-symbol-palette.exe'
     if not executable.is_file(): raise SystemExit('Run cargo build -p ipa-palette --release --locked first')
     redist=args.vc_redist_dir
     if redist is None:

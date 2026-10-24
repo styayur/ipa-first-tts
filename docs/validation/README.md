@@ -8,7 +8,7 @@ separate real native interaction from unit/headless-browser tests.
 Recorded local passes so far:
 
 - `cargo fmt --all -- --check`
-- `cargo test --workspace --locked`: 28 unit/integration boundary tests, including hidden test-owned native controls; the two existing model-dependent tests remain explicit opt-in.
+- `cargo test --workspace --locked`: 29 unit/integration boundary tests, including hidden test-owned native controls; the two existing model-dependent tests remain explicit opt-in.
 - `cargo clippy --workspace --all-targets --locked -- -D warnings`
 - `cargo build --workspace --locked --release`
 - `cargo test -p ipa-desktop --test pipeline --locked -- --ignored --test-threads=1`: both real eSpeak and Kokoro tests passed, including changed IPA changing generated WAV and unsupported token failure.
@@ -16,7 +16,7 @@ Recorded local passes so far:
 - `python scripts/run_studio_test.py --exe target/debug/ipa-tts.exe --test scripts/test_ui.py`: real Kokoro generation/playback/Stop/highlighting/errors and narrow layout passed.
 - `cargo audit`: zero vulnerabilities and no warnings after fixing nine baseline build-tool advisories. No ignores are used.
 - `python scripts/check_dependencies.py`: 120 locked package license expressions reviewed; upstream notice bytes and inventory checked.
-- Architecture source anchors and light/dark/repeated Mermaid rendering passed locally; the README diagram is updated with the new boundaries and will be checked again in CI.
+- Architecture source anchors and light/dark/repeated Mermaid rendering passed locally; the README diagram is updated with the new boundaries and passed in CI.
 
 Generated detailed browser results/screenshots remain under ignored `outputs/`;
 the maintained native matrix records actual unavailable checks. The initial
@@ -35,10 +35,13 @@ opened the local browser page with explicit transfer feedback.
 
 The earlier locked-desktop problem was resolved. Browser native automation was
 then stopped by the helper's inability to determine the current URL confidently,
-including for the local Studio page. It was not bypassed. Actual browser input,
-tray/menu and remaining visual checks are recorded individually in the matrix;
-they are not inferred from the editor tests. Manual user verification was
-requested while CI and packaging continue.
+including for the local Studio page. It was not bypassed. The user subsequently reported complete browser t͡ʃ/œ insertion with focus
+restoration, and normal native Copy, favorites/recent, English/Chinese switching
+and menu/tray hide/Exit operations. These are explicitly user-reported checks.
+Default-DPI layout was visually inspected; native hidden-control layout and
+mutex/cleanup checks remain separately identified as automated evidence.
+Mixed DPI, interactive duplicate reveal, owned-child shutdown, a separate clean
+VM and physical network disconnection remain unverified.
 
 The new native-control regression creates only hidden test-owned windows,
 checks bounds and at least three grid rows at three client sizes, filters/no

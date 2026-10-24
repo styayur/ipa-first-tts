@@ -3,11 +3,11 @@
 
 **An offline-first multilingual symbol palette and IPA-first speech tool.**
 
-[简体中文与完整技术参考](README.zh-CN.md) · [v0.1.0 offline package](https://github.com/styayur/ipa-first-tts/releases/tag/v0.1.0) · [Model setup](models/README.md)
+[简体中文与完整技术参考](README.zh-CN.md) · [v0.2.0-alpha.1 experimental packages](https://github.com/styayur/ipa-first-tts/releases/tag/v0.2.0-alpha.1) · [Model setup](models/README.md)
 
-**v0.2.0-alpha.1 source candidate.** Symbol Palette is an independent Rust/Win32 app; IPA Studio retains its Rust loopback HTTP server and plain browser UI. The offline catalog contains 368 curated IPA and Latin-script records associated with French, German, Spanish, Portuguese, Polish, Czech, Turkish and Vietnamese. This is selected character coverage. Speech remains English en-US/en-GB only. Catalog membership, IPA grammar acceptance, backend vocabulary and real language pipeline verification are four separate capabilities.
+**v0.2.0-alpha.1 experimental preview.** Symbol Palette is an independent Rust/Win32 app; IPA Studio retains its Rust loopback HTTP server and plain browser UI. The offline catalog contains 368 curated IPA and Latin-script records associated with French, German, Spanish, Portuguese, Polish, Czech, Turkish and Vietnamese. This is selected character coverage. Speech remains English en-US/en-GB only. Catalog membership, IPA grammar acceptance, backend vocabulary and real language pipeline verification are four separate capabilities.
 
-The palette does not link or initialize Kokoro, eSpeak, a browser runtime or an HTTP server. Both `ipa-core` and `symbol-catalog` remain independent reusable libraries. No npm/CDN/React/Tauri runtime is added. Native desktop verification and release status are tracked in [validation](docs/validation/README.md); this source candidate is not a claim that v0.2.0 assets have been published.
+The palette does not link or initialize Kokoro, eSpeak, a browser runtime or an HTTP server. Both `ipa-core` and `symbol-catalog` remain independent reusable libraries. No npm/CDN/React/Tauri runtime is added. Native desktop verification and release status are tracked in [validation](docs/validation/README.md). Download only assets listed on the linked release.
 
 ## Symbol Palette / Windows x64
 
@@ -34,7 +34,7 @@ Settings changes the shortcut, detecting conflicts while retaining the previous 
 
 The full package can place `ipa-tts.exe` beside the palette for **IPA Studio** transfer; the light package works without it. Studio also exposes the shared searchable catalog inside its IPA editor. Unsupported catalog characters stay copyable; IPA parsing and speech adapters fail explicitly instead of dropping them.
 
-Planned asset names are `ipa-symbol-palette-v0.2.0-alpha.1-windows-x64.zip` (model-free) and, only after full verification, `ipa-first-tts-v0.2.0-alpha.1-windows-x64-offline.zip`. Use only assets actually listed on [Releases](https://github.com/styayur/ipa-first-tts/releases), with their SHA-256 and corresponding source. Checksums are not signatures; these builds have no Authenticode certificate.
+Release asset names are `ipa-symbol-palette-v0.2.0-alpha.1-windows-x64.zip` (model-free) and `ipa-first-tts-v0.2.0-alpha.1-windows-x64-offline.zip`. Use only assets actually listed on [Releases](https://github.com/styayur/ipa-first-tts/releases), with their SHA-256 and corresponding source. Checksums are not signatures; these builds have no Authenticode certificate.
 
 ![Actual IPA Studio browser interface with editable phonemes, synthesis and playback controls](outputs/desktop.png)
 

@@ -1,15 +1,15 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 # IPA-first TTS
 
-[English](README.md) · [v0.1.0 离线包](https://github.com/styayur/ipa-first-tts/releases/tag/v0.1.0)
+[English](README.md) · [v0.2.0-alpha.1 实验包](https://github.com/styayur/ipa-first-tts/releases/tag/v0.2.0-alpha.1)
 
 **Alpha 预览版。** 当前语音仅支持英语，时间戳为估算，尚未达到稳定产品阶段。
 
 **IPA-first TTS — An offline-first multilingual symbol palette and IPA-first speech tool.**
 
-`v0.2.0-alpha.1` 源码候选版包含两个独立能力：Windows 原生 **Symbol Palette 字符面板**，以及保留现有浏览器界面与 Rust 引擎的 **IPA Studio**。首批目录有 368 条精选记录，涉及常见 IPA，以及法语、德语、西班牙语、葡萄牙语、波兰语、捷克语、土耳其语和越南语的部分拉丁字符。目录覆盖、IPA Core 解析、后端词表支持和真实语言流程验证是四项不同能力；语音仍仅启用英语。
+`v0.2.0-alpha.1` 实验预览版包含两个独立能力：Windows 原生 **Symbol Palette 字符面板**，以及保留现有浏览器界面与 Rust 引擎的 **IPA Studio**。首批目录有 368 条精选记录，涉及常见 IPA，以及法语、德语、西班牙语、葡萄牙语、波兰语、捷克语、土耳其语和越南语的部分拉丁字符。目录覆盖、IPA Core 解析、后端词表支持和真实语言流程验证是四项不同能力；语音仍仅启用英语。
 
-面板不链接或初始化 Kokoro、eSpeak、浏览器运行时或 HTTP 服务；`ipa-core` 与 `symbol-catalog` 都是独立可复用库。[验证记录](docs/validation/README.md) 明确区分已通过的检查和原生桌面待验证项目。源码候选版不表示 v0.2.0 发布资产已经可下载。
+面板不链接或初始化 Kokoro、eSpeak、浏览器运行时或 HTTP 服务；`ipa-core` 与 `symbol-catalog` 都是独立可复用库。[验证记录](docs/validation/README.md) 区分原生实测、用户反馈、自动化检查与未验证范围。请仅下载 Release 实际列出的资产。
 
 ## Windows 字符面板
 
@@ -30,7 +30,7 @@ cargo build -p ipa-palette --release --locked
 
 完整包中将 `ipa-tts.exe` 与面板放在同一目录，即可发送至 IPA Studio；轻量面板无需它。Studio 的 IPA 编辑器也使用同一份可搜索目录。不支持的字符仍可复制；IPA 解析与后端适配明确报错，不静默删除。
 
-预定资产名为 `ipa-symbol-palette-v0.2.0-alpha.1-windows-x64.zip`（无模型），以及仅在完整验证后才发布的 `ipa-first-tts-v0.2.0-alpha.1-windows-x64-offline.zip`。请仅下载 [Releases](https://github.com/styayur/ipa-first-tts/releases) 实际列出的资产，并核对 SHA-256 与对应源码。SHA-256 不是代码签名；本轮无 Authenticode 证书。
+发布资产名为 `ipa-symbol-palette-v0.2.0-alpha.1-windows-x64.zip`（无模型），以及 `ipa-first-tts-v0.2.0-alpha.1-windows-x64-offline.zip`。请仅下载 [Releases](https://github.com/styayur/ipa-first-tts/releases) 实际列出的资产，并核对 SHA-256 与对应源码。SHA-256 不是代码签名；本轮无 Authenticode 证书。
 
 首期支持英语（en-US / en-GB）。语言标识为开放字符串，`zh`、`ja`、`fr`、`de` 可以由新 backend 启用；当前入口会明确拒绝这些语言，避免声称已经支持。
 
