@@ -22,16 +22,42 @@ jobs:
       - name: Format
         run: cargo fmt --all -- --check
       - name: Model-independent core tests
-        run: cargo test -p ipa-core -p tts-core -p alignment-core -p g2p-espeak -p tts-kokoro --no-default-features --locked
+        run: cargo test -p ipa-core -p tts-core -p alignment-core -p g2p-espeak -p tts-kokoro -p symbol-catalog -p ipa-palette --no-default-features --locked
       - name: Fallback application lint
         run: cargo clippy -p ipa-desktop --no-default-features --all-targets --locked -- -D warnings
+      - name: Palette and catalog lint
+        run: cargo clippy -p ipa-palette -p symbol-catalog --all-targets --locked -- -D warnings
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dependency license inventory
+        run: python scripts/check_dependencies.py
+      - name: Install security auditor
+        run: cargo install cargo-audit --locked --version 0.22.2
+      - name: Audit locked dependencies
+        run: cargo audit
+      - name: Build model-free Studio for catalog tests
+        run: cargo build -p ipa-desktop --no-default-features --locked
+      - name: Prepare browser test tooling
+        run: python -m pip install playwright==1.58.0
+      - name: Prepare Chromium
+        run: python -m playwright install chromium
+      - name: Real catalog UI and HTTP boundary checks
+        shell: bash
+        run: python scripts/run_studio_test.py --exe target/debug/ipa-tts${{ runner.os == 'Windows' && '.exe' || '' }} --test scripts/test_catalog_ui.py --without-assets
   windows-native:
     name: Windows native build
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
       - name: Build Kokoro application
         run: cargo build --release --workspace --locked
       - name: Unit tests
         run: cargo test --workspace --locked
+      - name: Full workspace lint
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - name: Palette standalone self-check
+        run: ./target/release/ipa-symbol-palette.exe --check palette-check.json

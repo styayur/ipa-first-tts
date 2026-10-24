@@ -1,10 +1,18 @@
 # Architecture evidence
 
-Source review: `fa8a3ab1e2010122619c791c6ed15fb946ace965` (2026-10-09).
+Source review: v0.2.0-alpha.1 source candidate, based on `e200900ff27c98807c7c1fad3e27c266282241da` (2026-10-24). Native execution status is tracked separately in [validation](../validation/README.md).
 
 The marked Mermaid block in [README](../../README.md) is the only maintained diagram source. GitHub renders it natively in the reader's theme. No duplicate SVG or independent `.mmd` is committed; extracted Mermaid and SVG files are disposable verification artifacts.
 
 The UI runs against a Rust loopback HTTP server, not Tauri. The CLI uses the same Engine directly. G2P invokes eSpeak-NG as a child process; synthesis consumes the edited IpaSequence, not the original text. Kokoro uses a vocabulary adapter, temporary phoneme lexicon and native sherpa-onnx session. eSpeak is an explicitly selected fallback, not an automatic recovery path.
+
+The separate apps/palette Win32 executable depends only on symbol-catalog,
+serde/serde_json and Windows system bindings. It owns hotkeys, tray, guarded
+UTF-16 input and atomic local settings. It starts no TTS/server at launch.
+Studio and palette share one validated embedded JSON catalog and Rust query
+algorithm. Explicit Studio transfer starts a sibling child and opens a loopback
+URL fragment; no symbol text is sent in an HTTP query. The catalog has no
+dependency on ipa-core, GUI or speech. See [ADR](../decisions/0001-native-symbol-palette.md).
 
 Alignment follows synthesis: UniformAligner divides audio duration uniformly across phones and reports TimingQuality::Estimated. No forced aligner or measured phoneme timestamps are implemented. The server retains at most four WAV results in memory; CLI synthesis writes the selected output file. Host/Origin checks protect the loopback boundary; this is not a public authenticated service.
 

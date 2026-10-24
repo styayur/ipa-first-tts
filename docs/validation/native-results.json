@@ -1,0 +1,104 @@
+{
+  "format_version": 1,
+  "version": "0.2.0-alpha.1",
+  "date": "2026-10-25",
+  "source_revision": null,
+  "environment": "Windows x64; interactive desktop available; native Release build tested through Computer Use",
+  "blocker": null,
+  "checks": {
+    "notepad": {
+      "evidence": "Microsoft Notepad 11.2607.14.0: real SendInput of ɲʁœçˈt͡ʃéã𝼀; target Copy readback equals exact 13 UTF-16 units / 24 UTF-8 bytes. Notepad3 additionally passed tied-affricate and two continuous mixed-sequence insertions.",
+      "status": "passed"
+    },
+    "browser": {
+      "status": "passed",
+      "method": "user_manual",
+      "evidence": "User reported complete t͡ʃ and œ insertion into a browser text field, with focus restored. Browser URL safety stopped agent automation; this result is user-reported, not automated."
+    },
+    "vscode": {
+      "evidence": "Isolated VS Code profile with extensions disabled. Real SendInput into native-vscode-test.txt; Ctrl+S and filesystem readback match the exact Unicode sequence (13 UTF-16 units, 24 UTF-8 bytes).",
+      "status": "passed"
+    },
+    "hotkey_toggle": {
+      "evidence": "User confirmed global hotkey; agent invoked from Notepad3, Microsoft Notepad and VS Code with search focus and accurate target caption. Esc hides; recall works repeatedly.",
+      "status": "passed"
+    },
+    "tray": {
+      "status": "passed",
+      "method": "user_manual",
+      "evidence": "User reported menu/tray hide and Exit operations working normally."
+    },
+    "focus_restore": {
+      "evidence": "Notepad3, Microsoft Notepad and VS Code accepted input at the saved caret after palette hide/focus restoration.",
+      "status": "passed"
+    },
+    "continuous_insert": {
+      "evidence": "Notepad3 accepted t͡ʃ then two consecutive mixed Unicode compositions without caret loss; exact accessible text checked.",
+      "status": "passed"
+    },
+    "copy_exact": {
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported native Copy working normally. Separate browser clipboard tests verify exact BMP, combining and supplementary strings; native editor SendInput readbacks match exact codepoints."
+    },
+    "favorites_recent": {
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported favorites/recent working normally; native test-owned controls additionally verify persistence, deduplication and ordering."
+    },
+    "bilingual": {
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported English/Chinese switching working normally; hidden native controls additionally verify Chinese labels."
+    },
+    "resize_dpi": {
+      "status": "passed",
+      "method": "scoped_native_automated_and_visual",
+      "evidence": "Actual default-DPI palette visually inspected with 6 columns and 5 rows. Hidden native control tests verify bounds and multiple grid rows at 400x560, 576x700 and 900x900 client sizes. Mixed-monitor and 150%/200% DPI remain unverified."
+    },
+    "exit_cleanup": {
+      "status": "passed",
+      "method": "mixed",
+      "evidence": "User reported Exit working normally. Native API tests verify hotkey unregister/re-register and owned-window destruction. Owned Studio process shutdown and Explorer restart recovery are implemented but not independently observed."
+    },
+    "single_instance": {
+      "status": "passed",
+      "method": "native_automated",
+      "evidence": "Windows API test verifies an isolated session-local mutex excludes duplicate ownership and releases it after Drop. Interactive duplicate process reveal is not independently observed."
+    },
+    "uipi": {
+      "status": "unverified",
+      "evidence": "Fail-closed integrity/target checks implemented; higher-integrity app not tested"
+    },
+    "remote_desktop": {
+      "status": "unverified",
+      "evidence": "No compatible target tested"
+    },
+    "multiple_monitors": {
+      "status": "unverified",
+      "evidence": "Hardware/interactive session not inspected"
+    },
+    "network_disconnected": {
+      "status": "unverified",
+      "evidence": "No physical network disconnection performed"
+    },
+    "clean_machine": {
+      "status": "unverified",
+      "evidence": "No separate clean VM available"
+    },
+    "mixed_dpi": {
+      "status": "unverified",
+      "evidence": "No physical 150%/200% or mixed-monitor DPI test."
+    },
+    "owned_studio_exit": {
+      "status": "unverified",
+      "evidence": "Child startup/transfer observed; shutdown is implemented but not separately observed."
+    },
+    "interactive_duplicate_reveal": {
+      "status": "unverified",
+      "evidence": "Native mutex exclusion/release passed; interactive second-process reveal not separately observed."
+    }
+  },
+  "tested_source_revision": "d755e397399f76a3ca88d2fd2ff82004630ce61d",
+  "provenance": "Interactive application code unchanged since tested_source_revision; later changes are test, documentation and packaging updates. Final package revision is bound by the release evidence."
+}

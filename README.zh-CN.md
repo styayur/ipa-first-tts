@@ -1,19 +1,44 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 # IPA-first TTS
 
-[English](README.md) · [v0.1.0 离线包](https://github.com/styayur/ipa-first-tts/releases/tag/v0.1.0)
+[English](README.md) · [v0.2.0-alpha.1 实验包](https://github.com/styayur/ipa-first-tts/releases/tag/v0.2.0-alpha.1)
 
-**MVP 预览版。** 当前仅支持英语，时间戳为估算，尚未达到稳定产品阶段。
+**Alpha 预览版。** 当前语音仅支持英语，时间戳为估算，尚未达到稳定产品阶段。
 
-一个可运行的 Rust workspace：文本先变为结构化 IPA，用户直接编辑 IPA，再把音素送入本地 Kokoro / sherpa-onnx。**`ipa-core` 不依赖 Kokoro、sherpa-onnx 或 UI。**
+**IPA-first TTS — An offline-first multilingual symbol palette and IPA-first speech tool.**
+
+`v0.2.0-alpha.1` 实验预览版包含两个独立能力：Windows 原生 **Symbol Palette 字符面板**，以及保留现有浏览器界面与 Rust 引擎的 **IPA Studio**。首批目录有 368 条精选记录，涉及常见 IPA，以及法语、德语、西班牙语、葡萄牙语、波兰语、捷克语、土耳其语和越南语的部分拉丁字符。目录覆盖、IPA Core 解析、后端词表支持和真实语言流程验证是四项不同能力；语音仍仅启用英语。
+
+面板不链接或初始化 Kokoro、eSpeak、浏览器运行时或 HTTP 服务；`ipa-core` 与 `symbol-catalog` 都是独立可复用库。[验证记录](docs/validation/README.md) 区分原生实测、用户反馈、自动化检查与未验证范围。请仅下载 Release 实际列出的资产。
+
+## Windows 字符面板
+
+```powershell
+cargo build -p ipa-palette --release --locked
+.\target\release\ipa-symbol-palette.exe
+```
+
+聚焦目标编辑器，按 **Ctrl+Alt+Shift+I** 呼出后直接搜索字符、英文名称、别名、语言名/代码或 `U+0252` 等码位。方向键移动选择，Enter 按当前动作插入或复制，Esc 隐藏，Tab 切换控件。托盘提供显示、隐藏、IPA Studio、设置、退出。关闭窗口只隐藏；退出会注销快捷键并停止由面板启动的 Studio。重复启动会显示已有实例。
+
+紧凑字符格显示字形与码位，完整名称保留在详情区。重置清除搜索和筛选；Ctrl+F 返回搜索，Ctrl+D 切换收藏，Shift+Enter 复制。目标提示与 ↵ 按钮标识当前动作；无有效目标时 Enter 复制，插入按钮禁用。“菜单”按钮也可直接退出，无需寻找托盘图标。
+
+分类包含最近使用、收藏、IPA、语言字符、附加符号与组合。**复制**会明确替换剪贴板内容；**插入**校验原目标窗口及前台焦点后发送目录原始 UTF-16 序列，不改动剪贴板。请从目标应用用快捷键呼出；从托盘打开时使用复制。权限、远程会话或目标应用限制可能拒绝输入；应检查错误并主动选择复制。本轮无自动剪贴板粘贴回退，也不提升权限。
+
+**组合 +** 将完整候选追加到组合框，包括附加符号。组合框非空时，复制、插入与 Studio 使用组合内容，直到清空。附加符前的虚线圆圈及空格显示标记不会写入输出。详情码位用于核对字形，扩展字符可能需要目标应用具有适合字体。
+
+设置可修改快捷键；冲突时保留原注册。English / 简体中文切换界面不会修改字符输出。收藏、最近使用和设置原子保存至 `%LOCALAPPDATA%/IPA-first-TTS/palette.json`；损坏文件保留为 `palette.corrupt-*`，未知未来版本不覆盖。默认不开机启动。详见[交互与安全](docs/palette.md)。
+
+完整包中将 `ipa-tts.exe` 与面板放在同一目录，即可发送至 IPA Studio；轻量面板无需它。Studio 的 IPA 编辑器也使用同一份可搜索目录。不支持的字符仍可复制；IPA 解析与后端适配明确报错，不静默删除。
+
+发布资产名为 `ipa-symbol-palette-v0.2.0-alpha.1-windows-x64.zip`（无模型），以及 `ipa-first-tts-v0.2.0-alpha.1-windows-x64-offline.zip`。请仅下载 [Releases](https://github.com/styayur/ipa-first-tts/releases) 实际列出的资产，并核对 SHA-256 与对应源码。SHA-256 不是代码签名；本轮无 Authenticode 证书。
 
 首期支持英语（en-US / en-GB）。语言标识为开放字符串，`zh`、`ja`、`fr`、`de` 可以由新 backend 启用；当前入口会明确拒绝这些语言，避免声称已经支持。
 
-UI 是 Rust 提供的 loopback 浏览器界面，使用原生 HTML/CSS/JavaScript，无 npm、CDN、React 或 Tauri 依赖。这样先跑通 IPA-first 流程；以后可以在相同 Rust API 外加 Tauri 壳。所有字体为系统字体，安装完成后运行不依赖网络。
+IPA Studio 继续使用 Rust 提供的 loopback 浏览器界面与原生 HTML/CSS/JavaScript；字符面板使用 Rust/Win32 控件。无 npm、CDN、React 或 Tauri 运行时依赖，字体使用系统字体。字符功能无需模型、联网或 Studio 初始化。
 
 ![IPA Studio 界面](outputs/desktop.png)
 
-## 下载并运行 / Windows x64
+## 已发布的历史 IPA Studio v0.1.0 / Windows x64
 
 从 [GitHub Releases](https://github.com/styayur/ipa-first-tts/releases/latest) 下载 `ipa-first-tts-v0.1.0-windows-x64-offline.zip`。在 Windows 10/11 x64 上完整解压后双击 `Start-IPA-Studio.cmd`，打开终端打印的本地地址。这个包包含 Kokoro 模型、eSpeak-NG、匹配的 sherpa/ONNX Runtime DLL 和应用目录内的 Microsoft VC++ runtime，无须安装 Rust、Python、Node 或 VC++ Redistributable，也无须联网。
 
@@ -149,7 +174,7 @@ pub struct IpaPhone {
 
 词边界为显式 `WordBoundary` 条目，canonical 输出为一个空格；音标修饰符属于前一个 phone。绑定音 `t͡ʃ`、双元音 `a͡ʊ` 为单个 IR 条目；无需把模型 token 粒度强加给 IPA Core。
 
-直接依赖为 serde、serde_json、unicode-normalization、tiny_http，以及可选 sherpa-onnx。WAV 编码使用 Rust 标准库。应用和核心均 `forbid(unsafe_code)`；第三方 sherpa 安全封装内部的 FFI 是唯一涉及 unsafe 的运行边界。
+直接依赖为 serde、serde_json、unicode-normalization、tiny_http，以及可选 sherpa-onnx；原生面板另用 windows-sys 0.61.2（MIT/Apache-2.0）调用系统 API。WAV 编码使用 Rust 标准库。Studio、IPA/TTS 核心与目录均 `forbid(unsafe_code)`；原生 Windows 模块和配置原子替换包含明确隔离的 unsafe，第三方 sherpa 封装另有 FFI。完整清单见 `licenses/rust-dependencies.json`。
 
 ## IPA pipeline
 
@@ -252,8 +277,8 @@ cargo test -p ipa-desktop --no-default-features --offline
 ## 当前限制
 
 - 实测平台为 Windows x64。Rust 核心无 OS 专属依赖；Linux/macOS 的 native runtime 和音频播放尚未实测。
-- UI 为本地浏览器应用，尚未提供原生 Tauri 窗口或安装包。
-- 仅英语；eSpeak 发音与 Kokoro 训练用的 Misaki 发音前端不完全一致。
+- Studio 为本地浏览器应用；新增 Win32 字符面板面向 Windows x64，真实桌面验证边界见[验证记录](docs/validation/README.md)。不宣称 Linux/macOS 原生面板支持，也未提供安装器或 Tauri 运行时。
+- 语音仅英语；字符目录涉及多种语言，但不扩展后端能力。eSpeak 发音与 Kokoro 训练用的 Misaki 发音前端不完全一致。
 - Core 支持常见 IPA 字符的保守 inventory，不涵盖全部历史/扩展 IPA；不检查英语音系合法性。
 - 本地 G2P text 上限 4096 UTF-8 bytes，UI IPA 上限 8192 bytes，Kokoro 上限 480 model tokens；长文需拆分。
 - `--ipa=2` 可能不保留原文标点。用户可在 IPA 中补入标点；MVP 没有独立 prosody IR。
@@ -266,7 +291,7 @@ cargo test -p ipa-desktop --no-default-features --offline
 ## Roadmap
 
 1. 以稳定的音素/token 推理桥替代临时词典，缓存 Kokoro session；将推理放入可重启 worker，支持取消。
-2. 保留现有 crates，为 UI 加 Tauri 壳和原生安装包；扩展 Linux/macOS runtime 实测。
+2. 验证并完善独立 Win32 字符面板与便携包；其他系统与安装器仍需各自实测。
 3. 加入模型真实 duration 或 `MFA` forced aligner，通过 `Aligner` 返回 `Model` / `Forced` timing。
 4. 为 zh / ja / fr / de 增加可测试的 G2P 与 backend adapter；IPA Core 保持模型无关。
 5. 新增 Piper `TtsBackend`；WikiPron / Epitran `G2pBackend`，无需修改 IPA Core。
@@ -290,8 +315,8 @@ cargo test -p ipa-desktop --no-default-features --offline
 
 | 组件 | 许可证 |
 |---|---|
-| `apps/desktop/` 完整应用、CLI、UI、应用测试与组合可执行程序 | **GPL-3.0-or-later** |
-| `crates/` 五个独立、可复用 Rust 库 | **MPL-2.0** |
+| `apps/desktop/`、`apps/palette/` 完整应用、CLI、UI、应用测试与组合可执行程序 | **GPL-3.0-or-later** |
+| `crates/` 六个独立、可复用 Rust 库（目录数据另按记录标注） | **MPL-2.0** |
 | `scripts/` 与 CI 自动化 | **MIT** |
 | 独立编写的 README / Markdown 文档 | **CC BY 4.0** |
 | Kokoro 模型、eSpeak-NG、sherpa-onnx、ONNX Runtime、依赖和第三方数据 | **保留各自原许可证** |

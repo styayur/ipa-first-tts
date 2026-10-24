@@ -1,8 +1,12 @@
 {
-  "source_commit": "fa8a3ab1e2010122619c791c6ed15fb946ace965",
-  "reviewed_on": "2026-10-09",
+  "source_commit": "e200900ff27c98807c7c1fad3e27c266282241da",
+  "scope": "v0.2.0-alpha.1 candidate source additions; execution evidence is separate",
+  "reviewed_on": "2026-10-24",
   "diagram_source": "README.md",
   "sources": [
+    {"path":"crates/symbol-catalog/src/lib.rs","anchors":["pub fn from_jsons","pub fn search","#![forbid(unsafe_code)]"]},
+    {"path":"apps/palette/src/windows.rs","anchors":["RegisterHotKey","SendInput","target.validate()?","GetForegroundWindow() != target.window","Shell_NotifyIconW"]},
+    {"path":"apps/palette/src/config.rs","anchors":["pub fn load","pub fn save","MOVEFILE_REPLACE_EXISTING"]},
     {
       "path": "apps/desktop/src/server.rs",
       "anchors": [

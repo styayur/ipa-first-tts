@@ -1,0 +1,5191 @@
+{
+  "schema_version": 1,
+  "languages": [
+    {
+      "id": "und",
+      "name": "IPA / language-neutral",
+      "native_name": "IPA",
+      "aliases": [
+        "国际音标",
+        "ipa"
+      ]
+    },
+    {
+      "id": "en",
+      "name": "English",
+      "native_name": "English",
+      "aliases": [
+        "英语"
+      ]
+    },
+    {
+      "id": "fr",
+      "name": "French",
+      "native_name": "français",
+      "aliases": [
+        "法语"
+      ]
+    },
+    {
+      "id": "de",
+      "name": "German",
+      "native_name": "Deutsch",
+      "aliases": [
+        "德语"
+      ]
+    },
+    {
+      "id": "es",
+      "name": "Spanish",
+      "native_name": "español",
+      "aliases": [
+        "西班牙语"
+      ]
+    },
+    {
+      "id": "pt",
+      "name": "Portuguese",
+      "native_name": "português",
+      "aliases": [
+        "葡萄牙语"
+      ]
+    },
+    {
+      "id": "pl",
+      "name": "Polish",
+      "native_name": "polski",
+      "aliases": [
+        "波兰语"
+      ]
+    },
+    {
+      "id": "cs",
+      "name": "Czech",
+      "native_name": "čeština",
+      "aliases": [
+        "捷克语"
+      ]
+    },
+    {
+      "id": "tr",
+      "name": "Turkish",
+      "native_name": "Türkçe",
+      "aliases": [
+        "土耳其语"
+      ]
+    },
+    {
+      "id": "vi",
+      "name": "Vietnamese",
+      "native_name": "Tiếng Việt",
+      "aliases": [
+        "越南语"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "unicode17",
+      "name": "Unicode Character Database 17.0.0",
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "license": "Unicode-3.0",
+      "accessed": "2026-10-24"
+    },
+    {
+      "id": "ipa-reference",
+      "name": "IPA official chart (consulted, not reproduced)",
+      "url": "https://www.internationalphoneticassociation.org/content/ipa-chart",
+      "license": "Reference only; chart CC-BY-SA-4.0; no chart artwork copied",
+      "accessed": "2026-10-24"
+    },
+    {
+      "id": "cldr47",
+      "name": "CLDR 47 language exemplar references (curated selection)",
+      "url": "https://github.com/unicode-org/cldr/tree/release-47/common/main",
+      "license": "Unicode-3.0",
+      "accessed": "2026-10-24"
+    }
+  ],
+  "symbols": [
+    {
+      "id": "consonants-0070",
+      "text": "p",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless bilabial plosive",
+      "aliases": [
+        "latin small letter p"
+      ],
+      "codepoints": [
+        "U+0070"
+      ],
+      "description": "voiceless bilabial plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0062",
+      "text": "b",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced bilabial plosive",
+      "aliases": [
+        "latin small letter b"
+      ],
+      "codepoints": [
+        "U+0062"
+      ],
+      "description": "voiced bilabial plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0074",
+      "text": "t",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless alveolar plosive",
+      "aliases": [
+        "latin small letter t"
+      ],
+      "codepoints": [
+        "U+0074"
+      ],
+      "description": "voiceless alveolar plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0064",
+      "text": "d",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced alveolar plosive",
+      "aliases": [
+        "latin small letter d"
+      ],
+      "codepoints": [
+        "U+0064"
+      ],
+      "description": "voiced alveolar plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0288",
+      "text": "ʈ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless retroflex plosive",
+      "aliases": [
+        "latin small letter t with retroflex hook"
+      ],
+      "codepoints": [
+        "U+0288"
+      ],
+      "description": "voiceless retroflex plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0256",
+      "text": "ɖ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced retroflex plosive",
+      "aliases": [
+        "latin small letter d with tail"
+      ],
+      "codepoints": [
+        "U+0256"
+      ],
+      "description": "voiced retroflex plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0063",
+      "text": "c",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless palatal plosive",
+      "aliases": [
+        "latin small letter c"
+      ],
+      "codepoints": [
+        "U+0063"
+      ],
+      "description": "voiceless palatal plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-025f",
+      "text": "ɟ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced palatal plosive",
+      "aliases": [
+        "latin small letter dotless j with stroke"
+      ],
+      "codepoints": [
+        "U+025F"
+      ],
+      "description": "voiced palatal plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-006b",
+      "text": "k",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless velar plosive",
+      "aliases": [
+        "latin small letter k"
+      ],
+      "codepoints": [
+        "U+006B"
+      ],
+      "description": "voiceless velar plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0261",
+      "text": "ɡ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced velar plosive",
+      "aliases": [
+        "latin small letter script g"
+      ],
+      "codepoints": [
+        "U+0261"
+      ],
+      "description": "voiced velar plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0071",
+      "text": "q",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless uvular plosive",
+      "aliases": [
+        "latin small letter q"
+      ],
+      "codepoints": [
+        "U+0071"
+      ],
+      "description": "voiceless uvular plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0262",
+      "text": "ɢ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced uvular plosive",
+      "aliases": [
+        "latin letter small capital g"
+      ],
+      "codepoints": [
+        "U+0262"
+      ],
+      "description": "voiced uvular plosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0294",
+      "text": "ʔ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "glottal stop",
+      "aliases": [
+        "latin letter glottal stop"
+      ],
+      "codepoints": [
+        "U+0294"
+      ],
+      "description": "glottal stop",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-006d",
+      "text": "m",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "bilabial nasal",
+      "aliases": [
+        "latin small letter m"
+      ],
+      "codepoints": [
+        "U+006D"
+      ],
+      "description": "bilabial nasal",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0271",
+      "text": "ɱ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "labiodental nasal",
+      "aliases": [
+        "latin small letter m with hook"
+      ],
+      "codepoints": [
+        "U+0271"
+      ],
+      "description": "labiodental nasal",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-006e",
+      "text": "n",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "alveolar nasal",
+      "aliases": [
+        "latin small letter n"
+      ],
+      "codepoints": [
+        "U+006E"
+      ],
+      "description": "alveolar nasal",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0273",
+      "text": "ɳ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "retroflex nasal",
+      "aliases": [
+        "latin small letter n with retroflex hook"
+      ],
+      "codepoints": [
+        "U+0273"
+      ],
+      "description": "retroflex nasal",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0272",
+      "text": "ɲ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "palatal nasal",
+      "aliases": [
+        "latin small letter n with left hook",
+        "ny",
+        "enye",
+        "palatal n"
+      ],
+      "codepoints": [
+        "U+0272"
+      ],
+      "description": "palatal nasal",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-014b",
+      "text": "ŋ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "velar nasal",
+      "aliases": [
+        "latin small letter eng"
+      ],
+      "codepoints": [
+        "U+014B"
+      ],
+      "description": "velar nasal",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0274",
+      "text": "ɴ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "uvular nasal",
+      "aliases": [
+        "latin letter small capital n"
+      ],
+      "codepoints": [
+        "U+0274"
+      ],
+      "description": "uvular nasal",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0299",
+      "text": "ʙ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "bilabial trill",
+      "aliases": [
+        "latin letter small capital b"
+      ],
+      "codepoints": [
+        "U+0299"
+      ],
+      "description": "bilabial trill",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0072",
+      "text": "r",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "alveolar trill",
+      "aliases": [
+        "latin small letter r"
+      ],
+      "codepoints": [
+        "U+0072"
+      ],
+      "description": "alveolar trill",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0280",
+      "text": "ʀ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "uvular trill",
+      "aliases": [
+        "latin letter small capital r"
+      ],
+      "codepoints": [
+        "U+0280"
+      ],
+      "description": "uvular trill",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-2c71",
+      "text": "ⱱ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "labiodental flap",
+      "aliases": [
+        "latin small letter v with right hook"
+      ],
+      "codepoints": [
+        "U+2C71"
+      ],
+      "description": "labiodental flap",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-027e",
+      "text": "ɾ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "alveolar tap",
+      "aliases": [
+        "latin small letter r with fishhook"
+      ],
+      "codepoints": [
+        "U+027E"
+      ],
+      "description": "alveolar tap",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-027d",
+      "text": "ɽ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "retroflex flap",
+      "aliases": [
+        "latin small letter r with tail"
+      ],
+      "codepoints": [
+        "U+027D"
+      ],
+      "description": "retroflex flap",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0278",
+      "text": "ɸ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless bilabial fricative",
+      "aliases": [
+        "latin small letter phi"
+      ],
+      "codepoints": [
+        "U+0278"
+      ],
+      "description": "voiceless bilabial fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-03b2",
+      "text": "β",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced bilabial fricative",
+      "aliases": [
+        "greek small letter beta"
+      ],
+      "codepoints": [
+        "U+03B2"
+      ],
+      "description": "voiced bilabial fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0066",
+      "text": "f",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless labiodental fricative",
+      "aliases": [
+        "latin small letter f"
+      ],
+      "codepoints": [
+        "U+0066"
+      ],
+      "description": "voiceless labiodental fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0076",
+      "text": "v",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced labiodental fricative",
+      "aliases": [
+        "latin small letter v"
+      ],
+      "codepoints": [
+        "U+0076"
+      ],
+      "description": "voiced labiodental fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-03b8",
+      "text": "θ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless dental fricative",
+      "aliases": [
+        "greek small letter theta"
+      ],
+      "codepoints": [
+        "U+03B8"
+      ],
+      "description": "voiceless dental fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-00f0",
+      "text": "ð",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced dental fricative",
+      "aliases": [
+        "latin small letter eth"
+      ],
+      "codepoints": [
+        "U+00F0"
+      ],
+      "description": "voiced dental fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0073",
+      "text": "s",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless alveolar fricative",
+      "aliases": [
+        "latin small letter s"
+      ],
+      "codepoints": [
+        "U+0073"
+      ],
+      "description": "voiceless alveolar fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-007a",
+      "text": "z",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced alveolar fricative",
+      "aliases": [
+        "latin small letter z"
+      ],
+      "codepoints": [
+        "U+007A"
+      ],
+      "description": "voiced alveolar fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0283",
+      "text": "ʃ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless postalveolar fricative",
+      "aliases": [
+        "latin small letter esh",
+        "esh",
+        "sh"
+      ],
+      "codepoints": [
+        "U+0283"
+      ],
+      "description": "voiceless postalveolar fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0292",
+      "text": "ʒ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced postalveolar fricative",
+      "aliases": [
+        "latin small letter ezh",
+        "ezh",
+        "zh"
+      ],
+      "codepoints": [
+        "U+0292"
+      ],
+      "description": "voiced postalveolar fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0282",
+      "text": "ʂ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless retroflex fricative",
+      "aliases": [
+        "latin small letter s with hook"
+      ],
+      "codepoints": [
+        "U+0282"
+      ],
+      "description": "voiceless retroflex fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0290",
+      "text": "ʐ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced retroflex fricative",
+      "aliases": [
+        "latin small letter z with retroflex hook"
+      ],
+      "codepoints": [
+        "U+0290"
+      ],
+      "description": "voiced retroflex fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-00e7",
+      "text": "ç",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless palatal fricative",
+      "aliases": [
+        "latin small letter c with cedilla"
+      ],
+      "codepoints": [
+        "U+00E7"
+      ],
+      "description": "voiceless palatal fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-029d",
+      "text": "ʝ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced palatal fricative",
+      "aliases": [
+        "latin small letter j with crossed-tail"
+      ],
+      "codepoints": [
+        "U+029D"
+      ],
+      "description": "voiced palatal fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0078",
+      "text": "x",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless velar fricative",
+      "aliases": [
+        "latin small letter x"
+      ],
+      "codepoints": [
+        "U+0078"
+      ],
+      "description": "voiceless velar fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0263",
+      "text": "ɣ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced velar fricative",
+      "aliases": [
+        "latin small letter gamma"
+      ],
+      "codepoints": [
+        "U+0263"
+      ],
+      "description": "voiced velar fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-03c7",
+      "text": "χ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless uvular fricative",
+      "aliases": [
+        "greek small letter chi"
+      ],
+      "codepoints": [
+        "U+03C7"
+      ],
+      "description": "voiceless uvular fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0281",
+      "text": "ʁ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced uvular fricative",
+      "aliases": [
+        "latin letter small capital inverted r",
+        "uvular r"
+      ],
+      "codepoints": [
+        "U+0281"
+      ],
+      "description": "voiced uvular fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0127",
+      "text": "ħ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless pharyngeal fricative",
+      "aliases": [
+        "latin small letter h with stroke"
+      ],
+      "codepoints": [
+        "U+0127"
+      ],
+      "description": "voiceless pharyngeal fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0295",
+      "text": "ʕ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced pharyngeal fricative",
+      "aliases": [
+        "latin letter pharyngeal voiced fricative"
+      ],
+      "codepoints": [
+        "U+0295"
+      ],
+      "description": "voiced pharyngeal fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0068",
+      "text": "h",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless glottal fricative",
+      "aliases": [
+        "latin small letter h"
+      ],
+      "codepoints": [
+        "U+0068"
+      ],
+      "description": "voiceless glottal fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0266",
+      "text": "ɦ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced glottal fricative",
+      "aliases": [
+        "latin small letter h with hook"
+      ],
+      "codepoints": [
+        "U+0266"
+      ],
+      "description": "voiced glottal fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-026c",
+      "text": "ɬ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless alveolar lateral fricative",
+      "aliases": [
+        "latin small letter l with belt"
+      ],
+      "codepoints": [
+        "U+026C"
+      ],
+      "description": "voiceless alveolar lateral fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-026e",
+      "text": "ɮ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced alveolar lateral fricative",
+      "aliases": [
+        "latin small letter lezh"
+      ],
+      "codepoints": [
+        "U+026E"
+      ],
+      "description": "voiced alveolar lateral fricative",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-028b",
+      "text": "ʋ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "labiodental approximant",
+      "aliases": [
+        "latin small letter v with hook"
+      ],
+      "codepoints": [
+        "U+028B"
+      ],
+      "description": "labiodental approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0279",
+      "text": "ɹ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "alveolar approximant",
+      "aliases": [
+        "latin small letter turned r"
+      ],
+      "codepoints": [
+        "U+0279"
+      ],
+      "description": "alveolar approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-027b",
+      "text": "ɻ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "retroflex approximant",
+      "aliases": [
+        "latin small letter turned r with hook"
+      ],
+      "codepoints": [
+        "U+027B"
+      ],
+      "description": "retroflex approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-006a",
+      "text": "j",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "palatal approximant",
+      "aliases": [
+        "latin small letter j"
+      ],
+      "codepoints": [
+        "U+006A"
+      ],
+      "description": "palatal approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0270",
+      "text": "ɰ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "velar approximant",
+      "aliases": [
+        "latin small letter turned m with long leg"
+      ],
+      "codepoints": [
+        "U+0270"
+      ],
+      "description": "velar approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-006c",
+      "text": "l",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "alveolar lateral approximant",
+      "aliases": [
+        "latin small letter l"
+      ],
+      "codepoints": [
+        "U+006C"
+      ],
+      "description": "alveolar lateral approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-026d",
+      "text": "ɭ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "retroflex lateral approximant",
+      "aliases": [
+        "latin small letter l with retroflex hook"
+      ],
+      "codepoints": [
+        "U+026D"
+      ],
+      "description": "retroflex lateral approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-028e",
+      "text": "ʎ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "palatal lateral approximant",
+      "aliases": [
+        "latin small letter turned y"
+      ],
+      "codepoints": [
+        "U+028E"
+      ],
+      "description": "palatal lateral approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-029f",
+      "text": "ʟ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "velar lateral approximant",
+      "aliases": [
+        "latin letter small capital l"
+      ],
+      "codepoints": [
+        "U+029F"
+      ],
+      "description": "velar lateral approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0077",
+      "text": "w",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced labial velar approximant",
+      "aliases": [
+        "latin small letter w"
+      ],
+      "codepoints": [
+        "U+0077"
+      ],
+      "description": "voiced labial velar approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0265",
+      "text": "ɥ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "labial palatal approximant",
+      "aliases": [
+        "latin small letter turned h"
+      ],
+      "codepoints": [
+        "U+0265"
+      ],
+      "description": "labial palatal approximant",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0298",
+      "text": "ʘ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "bilabial click",
+      "aliases": [
+        "latin letter bilabial click"
+      ],
+      "codepoints": [
+        "U+0298"
+      ],
+      "description": "bilabial click",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-01c0",
+      "text": "ǀ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "dental click",
+      "aliases": [
+        "latin letter dental click"
+      ],
+      "codepoints": [
+        "U+01C0"
+      ],
+      "description": "dental click",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-01c3",
+      "text": "ǃ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "alveolar click",
+      "aliases": [
+        "latin letter retroflex click"
+      ],
+      "codepoints": [
+        "U+01C3"
+      ],
+      "description": "alveolar click",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-01c2",
+      "text": "ǂ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "palatal click",
+      "aliases": [
+        "latin letter alveolar click"
+      ],
+      "codepoints": [
+        "U+01C2"
+      ],
+      "description": "palatal click",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-01c1",
+      "text": "ǁ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "lateral click",
+      "aliases": [
+        "latin letter lateral click"
+      ],
+      "codepoints": [
+        "U+01C1"
+      ],
+      "description": "lateral click",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0253",
+      "text": "ɓ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "bilabial implosive",
+      "aliases": [
+        "latin small letter b with hook"
+      ],
+      "codepoints": [
+        "U+0253"
+      ],
+      "description": "bilabial implosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0257",
+      "text": "ɗ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "alveolar implosive",
+      "aliases": [
+        "latin small letter d with hook"
+      ],
+      "codepoints": [
+        "U+0257"
+      ],
+      "description": "alveolar implosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0284",
+      "text": "ʄ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "palatal implosive",
+      "aliases": [
+        "latin small letter dotless j with stroke and hook"
+      ],
+      "codepoints": [
+        "U+0284"
+      ],
+      "description": "palatal implosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-0260",
+      "text": "ɠ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "velar implosive",
+      "aliases": [
+        "latin small letter g with hook"
+      ],
+      "codepoints": [
+        "U+0260"
+      ],
+      "description": "velar implosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-029b",
+      "text": "ʛ",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "uvular implosive",
+      "aliases": [
+        "latin letter small capital g with hook"
+      ],
+      "codepoints": [
+        "U+029B"
+      ],
+      "description": "uvular implosive",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0069",
+      "text": "i",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close front unrounded vowel",
+      "aliases": [
+        "latin small letter i",
+        "close front unrounded"
+      ],
+      "codepoints": [
+        "U+0069"
+      ],
+      "description": "close front unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0079",
+      "text": "y",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close front rounded vowel",
+      "aliases": [
+        "latin small letter y",
+        "close front rounded"
+      ],
+      "codepoints": [
+        "U+0079"
+      ],
+      "description": "close front rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0268",
+      "text": "ɨ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close central unrounded vowel",
+      "aliases": [
+        "latin small letter i with stroke",
+        "close central unrounded"
+      ],
+      "codepoints": [
+        "U+0268"
+      ],
+      "description": "close central unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0289",
+      "text": "ʉ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close central rounded vowel",
+      "aliases": [
+        "latin small letter u bar",
+        "close central rounded"
+      ],
+      "codepoints": [
+        "U+0289"
+      ],
+      "description": "close central rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-026f",
+      "text": "ɯ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close back unrounded vowel",
+      "aliases": [
+        "latin small letter turned m",
+        "close back unrounded"
+      ],
+      "codepoints": [
+        "U+026F"
+      ],
+      "description": "close back unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0075",
+      "text": "u",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close back rounded vowel",
+      "aliases": [
+        "latin small letter u",
+        "close back rounded"
+      ],
+      "codepoints": [
+        "U+0075"
+      ],
+      "description": "close back rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-026a",
+      "text": "ɪ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "near-close near-front unrounded vowel",
+      "aliases": [
+        "latin letter small capital i",
+        "near-close near-front unrounded"
+      ],
+      "codepoints": [
+        "U+026A"
+      ],
+      "description": "near-close near-front unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-028f",
+      "text": "ʏ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "near-close near-front rounded vowel",
+      "aliases": [
+        "latin letter small capital y",
+        "near-close near-front rounded"
+      ],
+      "codepoints": [
+        "U+028F"
+      ],
+      "description": "near-close near-front rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-028a",
+      "text": "ʊ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "near-close near-back rounded vowel",
+      "aliases": [
+        "latin small letter upsilon",
+        "near-close near-back rounded"
+      ],
+      "codepoints": [
+        "U+028A"
+      ],
+      "description": "near-close near-back rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0065",
+      "text": "e",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close-mid front unrounded vowel",
+      "aliases": [
+        "latin small letter e",
+        "close-mid front unrounded"
+      ],
+      "codepoints": [
+        "U+0065"
+      ],
+      "description": "close-mid front unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-00f8",
+      "text": "ø",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close-mid front rounded vowel",
+      "aliases": [
+        "latin small letter o with stroke",
+        "close-mid front rounded"
+      ],
+      "codepoints": [
+        "U+00F8"
+      ],
+      "description": "close-mid front rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0258",
+      "text": "ɘ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close-mid central unrounded vowel",
+      "aliases": [
+        "latin small letter reversed e",
+        "close-mid central unrounded"
+      ],
+      "codepoints": [
+        "U+0258"
+      ],
+      "description": "close-mid central unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0275",
+      "text": "ɵ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close-mid central rounded vowel",
+      "aliases": [
+        "latin small letter barred o",
+        "close-mid central rounded"
+      ],
+      "codepoints": [
+        "U+0275"
+      ],
+      "description": "close-mid central rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0264",
+      "text": "ɤ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close-mid back unrounded vowel",
+      "aliases": [
+        "latin small letter rams horn",
+        "close-mid back unrounded"
+      ],
+      "codepoints": [
+        "U+0264"
+      ],
+      "description": "close-mid back unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-006f",
+      "text": "o",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "close-mid back rounded vowel",
+      "aliases": [
+        "latin small letter o",
+        "close-mid back rounded"
+      ],
+      "codepoints": [
+        "U+006F"
+      ],
+      "description": "close-mid back rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0259",
+      "text": "ə",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "mid central vowel",
+      "aliases": [
+        "latin small letter schwa",
+        "schwa"
+      ],
+      "codepoints": [
+        "U+0259"
+      ],
+      "description": "mid central vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-025b",
+      "text": "ɛ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open-mid front unrounded vowel",
+      "aliases": [
+        "latin small letter open e",
+        "open-mid front unrounded"
+      ],
+      "codepoints": [
+        "U+025B"
+      ],
+      "description": "open-mid front unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0153",
+      "text": "œ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open-mid front rounded vowel",
+      "aliases": [
+        "latin small ligature oe",
+        "open-mid front rounded"
+      ],
+      "codepoints": [
+        "U+0153"
+      ],
+      "description": "open-mid front rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-025c",
+      "text": "ɜ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open-mid central unrounded vowel",
+      "aliases": [
+        "latin small letter reversed open e",
+        "open-mid central unrounded"
+      ],
+      "codepoints": [
+        "U+025C"
+      ],
+      "description": "open-mid central unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-025e",
+      "text": "ɞ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open-mid central rounded vowel",
+      "aliases": [
+        "latin small letter closed reversed open e",
+        "open-mid central rounded"
+      ],
+      "codepoints": [
+        "U+025E"
+      ],
+      "description": "open-mid central rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-028c",
+      "text": "ʌ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open-mid back unrounded vowel",
+      "aliases": [
+        "latin small letter turned v",
+        "open-mid back unrounded"
+      ],
+      "codepoints": [
+        "U+028C"
+      ],
+      "description": "open-mid back unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0254",
+      "text": "ɔ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open-mid back rounded vowel",
+      "aliases": [
+        "latin small letter open o",
+        "open-mid back rounded"
+      ],
+      "codepoints": [
+        "U+0254"
+      ],
+      "description": "open-mid back rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-00e6",
+      "text": "æ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "near-open front unrounded vowel",
+      "aliases": [
+        "latin small letter ae",
+        "near-open front unrounded"
+      ],
+      "codepoints": [
+        "U+00E6"
+      ],
+      "description": "near-open front unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0250",
+      "text": "ɐ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "near-open central vowel",
+      "aliases": [
+        "latin small letter turned a",
+        "near-open central"
+      ],
+      "codepoints": [
+        "U+0250"
+      ],
+      "description": "near-open central vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0061",
+      "text": "a",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open front unrounded vowel",
+      "aliases": [
+        "latin small letter a",
+        "open front unrounded"
+      ],
+      "codepoints": [
+        "U+0061"
+      ],
+      "description": "open front unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0276",
+      "text": "ɶ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open front rounded vowel",
+      "aliases": [
+        "latin letter small capital oe",
+        "open front rounded"
+      ],
+      "codepoints": [
+        "U+0276"
+      ],
+      "description": "open front rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0251",
+      "text": "ɑ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open back unrounded vowel",
+      "aliases": [
+        "latin small letter alpha",
+        "open back unrounded"
+      ],
+      "codepoints": [
+        "U+0251"
+      ],
+      "description": "open back unrounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-0252",
+      "text": "ɒ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "open back rounded vowel",
+      "aliases": [
+        "latin small letter turned alpha",
+        "open back rounded"
+      ],
+      "codepoints": [
+        "U+0252"
+      ],
+      "description": "open back rounded vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-025a",
+      "text": "ɚ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "rhotic mid central vowel",
+      "aliases": [
+        "latin small letter schwa with hook",
+        "rhotic mid central"
+      ],
+      "codepoints": [
+        "U+025A"
+      ],
+      "description": "rhotic mid central vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "vowels-025d",
+      "text": "ɝ",
+      "kind": "phoneme",
+      "category": "vowels",
+      "tags": [
+        "vowels",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "rhotic open-mid central vowel",
+      "aliases": [
+        "latin small letter reversed open e with hook",
+        "rhotic open-mid central"
+      ],
+      "codepoints": [
+        "U+025D"
+      ],
+      "description": "rhotic open-mid central vowel",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0325",
+      "text": "̥",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "voiceless",
+      "aliases": [
+        "combining ring below"
+      ],
+      "codepoints": [
+        "U+0325"
+      ],
+      "description": "voiceless; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "n̥"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-032c",
+      "text": "̬",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "voiced",
+      "aliases": [
+        "combining caron below"
+      ],
+      "codepoints": [
+        "U+032C"
+      ],
+      "description": "voiced; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "s̬"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0303",
+      "text": "̃",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "nasalized",
+      "aliases": [
+        "combining tilde"
+      ],
+      "codepoints": [
+        "U+0303"
+      ],
+      "description": "nasalized; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "ã"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0329",
+      "text": "̩",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "syllabic",
+      "aliases": [
+        "combining vertical line below"
+      ],
+      "codepoints": [
+        "U+0329"
+      ],
+      "description": "syllabic; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "n̩"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-032f",
+      "text": "̯",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "non-syllabic",
+      "aliases": [
+        "combining inverted breve below"
+      ],
+      "codepoints": [
+        "U+032F"
+      ],
+      "description": "non-syllabic; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "i̯"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-032a",
+      "text": "̪",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "dental",
+      "aliases": [
+        "combining bridge below"
+      ],
+      "codepoints": [
+        "U+032A"
+      ],
+      "description": "dental; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "t̪"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-033a",
+      "text": "̺",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "apical",
+      "aliases": [
+        "combining inverted bridge below"
+      ],
+      "codepoints": [
+        "U+033A"
+      ],
+      "description": "apical; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "s̺"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-033b",
+      "text": "̻",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "laminal",
+      "aliases": [
+        "combining square below"
+      ],
+      "codepoints": [
+        "U+033B"
+      ],
+      "description": "laminal; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "s̻"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0339",
+      "text": "̹",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "more rounded",
+      "aliases": [
+        "combining right half ring below"
+      ],
+      "codepoints": [
+        "U+0339"
+      ],
+      "description": "more rounded; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "ɔ̹"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-031c",
+      "text": "̜",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "less rounded",
+      "aliases": [
+        "combining left half ring below"
+      ],
+      "codepoints": [
+        "U+031C"
+      ],
+      "description": "less rounded; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "ɔ̜"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-031f",
+      "text": "̟",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "advanced",
+      "aliases": [
+        "combining plus sign below"
+      ],
+      "codepoints": [
+        "U+031F"
+      ],
+      "description": "advanced; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "u̟"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0320",
+      "text": "̠",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "retracted",
+      "aliases": [
+        "combining minus sign below"
+      ],
+      "codepoints": [
+        "U+0320"
+      ],
+      "description": "retracted; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "i̠"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0308",
+      "text": "̈",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "centralized",
+      "aliases": [
+        "combining diaeresis"
+      ],
+      "codepoints": [
+        "U+0308"
+      ],
+      "description": "centralized; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "ë"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-033d",
+      "text": "̽",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "mid-centralized",
+      "aliases": [
+        "combining x above"
+      ],
+      "codepoints": [
+        "U+033D"
+      ],
+      "description": "mid-centralized; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "e̽"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-031d",
+      "text": "̝",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "raised",
+      "aliases": [
+        "combining up tack below"
+      ],
+      "codepoints": [
+        "U+031D"
+      ],
+      "description": "raised; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "e̝"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-031e",
+      "text": "̞",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "lowered",
+      "aliases": [
+        "combining down tack below"
+      ],
+      "codepoints": [
+        "U+031E"
+      ],
+      "description": "lowered; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "e̞"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0318",
+      "text": "̘",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "advanced tongue root",
+      "aliases": [
+        "combining left tack below"
+      ],
+      "codepoints": [
+        "U+0318"
+      ],
+      "description": "advanced tongue root; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "e̘"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0319",
+      "text": "̙",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "retracted tongue root",
+      "aliases": [
+        "combining right tack below"
+      ],
+      "codepoints": [
+        "U+0319"
+      ],
+      "description": "retracted tongue root; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "e̙"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0330",
+      "text": "̰",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "creaky voice",
+      "aliases": [
+        "combining tilde below"
+      ],
+      "codepoints": [
+        "U+0330"
+      ],
+      "description": "creaky voice; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "a̰"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0324",
+      "text": "̤",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "breathy voice",
+      "aliases": [
+        "combining diaeresis below"
+      ],
+      "codepoints": [
+        "U+0324"
+      ],
+      "description": "breathy voice; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "a̤"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-031a",
+      "text": "̚",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "no audible release",
+      "aliases": [
+        "combining left angle above"
+      ],
+      "codepoints": [
+        "U+031A"
+      ],
+      "description": "no audible release; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "t̚"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-0361",
+      "text": "͡",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "tie bar above",
+      "aliases": [
+        "combining double inverted breve"
+      ],
+      "codepoints": [
+        "U+0361"
+      ],
+      "description": "tie bar above; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "t͡ʃ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-035c",
+      "text": "͜",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "tie bar below",
+      "aliases": [
+        "combining double breve below"
+      ],
+      "codepoints": [
+        "U+035C"
+      ],
+      "description": "tie bar below; combine with a base, do not add the display dotted circle.",
+      "examples": [
+        "t͜ʃ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-02b0",
+      "text": "ʰ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "aspirated",
+      "aliases": [
+        "modifier letter small h"
+      ],
+      "codepoints": [
+        "U+02B0"
+      ],
+      "description": "aspirated",
+      "examples": [
+        "tʰ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-02b2",
+      "text": "ʲ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "palatalized",
+      "aliases": [
+        "modifier letter small j"
+      ],
+      "codepoints": [
+        "U+02B2"
+      ],
+      "description": "palatalized",
+      "examples": [
+        "tʲ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-02b7",
+      "text": "ʷ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "labialized",
+      "aliases": [
+        "modifier letter small w"
+      ],
+      "codepoints": [
+        "U+02B7"
+      ],
+      "description": "labialized",
+      "examples": [
+        "tʷ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-02e0",
+      "text": "ˠ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "velarized",
+      "aliases": [
+        "modifier letter small gamma"
+      ],
+      "codepoints": [
+        "U+02E0"
+      ],
+      "description": "velarized",
+      "examples": [
+        "tˠ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-02e4",
+      "text": "ˤ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "pharyngealized",
+      "aliases": [
+        "modifier letter small reversed glottal stop"
+      ],
+      "codepoints": [
+        "U+02E4"
+      ],
+      "description": "pharyngealized",
+      "examples": [
+        "tˤ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-207f",
+      "text": "ⁿ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "nasal release",
+      "aliases": [
+        "superscript latin small letter n"
+      ],
+      "codepoints": [
+        "U+207F"
+      ],
+      "description": "nasal release",
+      "examples": [
+        "tⁿ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-02e1",
+      "text": "ˡ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "lateral release",
+      "aliases": [
+        "modifier letter small l"
+      ],
+      "codepoints": [
+        "U+02E1"
+      ],
+      "description": "lateral release",
+      "examples": [
+        "tˡ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "diacritics-02bc",
+      "text": "ʼ",
+      "kind": "diacritic",
+      "category": "diacritics",
+      "tags": [
+        "diacritics",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Zinh"
+      ],
+      "name": "ejective",
+      "aliases": [
+        "modifier letter apostrophe"
+      ],
+      "codepoints": [
+        "U+02BC"
+      ],
+      "description": "ejective",
+      "examples": [
+        "tʼ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02c8",
+      "text": "ˈ",
+      "kind": "stress",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "primary stress",
+      "aliases": [
+        "modifier letter vertical line"
+      ],
+      "codepoints": [
+        "U+02C8"
+      ],
+      "description": "primary stress",
+      "examples": [
+        "ˈa"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02cc",
+      "text": "ˌ",
+      "kind": "stress",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "secondary stress",
+      "aliases": [
+        "modifier letter low vertical line"
+      ],
+      "codepoints": [
+        "U+02CC"
+      ],
+      "description": "secondary stress",
+      "examples": [
+        "ˌa"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02d0",
+      "text": "ː",
+      "kind": "length",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "long",
+      "aliases": [
+        "modifier letter triangular colon"
+      ],
+      "codepoints": [
+        "U+02D0"
+      ],
+      "description": "long",
+      "examples": [
+        "aː"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02d1",
+      "text": "ˑ",
+      "kind": "length",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "half long",
+      "aliases": [
+        "modifier letter half triangular colon"
+      ],
+      "codepoints": [
+        "U+02D1"
+      ],
+      "description": "half long",
+      "examples": [
+        "aˑ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02e5",
+      "text": "˥",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "extra high tone",
+      "aliases": [
+        "modifier letter extra-high tone bar"
+      ],
+      "codepoints": [
+        "U+02E5"
+      ],
+      "description": "extra high tone",
+      "examples": [
+        "a˥"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02e6",
+      "text": "˦",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "high tone",
+      "aliases": [
+        "modifier letter high tone bar"
+      ],
+      "codepoints": [
+        "U+02E6"
+      ],
+      "description": "high tone",
+      "examples": [
+        "a˦"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02e7",
+      "text": "˧",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "mid tone",
+      "aliases": [
+        "modifier letter mid tone bar"
+      ],
+      "codepoints": [
+        "U+02E7"
+      ],
+      "description": "mid tone",
+      "examples": [
+        "a˧"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02e8",
+      "text": "˨",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "low tone",
+      "aliases": [
+        "modifier letter low tone bar"
+      ],
+      "codepoints": [
+        "U+02E8"
+      ],
+      "description": "low tone",
+      "examples": [
+        "a˨"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-02e9",
+      "text": "˩",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "extra low tone",
+      "aliases": [
+        "modifier letter extra-low tone bar"
+      ],
+      "codepoints": [
+        "U+02E9"
+      ],
+      "description": "extra low tone",
+      "examples": [
+        "a˩"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-2197",
+      "text": "↗",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "global rise",
+      "aliases": [
+        "north east arrow"
+      ],
+      "codepoints": [
+        "U+2197"
+      ],
+      "description": "global rise",
+      "examples": [
+        "a↗"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-2198",
+      "text": "↘",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "global fall",
+      "aliases": [
+        "south east arrow"
+      ],
+      "codepoints": [
+        "U+2198"
+      ],
+      "description": "global fall",
+      "examples": [
+        "a↘"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-a71b",
+      "text": "ꜛ",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "upstep",
+      "aliases": [
+        "modifier letter raised up arrow"
+      ],
+      "codepoints": [
+        "U+A71B"
+      ],
+      "description": "upstep",
+      "examples": [
+        "aꜛ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "prosody-a71c",
+      "text": "ꜜ",
+      "kind": "tone",
+      "category": "prosody",
+      "tags": [
+        "prosody",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "downstep",
+      "aliases": [
+        "modifier letter raised down arrow"
+      ],
+      "codepoints": [
+        "U+A71C"
+      ],
+      "description": "downstep",
+      "examples": [
+        "aꜜ"
+      ],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0074-0361-0283",
+      "text": "t͡ʃ",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless postalveolar affricate",
+      "aliases": [
+        "tsh",
+        "ch"
+      ],
+      "codepoints": [
+        "U+0074",
+        "U+0361",
+        "U+0283"
+      ],
+      "description": "voiceless postalveolar affricate; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0064-0361-0292",
+      "text": "d͡ʒ",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced postalveolar affricate",
+      "aliases": [
+        "dzh",
+        "j"
+      ],
+      "codepoints": [
+        "U+0064",
+        "U+0361",
+        "U+0292"
+      ],
+      "description": "voiced postalveolar affricate; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0074-0361-0073",
+      "text": "t͡s",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiceless alveolar affricate",
+      "aliases": [
+        "ts"
+      ],
+      "codepoints": [
+        "U+0074",
+        "U+0361",
+        "U+0073"
+      ],
+      "description": "voiceless alveolar affricate; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0064-0361-007a",
+      "text": "d͡z",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "voiced alveolar affricate",
+      "aliases": [
+        "dz"
+      ],
+      "codepoints": [
+        "U+0064",
+        "U+0361",
+        "U+007A"
+      ],
+      "description": "voiced alveolar affricate; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0061-026a",
+      "text": "aɪ",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "closing diphthong a-i",
+      "aliases": [
+        "ai"
+      ],
+      "codepoints": [
+        "U+0061",
+        "U+026A"
+      ],
+      "description": "closing diphthong a-i; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0061-028a",
+      "text": "aʊ",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "closing diphthong a-u",
+      "aliases": [
+        "au"
+      ],
+      "codepoints": [
+        "U+0061",
+        "U+028A"
+      ],
+      "description": "closing diphthong a-u; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0065-026a",
+      "text": "eɪ",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "closing diphthong e-i",
+      "aliases": [
+        "ei"
+      ],
+      "codepoints": [
+        "U+0065",
+        "U+026A"
+      ],
+      "description": "closing diphthong e-i; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-006f-028a",
+      "text": "oʊ",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "closing diphthong o-u",
+      "aliases": [
+        "ou"
+      ],
+      "codepoints": [
+        "U+006F",
+        "U+028A"
+      ],
+      "description": "closing diphthong o-u; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0254-026a",
+      "text": "ɔɪ",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "closing diphthong open-o-i",
+      "aliases": [
+        "oi"
+      ],
+      "codepoints": [
+        "U+0254",
+        "U+026A"
+      ],
+      "description": "closing diphthong open-o-i; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-0061-0303",
+      "text": "ã",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "nasalized open front vowel",
+      "aliases": [
+        "a tilde"
+      ],
+      "codepoints": [
+        "U+0061",
+        "U+0303"
+      ],
+      "description": "nasalized open front vowel; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-02e9-02e5",
+      "text": "˩˥",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "rising tone contour",
+      "aliases": [
+        "rising"
+      ],
+      "codepoints": [
+        "U+02E9",
+        "U+02E5"
+      ],
+      "description": "rising tone contour; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "combinations-02e5-02e9",
+      "text": "˥˩",
+      "kind": "combination",
+      "category": "combinations",
+      "tags": [
+        "combinations",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "falling tone contour",
+      "aliases": [
+        "falling"
+      ],
+      "codepoints": [
+        "U+02E5",
+        "U+02E9"
+      ],
+      "description": "falling tone contour; inserted as one complete candidate, without normalization.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "punctuation-0020",
+      "text": " ",
+      "kind": "boundary",
+      "category": "punctuation",
+      "tags": [
+        "punctuation",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "word boundary",
+      "aliases": [],
+      "codepoints": [
+        "U+0020"
+      ],
+      "description": "word boundary",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "punctuation-007c",
+      "text": "|",
+      "kind": "boundary",
+      "category": "punctuation",
+      "tags": [
+        "punctuation",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "minor group boundary",
+      "aliases": [],
+      "codepoints": [
+        "U+007C"
+      ],
+      "description": "minor group boundary",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "punctuation-2016",
+      "text": "‖",
+      "kind": "boundary",
+      "category": "punctuation",
+      "tags": [
+        "punctuation",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "major group boundary",
+      "aliases": [],
+      "codepoints": [
+        "U+2016"
+      ],
+      "description": "major group boundary",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "punctuation-002e",
+      "text": ".",
+      "kind": "boundary",
+      "category": "punctuation",
+      "tags": [
+        "punctuation",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "syllable break",
+      "aliases": [],
+      "codepoints": [
+        "U+002E"
+      ],
+      "description": "syllable break",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "punctuation-002f",
+      "text": "/",
+      "kind": "punctuation",
+      "category": "punctuation",
+      "tags": [
+        "punctuation",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "phonemic transcription delimiter",
+      "aliases": [],
+      "codepoints": [
+        "U+002F"
+      ],
+      "description": "phonemic transcription delimiter",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "punctuation-005b",
+      "text": "[",
+      "kind": "punctuation",
+      "category": "punctuation",
+      "tags": [
+        "punctuation",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "phonetic transcription opening",
+      "aliases": [],
+      "codepoints": [
+        "U+005B"
+      ],
+      "description": "phonetic transcription opening",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "punctuation-005d",
+      "text": "]",
+      "kind": "punctuation",
+      "category": "punctuation",
+      "tags": [
+        "punctuation",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "phonetic transcription closing",
+      "aliases": [],
+      "codepoints": [
+        "U+005D"
+      ],
+      "description": "phonetic transcription closing",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "consonants-1df00",
+      "text": "𝼀",
+      "kind": "phoneme",
+      "category": "consonants",
+      "tags": [
+        "consonants",
+        "ipa"
+      ],
+      "languages": [
+        "und"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "f with right hook (phonetic extension)",
+      "aliases": [
+        "latin small letter feng digraph with trill"
+      ],
+      "codepoints": [
+        "U+1DF00"
+      ],
+      "description": "Extended phonetic character; catalog support does not imply IPA Core or TTS support.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "ipa-reference"
+      ],
+      "license": "CC-BY-4.0"
+    }
+  ]
+}
