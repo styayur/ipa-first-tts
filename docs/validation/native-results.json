@@ -1,0 +1,82 @@
+{
+  "format_version": 1,
+  "version": "0.2.0-alpha.1",
+  "date": "2026-10-25",
+  "source_revision": null,
+  "environment": "Windows x64; interactive desktop available; native Release build tested through Computer Use",
+  "blocker": null,
+  "checks": {
+    "notepad": {
+      "evidence": "Microsoft Notepad 11.2607.14.0: real SendInput of ɲʁœçˈt͡ʃéã𝼀; target Copy readback equals exact 13 UTF-16 units / 24 UTF-8 bytes. Notepad3 additionally passed tied-affricate and two continuous mixed-sequence insertions.",
+      "status": "passed"
+    },
+    "browser": {
+      "status": "blocked",
+      "evidence": "Headless Studio tests passed separately; native cross-app injection not verified"
+    },
+    "vscode": {
+      "evidence": "Isolated VS Code profile with extensions disabled. Real SendInput into native-vscode-test.txt; Ctrl+S and filesystem readback match the exact Unicode sequence (13 UTF-16 units, 24 UTF-8 bytes).",
+      "status": "passed"
+    },
+    "hotkey_toggle": {
+      "evidence": "User confirmed global hotkey; agent invoked from Notepad3, Microsoft Notepad and VS Code with search focus and accurate target caption. Esc hides; recall works repeatedly.",
+      "status": "passed"
+    },
+    "tray": {
+      "status": "blocked",
+      "evidence": "Implemented; interaction not verified"
+    },
+    "focus_restore": {
+      "evidence": "Notepad3, Microsoft Notepad and VS Code accepted input at the saved caret after palette hide/focus restoration.",
+      "status": "passed"
+    },
+    "continuous_insert": {
+      "evidence": "Notepad3 accepted t͡ʃ then two consecutive mixed Unicode compositions without caret loss; exact accessible text checked.",
+      "status": "passed"
+    },
+    "copy_exact": {
+      "status": "blocked",
+      "evidence": "Browser clipboard BMP/supplementary test passed; native clipboard action unverified"
+    },
+    "favorites_recent": {
+      "status": "blocked",
+      "evidence": "Persistence/migration/corruption/atomic-replace tests passed; native controls unverified"
+    },
+    "bilingual": {
+      "status": "blocked",
+      "evidence": "Native labels implemented; visual verification pending"
+    },
+    "resize_dpi": {
+      "status": "blocked",
+      "evidence": "Browser 390px test passed; native/mixed-DPI visual checks pending"
+    },
+    "exit_cleanup": {
+      "status": "blocked",
+      "evidence": "RAII registration cleanup unit test passed; tray/owned-child exit unverified"
+    },
+    "single_instance": {
+      "status": "blocked",
+      "evidence": "Session/user mutex implemented; interactive duplicate launch unverified"
+    },
+    "uipi": {
+      "status": "unverified",
+      "evidence": "Fail-closed integrity/target checks implemented; higher-integrity app not tested"
+    },
+    "remote_desktop": {
+      "status": "unverified",
+      "evidence": "No compatible target tested"
+    },
+    "multiple_monitors": {
+      "status": "unverified",
+      "evidence": "Hardware/interactive session not inspected"
+    },
+    "network_disconnected": {
+      "status": "unverified",
+      "evidence": "No physical network disconnection performed"
+    },
+    "clean_machine": {
+      "status": "unverified",
+      "evidence": "No separate clean VM available"
+    }
+  }
+}

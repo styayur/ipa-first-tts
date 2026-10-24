@@ -6,8 +6,10 @@ This repository follows the studio's [License Policy](https://github.com/styayur
 
 | Scope | License | Text |
 |---|---|---|
-| `apps/desktop/**`: complete application, CLI, browser UI, application tests | **GPL-3.0-or-later** | [GPL](GPL-3.0-or-later.txt) |
-| `crates/ipa-core/**`, `crates/g2p-espeak/**`, `crates/tts-core/**`, `crates/tts-kokoro/**`, `crates/alignment-core/**`: reusable libraries, including reusable adapters | **MPL-2.0** | [MPL](MPL-2.0.txt) |
+| `apps/desktop/**`, `apps/palette/**`: complete applications, CLI, browser/native UI, application tests | **GPL-3.0-or-later** | [GPL](GPL-3.0-or-later.txt) |
+| `crates/ipa-core/**`, `crates/g2p-espeak/**`, `crates/tts-core/**`, `crates/tts-kokoro/**`, `crates/alignment-core/**`, `crates/symbol-catalog/**` excluding catalog data: reusable libraries | **MPL-2.0** | [MPL](MPL-2.0.txt) |
+| Authored symbol catalog selection, aliases and descriptions | **CC-BY-4.0**; Unicode-derived names/data retain Unicode-3.0 | [Data provenance](../docs/data-sources.md) |
+| `third_party/sherpa-onnx-sys/**` | **Apache-2.0**, upstream preserved with documented manifest patch | [License](../third_party/sherpa-onnx-sys/LICENSE) |
 | `scripts/**`, `.github/workflows/**`: small scripts and CI automation | **MIT** | [MIT](MIT.txt) |
 | Standalone first-party README/Markdown documentation | **CC-BY-4.0** | [CC BY 4.0](CC-BY-4.0.txt) |
 | Third-party software, native runtime, model weights and data | **Their original licenses** | [Third-party inventory](../THIRD_PARTY_NOTICES.md) |

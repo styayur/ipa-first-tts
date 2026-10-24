@@ -7,19 +7,21 @@ No mock G2P, model or audio is used.
 """
 from pathlib import Path
 import json
+import os
 import urllib.request
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "outputs"
 OUTPUT.mkdir(exist_ok=True)
+URL = os.environ.get('IPA_TEST_URL', 'http://127.0.0.1:17842')
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True, args=["--autoplay-policy=no-user-gesture-required"])
     page = browser.new_page(viewport={"width": 1120, "height": 1000})
     errors = []
     page.on("pageerror", lambda error: errors.append(str(error)))
-    page.goto("http://127.0.0.1:17842")
+    page.goto(URL)
     page.wait_for_load_state("networkidle")
     # Inspect rendered state before interacting.
     assert page.get_by_role("heading", name="IPA Studio").is_visible()
@@ -32,7 +34,7 @@ with sync_playwright() as p:
     expect(page.locator("#play")).to_be_enabled(timeout=90000)
     expect(page.locator("#status")).to_contain_text("Kokoro / sherpa-onnx")
     wav_url = page.locator("#download").get_attribute("href")
-    wav = urllib.request.urlopen("http://127.0.0.1:17842" + wav_url).read()
+    wav = urllib.request.urlopen(URL + wav_url).read()
     assert wav[:4] == b"RIFF" and len(wav) > 48000
     (OUTPUT / "ui-pangram.wav").write_bytes(wav)
     page.get_by_role("button", name="Play", exact=True).click()
@@ -49,7 +51,7 @@ with sync_playwright() as p:
     page.get_by_role("button", name="Synthesize", exact=True).click()
     expect(page.locator("#play")).to_be_enabled(timeout=90000)
     edited_url = page.locator("#download").get_attribute("href")
-    edited = urllib.request.urlopen("http://127.0.0.1:17842" + edited_url).read()
+    edited = urllib.request.urlopen(URL + edited_url).read()
     assert edited != wav
     # Valid IPA absent from the model's token inventory must produce a clear error.
     page.locator("#ipa").fill("ɬ")

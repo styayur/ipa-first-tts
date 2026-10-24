@@ -104,25 +104,31 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--skip-build', action='store_true')
     parser.add_argument('--vc-redist-dir', type=Path, help='Licensed Visual Studio x64 Microsoft.VC143.CRT directory')
+    parser.add_argument('--native-evidence',type=Path,required=True,help='Final-commit native UI validation evidence')
     options = parser.parse_args()
     if os.name != 'nt': raise SystemExit('This package targets Windows x64')
     if not options.skip_build:
         subprocess.run(['cargo','build','--release','--workspace','--locked'],cwd=ROOT,check=True)
     revision = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    from package_palette import NATIVE_GATES
+    native_evidence=json.loads(options.native_evidence.read_text(encoding='utf-8'))
+    if native_evidence.get('source_revision')!=revision: raise SystemExit('Native UI evidence must match final packaging commit')
+    for gate in NATIVE_GATES:
+        if native_evidence.get('checks',{}).get(gate,{}).get('status')!='passed': raise SystemExit('Native UI gate not passed: '+gate)
     tracked = subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode('utf-8').split('\0')
     tracked = [p for p in tracked if p]
     dirty = subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True)
     if dirty.strip(): raise SystemExit('Commit source changes before packaging: release source must match HEAD')
-    vendor = ROOT / '.cache/vendor'
-    if not vendor.is_dir(): raise SystemExit('First run cargo vendor --locked .cache/vendor')
+    vendor = ROOT / f'.cache/vendor-v{VERSION}'
+    if not vendor.is_dir(): raise SystemExit(f'First run cargo vendor --locked .cache/vendor-v{VERSION}')
     native_manifest = json.loads((ROOT/'licenses/native-sources.json').read_text(encoding='utf-8'))
     DIST.mkdir(exist_ok=True)
     # Refuse to overwrite a previous package/stage instead of deleting outputs.
     stage = DIST / f'ipa-first-tts-v{VERSION}-windows-x64-offline'
     stage.mkdir()
-    for name in ['ipa-tts.exe','onnxruntime.dll','onnxruntime_providers_shared.dll','sherpa-onnx-c-api.dll','sherpa-onnx-cxx-api.dll']:
+    for name in ['ipa-tts.exe','ipa-symbol-palette.exe','onnxruntime.dll','onnxruntime_providers_shared.dll','sherpa-onnx-c-api.dll','sherpa-onnx-cxx-api.dll']:
         copy(ROOT/'target/release'/name, stage/name)
-    for name in ['README.md','LICENSE','NOTICE','THIRD_PARTY_NOTICES.md','licenses']:
+    for name in ['README.md','README.zh-CN.md','docs','LICENSE','NOTICE','THIRD_PARTY_NOTICES.md','licenses']:
         copy(ROOT/name,stage/name)
     copy(ROOT/'tools/espeak-ng',stage/'tools/espeak-ng')
     redist = options.vc_redist_dir
@@ -180,7 +186,8 @@ def main():
         native_binary = ROOT/'target/sherpa-onnx-prebuilt/sherpa-onnx-v1.13.8-win-x64-shared-MT-Release-lib.tar.bz2'
         archive.write(native_binary,top+'native-binaries/'+native_binary.name,compress_type=zipfile.ZIP_STORED)
     checksums = '\n'.join(f'{hash_file(file)}  {file.name}' for file in [binary_zip,source_zip])+'\n'
-    (DIST/'SHA256SUMS.txt').write_text(checksums,encoding='ascii')
+    with (DIST/f'SHA256SUMS-v{VERSION}-tts.txt').open('x',encoding='ascii') as checksum_file:
+        checksum_file.write(checksums)
     for file in [binary_zip,source_zip]: print(f'{file.name}: {file.stat().st_size/1024/1024:.1f} MiB',flush=True)
     print('Release packaging and real Kokoro smoke check passed',flush=True)
 

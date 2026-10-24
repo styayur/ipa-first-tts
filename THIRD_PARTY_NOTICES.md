@@ -1,5 +1,38 @@
 # Third-party components
 
+## v0.2.0-alpha.1 catalog and native palette
+
+`windows-sys` 0.61.2 and `windows-link` 0.2.1 are MIT OR Apache-2.0 bindings to
+Windows OS APIs. They add no WebView/GUI framework or TTS runtime to the palette.
+Unicode 17.0.0 names/data and CLDR 47 references retain Unicode-3.0; the unchanged
+license is in `licenses/upstream/Unicode-3.0.txt`. First-party catalog selection,
+labels and aliases are CC BY 4.0. No IPA chart image, audio or third-party font
+is redistributed. See [data provenance](docs/data-sources.md).
+
+All 120 locked Cargo packages and their license expressions are inventoried in
+`licenses/rust-dependencies.json`; exact upstream license/notice files are in
+`licenses/rust/`. For alternative licenses, permissive MIT/Apache/Zlib options
+are available; dual obligations such as Unicode/ISC notices are retained.
+The r-efi upstream crate places its license/copyright text in AUTHORS, retained
+unchanged. Metadata includes target/build dependencies, not just linked runtime
+code; the inventory is not a claim all packages ship in the light executable.
+
+`third_party/sherpa-onnx-sys` preserves Apache-2.0 version 1.13.8 source and native
+ABI, with only its Cargo ZIP build dependency updated to 9 (deflate only).
+See its PATCH.md. Build-download TLS dependencies were updated to address nine
+inherited advisories; no ignores or safety-threshold changes were used. Native
+sherpa DLLs remain the matching official unmodified 1.13.8 binaries.
+
+The model-free palette source ZIP contains the tracked source and locked Rust
+vendor dependencies, and builds with `cargo build -p ipa-palette --release
+--offline --locked`. It does not need eSpeak/Kokoro native corresponding source
+because they are not linked into the palette. A complete TTS binary distribution
+additionally requires the native corresponding-source archive described below.
+Candidate artifacts are local test materials; published versions/assets must be
+checked against the actual Release listing and validation evidence.
+
+## Existing Studio and native speech components
+
 First-party components have the scoped licenses documented in
 [licenses/README.md](licenses/README.md): GPL-3.0-or-later application, MPL-2.0
 reusable crates, MIT automation and CC-BY-4.0 authored documentation. External

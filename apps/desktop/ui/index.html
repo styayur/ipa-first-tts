@@ -8,7 +8,13 @@
 <button id="generate" class="secondary">Generate IPA</button></section>
 <section class="ipa-section"><div class="section-title"><label for="ipa">Pronunciation / IPA</label><span id="validation">Generate IPA or enter it directly</span></div>
 <textarea id="ipa" rows="4" maxlength="8192" spellcheck="false" placeholder="ðə kwˈɪk bɹˈaʊn …" aria-describedby="ipa-help"></textarea>
-<div class="symbols" aria-label="Insert IPA symbol"><button type="button">ˈ</button><button type="button">ˌ</button><button type="button">ː</button><button type="button">ə</button><button type="button">ɹ</button><button type="button">θ</button><button type="button">ð</button><button type="button">ʃ</button><button type="button">ʒ</button><button type="button">ŋ</button><button type="button">ɪ</button><button type="button">ʊ</button><button type="button">æ</button></div>
+<details id="symbol-panel"><summary>Symbol catalog / 字符目录</summary>
+<div class="catalog-filters"><input id="symbol-search" type="search" maxlength="256" placeholder="ɲ, French, tsh, U+0252…" aria-label="Search symbols">
+<select id="symbol-category" aria-label="Symbol category"><option value="">All categories</option value="vowels">Vowels</option><option value="consonants">Consonants</option><option value="diacritics">Diacritics</option><option value="prosody">Stress / tone / length</option><option value="combinations">Combinations</option><option value="orthography">Language characters</option><option value="punctuation">Boundaries / punctuation</option></select>
+<select id="symbol-language" aria-label="Symbol language"><option value="">All languages</option></select></div>
+<div id="symbol-results" class="symbols" role="group" aria-label="Insert catalog symbol"></div>
+<p id="symbol-details" class="hint" role="status"></p><button id="symbol-copy" type="button" class="secondary" disabled>Copy selected</button>
+<p class="hint">Click or Enter inserts the complete string at the IPA caret. Arrows select; Esc closes this catalog. Native global input is available in the separate Windows palette.</p></details>
 <p id="ipa-help" class="hint">Spaces separate words. Stress precedes a phone; length follows it. Unsupported model symbols produce an error.</p>
 <div class="synthesis"><select id="backend" aria-label="TTS backend"><option value="kokoro">Kokoro / sherpa-onnx</option><option value="espeak">eSpeak fallback</option></select><label class="setting">Speaker <input id="speaker" type="number" min="0" max="53" value="0"></label><label class="setting">Speed <input id="speed" type="number" min="0.25" max="4" step="0.05" value="1"></label><button id="synthesize" disabled>Synthesize</button></div></section>
 <section class="listening"><div class="section-title"><h2>Phoneme sequence</h2><span id="timing">No audio yet</span></div><div id="phones" class="phones" aria-label="IPA phoneme sequence"></div>

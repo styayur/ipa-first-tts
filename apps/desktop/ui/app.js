@@ -82,10 +82,59 @@ function updatePlayback() {
 function frame() { updatePlayback(); if (!audio.paused && !audio.ended) requestAnimationFrame(frame); }
 audio.addEventListener('play',frame); audio.addEventListener('pause',updatePlayback); audio.addEventListener('ended',updatePlayback);
 audio.addEventListener('error',()=>{if(audio.hasAttribute('src')) message('Cannot load generated WAV. Synthesize again if the audio has expired.',true);});
-document.querySelectorAll('.symbols button').forEach(b=>b.addEventListener('click',()=>{
-  const field=$('ipa'),start=field.selectionStart,end=field.selectionEnd;
-  field.setRangeText(b.textContent,start,end,'end');field.focus();edited();
-}));
+let symbols = [], symbolIndex = 0, symbolRequest = 0;
+function describeSymbol() {
+  const s = symbols[symbolIndex];
+  $('symbol-details').textContent = s ? `${s.name} · ${s.codepoints.join(' ')} · ${s.languages.join(', ')} · ${s.description}${s.examples.length ? ' · e.g. '+s.examples.join(' / ') : ''}` : 'No results / 没有结果';
+  $('symbol-copy').disabled = !s;
+  Array.from($('symbol-results').children).forEach((b,i)=>b.setAttribute('aria-pressed',String(i===symbolIndex)));
+}
+function insertSymbol() {
+  const s = symbols[symbolIndex]; if (!s || busy) return;
+  const field=$('ipa'); field.setRangeText(s.text,field.selectionStart,field.selectionEnd,'end');field.focus();edited();
+}
+async function searchSymbols() {
+  const request = ++symbolRequest;
+  try {
+    const result = await api('symbols',{query:$('symbol-search').value,language:$('symbol-language').value || null,category:$('symbol-category').value || null});
+    if(request!==symbolRequest) return;
+    symbols=result.symbols; symbolIndex=0; $('symbol-results').replaceChildren();
+    symbols.forEach((s,i)=>{
+      const button=document.createElement('button');button.type='button';button.textContent=s.kind==='diacritic' && /^\p{M}/u.test(s.text) ? '◌'+s.text : s.text===' ' ? '␠' : s.text;
+      button.title=s.name+' · '+s.codepoints.join(' ');button.setAttribute('aria-label',s.name);button.disabled=busy;
+      button.addEventListener('focus',()=>{symbolIndex=i;describeSymbol();});
+      button.addEventListener('click',()=>{symbolIndex=i;describeSymbol();insertSymbol();});$('symbol-results').append(button);
+    }); describeSymbol();
+  } catch(e) { $('symbol-details').textContent=e.message; }
+}
+$('symbol-panel').addEventListener('toggle',()=>{if($('symbol-panel').open){$('symbol-search').focus();searchSymbols();}});
+$('symbol-search').addEventListener('input',searchSymbols);
+for(const id of ['symbol-category','symbol-language']) $(id).addEventListener('change',searchSymbols);
+$('symbol-panel').addEventListener('keydown',e=>{
+  if(e.key==='Escape'){e.preventDefault();$('symbol-panel').open=false;$('ipa').focus();return;}
+  if(e.target===$('symbol-search') || e.target.closest('#symbol-results')){
+    if(e.key==='Enter'){e.preventDefault();insertSymbol();}
+    const step={ArrowRight:1,ArrowLeft:-1,ArrowDown:8,ArrowUp:-8}[e.key];
+    if(step && symbols.length){e.preventDefault();symbolIndex=Math.max(0,Math.min(symbols.length-1,symbolIndex+step));describeSymbol();$('symbol-results').children[symbolIndex]?.scrollIntoView({block:'nearest'});}
+  }
+});
+$('symbol-copy').addEventListener('click',async()=>{
+  const s=symbols[symbolIndex];if(!s)return;
+  try{await navigator.clipboard.writeText(s.text);message('Copied exact catalog string. Clipboard replaced.');}
+  catch(e){message('Copy failed: '+e.message,true);}
+});
+fetch('/api/catalog').then(r=>r.json()).then(c=>{
+  for(const l of c.languages){const option=document.createElement('option');option.value=l.id;option.textContent=l.id+' · '+l.native_name;$('symbol-language').append(option);}
+}).catch(e=>message('Catalog unavailable: '+e.message,true));
+function receiveSymbolLink(){
+  if(!location.hash.startsWith('#ipa=')) return;
+  try{
+    const value=decodeURIComponent(location.hash.slice(5));
+    if(new TextEncoder().encode(value).length>8192) throw new Error('IPA exceeds 8192 UTF-8 bytes');
+    $('ipa').value=value;history.replaceState(null,'',location.pathname);edited();
+  } catch(e){message('Invalid Studio symbol link: '+e.message,true);}
+}
+addEventListener('hashchange',receiveSymbolLink);receiveSymbolLink();
 fetch('/api/status').then(r=>r.json()).then(s=>{
   if(!s.kokoro_compiled){$('backend').value='espeak';$('backend').options[0].disabled=true;message('Kokoro is disabled in this build. eSpeak fallback is selected.');}
 }).catch(e=>message('Local server unavailable: '+e.message,true));

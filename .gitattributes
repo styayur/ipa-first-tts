@@ -6,5 +6,7 @@
 *.rtf binary
 # Retain upstream notice bytes and formatting exactly as received.
 licenses/upstream/** -text -whitespace
+licenses/rust/** -text -whitespace
+third_party/** -text -whitespace
 licenses/*.txt -whitespace
 crates/*/LICENSE -whitespace

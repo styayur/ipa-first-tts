@@ -2,7 +2,7 @@
 use alignment_core::{Aligner, UniformAligner};
 use ipa_core::{G2pBackend, IpaSequence};
 use ipa_desktop::Engine;
-use serde::Deserialize;
+use serde::{de::DeserializeOwned, Deserialize};
 use serde_json::json;
 use std::{collections::VecDeque, io::Read};
 use tiny_http::{Header, Method, Request, Response, StatusCode};
@@ -58,6 +58,16 @@ fn json_response(request: Request, result: Result<serde_json::Value, String>) {
     );
 }
 fn read_input(request: &mut Request) -> Result<Input, String> {
+    let input: Input = read_json(request)?;
+    if input.ipa.len() > 8192 || input.text.len() > 4096 {
+        return Err("Input is too long (text <= 4096 / IPA <= 8192 UTF-8 bytes)".into());
+    }
+    if !matches!(input.language.as_str(), "en" | "en-US" | "en-GB") {
+        return Err("Only English is enabled for speech".into());
+    }
+    Ok(input)
+}
+fn read_json<T: DeserializeOwned>(request: &mut Request) -> Result<T, String> {
     let content_type = request
         .headers()
         .iter()
@@ -76,16 +86,17 @@ fn read_input(request: &mut Request) -> Result<Input, String> {
     if body.len() > 32768 {
         return Err("Request exceeds 32 KiB limit".into());
     }
-    let input: Input = serde_json::from_slice(&body).map_err(|e| format!("Invalid JSON: {e}"))?;
-    if input.ipa.len() > 8192 || input.text.len() > 4096 {
-        return Err("Input is too long (text <= 4096 / IPA <= 8192 UTF-8 bytes)".into());
-    }
-    if !matches!(input.language.as_str(), "en" | "en-US" | "en-GB") {
-        return Err("Only English is enabled in this MVP".into());
-    }
-    Ok(input)
+    serde_json::from_slice(&body).map_err(|e| format!("Invalid JSON: {e}"))
+}
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+struct SymbolQuery {
+    query: String,
+    language: Option<String>,
+    category: Option<String>,
 }
 pub fn serve(mut engine: Engine, port: u16) -> Result<(), String> {
+    let catalog = symbol_catalog::Catalog::bundled()?;
     let server = tiny_http::Server::http(("127.0.0.1", port))
         .map_err(|e| format!("Cannot bind local UI port {port}: {e}"))?;
     let expected_host = format!("127.0.0.1:{port}");
@@ -146,6 +157,12 @@ pub fn serve(mut engine: Engine, port: u16) -> Result<(), String> {
                         json!({"kokoro_compiled":cfg!(feature="kokoro"),"model_dir":engine.model_dir,"espeak":engine.g2p.executable}),
                     ),
                 ),
+                "/api/catalog" => json_response(
+                    request,
+                    Ok(
+                        json!({"schema_version":1,"languages":catalog.languages,"sources":catalog.sources,"count":catalog.symbols.len()}),
+                    ),
+                ),
                 _ => {
                     let id = url
                         .strip_prefix("/audio/")
@@ -162,6 +179,20 @@ pub fn serve(mut engine: Engine, port: u16) -> Result<(), String> {
                     }
                 }
             }
+        } else if request.method() == &Method::Post && url == "/api/symbols" {
+            let result = (|| {
+                let input: SymbolQuery = read_json(&mut request)?;
+                if input.query.len() > 1024
+                    || input.language.as_ref().is_some_and(|s| s.len() > 16)
+                    || input.category.as_ref().is_some_and(|s| s.len() > 80)
+                {
+                    return Err("Symbol query is too long".into());
+                }
+                Ok(
+                    json!({"symbols":catalog.search(&input.query,input.language.as_deref(),input.category.as_deref())}),
+                )
+            })();
+            json_response(request, result);
         } else if request.method() == &Method::Post
             && matches!(
                 url.as_str(),

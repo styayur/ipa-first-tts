@@ -1,0 +1,6169 @@
+{
+  "schema_version": 1,
+  "languages": [],
+  "sources": [],
+  "symbols": [
+    {
+      "id": "orthography-00c0",
+      "text": "À",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with grave",
+      "aliases": [
+        "latin capital letter a with grave"
+      ],
+      "codepoints": [
+        "U+00C0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c2",
+      "text": "Â",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with circumflex",
+      "aliases": [
+        "latin capital letter a with circumflex"
+      ],
+      "codepoints": [
+        "U+00C2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c6",
+      "text": "Æ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter ae",
+      "aliases": [
+        "latin capital letter ae"
+      ],
+      "codepoints": [
+        "U+00C6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c7",
+      "text": "Ç",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter c with cedilla",
+      "aliases": [
+        "latin capital letter c with cedilla"
+      ],
+      "codepoints": [
+        "U+00C7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c8",
+      "text": "È",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with grave",
+      "aliases": [
+        "latin capital letter e with grave"
+      ],
+      "codepoints": [
+        "U+00C8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c9",
+      "text": "É",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with acute",
+      "aliases": [
+        "latin capital letter e with acute"
+      ],
+      "codepoints": [
+        "U+00C9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ca",
+      "text": "Ê",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with circumflex",
+      "aliases": [
+        "latin capital letter e with circumflex"
+      ],
+      "codepoints": [
+        "U+00CA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00cb",
+      "text": "Ë",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with diaeresis",
+      "aliases": [
+        "latin capital letter e with diaeresis"
+      ],
+      "codepoints": [
+        "U+00CB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ce",
+      "text": "Î",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with circumflex",
+      "aliases": [
+        "latin capital letter i with circumflex"
+      ],
+      "codepoints": [
+        "U+00CE"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00cf",
+      "text": "Ï",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with diaeresis",
+      "aliases": [
+        "latin capital letter i with diaeresis"
+      ],
+      "codepoints": [
+        "U+00CF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00d4",
+      "text": "Ô",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with circumflex",
+      "aliases": [
+        "latin capital letter o with circumflex"
+      ],
+      "codepoints": [
+        "U+00D4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00d9",
+      "text": "Ù",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with grave",
+      "aliases": [
+        "latin capital letter u with grave"
+      ],
+      "codepoints": [
+        "U+00D9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00db",
+      "text": "Û",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with circumflex",
+      "aliases": [
+        "latin capital letter u with circumflex"
+      ],
+      "codepoints": [
+        "U+00DB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00dc",
+      "text": "Ü",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "de",
+        "es",
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with diaeresis",
+      "aliases": [
+        "latin capital letter u with diaeresis"
+      ],
+      "codepoints": [
+        "U+00DC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e0",
+      "text": "à",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with grave",
+      "aliases": [
+        "latin small letter a with grave"
+      ],
+      "codepoints": [
+        "U+00E0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e2",
+      "text": "â",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with circumflex",
+      "aliases": [
+        "latin small letter a with circumflex"
+      ],
+      "codepoints": [
+        "U+00E2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e6",
+      "text": "æ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter ae",
+      "aliases": [
+        "latin small letter ae"
+      ],
+      "codepoints": [
+        "U+00E6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e7",
+      "text": "ç",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter c with cedilla",
+      "aliases": [
+        "latin small letter c with cedilla"
+      ],
+      "codepoints": [
+        "U+00E7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e8",
+      "text": "è",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with grave",
+      "aliases": [
+        "latin small letter e with grave"
+      ],
+      "codepoints": [
+        "U+00E8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e9",
+      "text": "é",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with acute",
+      "aliases": [
+        "latin small letter e with acute"
+      ],
+      "codepoints": [
+        "U+00E9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ea",
+      "text": "ê",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with circumflex",
+      "aliases": [
+        "latin small letter e with circumflex"
+      ],
+      "codepoints": [
+        "U+00EA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00eb",
+      "text": "ë",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with diaeresis",
+      "aliases": [
+        "latin small letter e with diaeresis"
+      ],
+      "codepoints": [
+        "U+00EB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ee",
+      "text": "î",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter i with circumflex",
+      "aliases": [
+        "latin small letter i with circumflex"
+      ],
+      "codepoints": [
+        "U+00EE"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ef",
+      "text": "ï",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter i with diaeresis",
+      "aliases": [
+        "latin small letter i with diaeresis"
+      ],
+      "codepoints": [
+        "U+00EF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00f4",
+      "text": "ô",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with circumflex",
+      "aliases": [
+        "latin small letter o with circumflex"
+      ],
+      "codepoints": [
+        "U+00F4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00f9",
+      "text": "ù",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with grave",
+      "aliases": [
+        "latin small letter u with grave"
+      ],
+      "codepoints": [
+        "U+00F9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00fb",
+      "text": "û",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with circumflex",
+      "aliases": [
+        "latin small letter u with circumflex"
+      ],
+      "codepoints": [
+        "U+00FB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00fc",
+      "text": "ü",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr",
+        "de",
+        "es",
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with diaeresis",
+      "aliases": [
+        "latin small letter u with diaeresis"
+      ],
+      "codepoints": [
+        "U+00FC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ff",
+      "text": "ÿ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter y with diaeresis",
+      "aliases": [
+        "latin small letter y with diaeresis"
+      ],
+      "codepoints": [
+        "U+00FF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0152",
+      "text": "Œ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital ligature oe",
+      "aliases": [
+        "OE ligature"
+      ],
+      "codepoints": [
+        "U+0152"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0153",
+      "text": "œ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small ligature oe",
+      "aliases": [
+        "oe ligature"
+      ],
+      "codepoints": [
+        "U+0153"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0178",
+      "text": "Ÿ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "fr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter y with diaeresis",
+      "aliases": [
+        "latin capital letter y with diaeresis"
+      ],
+      "codepoints": [
+        "U+0178"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c4",
+      "text": "Ä",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "de"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with diaeresis",
+      "aliases": [
+        "latin capital letter a with diaeresis"
+      ],
+      "codepoints": [
+        "U+00C4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00d6",
+      "text": "Ö",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "de",
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with diaeresis",
+      "aliases": [
+        "latin capital letter o with diaeresis"
+      ],
+      "codepoints": [
+        "U+00D6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00df",
+      "text": "ß",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "de"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter sharp s",
+      "aliases": [
+        "eszett sharp s"
+      ],
+      "codepoints": [
+        "U+00DF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e4",
+      "text": "ä",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "de"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with diaeresis",
+      "aliases": [
+        "latin small letter a with diaeresis"
+      ],
+      "codepoints": [
+        "U+00E4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00f6",
+      "text": "ö",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "de",
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with diaeresis",
+      "aliases": [
+        "latin small letter o with diaeresis"
+      ],
+      "codepoints": [
+        "U+00F6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1e9e",
+      "text": "ẞ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "de"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter sharp s",
+      "aliases": [
+        "capital sharp s"
+      ],
+      "codepoints": [
+        "U+1E9E"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00a1",
+      "text": "¡",
+      "kind": "punctuation",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "inverted exclamation mark",
+      "aliases": [
+        "inverted exclamation mark"
+      ],
+      "codepoints": [
+        "U+00A1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00bf",
+      "text": "¿",
+      "kind": "punctuation",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "inverted question mark",
+      "aliases": [
+        "inverted question mark"
+      ],
+      "codepoints": [
+        "U+00BF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c1",
+      "text": "Á",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with acute",
+      "aliases": [
+        "latin capital letter a with acute"
+      ],
+      "codepoints": [
+        "U+00C1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00cd",
+      "text": "Í",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with acute",
+      "aliases": [
+        "latin capital letter i with acute"
+      ],
+      "codepoints": [
+        "U+00CD"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00d1",
+      "text": "Ñ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter n with tilde",
+      "aliases": [
+        "latin capital letter n with tilde"
+      ],
+      "codepoints": [
+        "U+00D1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00d3",
+      "text": "Ó",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "pl",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with acute",
+      "aliases": [
+        "latin capital letter o with acute"
+      ],
+      "codepoints": [
+        "U+00D3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00da",
+      "text": "Ú",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with acute",
+      "aliases": [
+        "latin capital letter u with acute"
+      ],
+      "codepoints": [
+        "U+00DA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e1",
+      "text": "á",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with acute",
+      "aliases": [
+        "latin small letter a with acute"
+      ],
+      "codepoints": [
+        "U+00E1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ed",
+      "text": "í",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter i with acute",
+      "aliases": [
+        "latin small letter i with acute"
+      ],
+      "codepoints": [
+        "U+00ED"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00f1",
+      "text": "ñ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter n with tilde",
+      "aliases": [
+        "latin small letter n with tilde"
+      ],
+      "codepoints": [
+        "U+00F1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00f3",
+      "text": "ó",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "pl",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with acute",
+      "aliases": [
+        "latin small letter o with acute"
+      ],
+      "codepoints": [
+        "U+00F3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00fa",
+      "text": "ú",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "es",
+        "pt",
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with acute",
+      "aliases": [
+        "latin small letter u with acute"
+      ],
+      "codepoints": [
+        "U+00FA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00c3",
+      "text": "Ã",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with tilde",
+      "aliases": [
+        "latin capital letter a with tilde"
+      ],
+      "codepoints": [
+        "U+00C3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00d5",
+      "text": "Õ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with tilde",
+      "aliases": [
+        "latin capital letter o with tilde"
+      ],
+      "codepoints": [
+        "U+00D5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00e3",
+      "text": "ã",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with tilde",
+      "aliases": [
+        "latin small letter a with tilde"
+      ],
+      "codepoints": [
+        "U+00E3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00f5",
+      "text": "õ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pt",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with tilde",
+      "aliases": [
+        "latin small letter o with tilde"
+      ],
+      "codepoints": [
+        "U+00F5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0104",
+      "text": "Ą",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with ogonek",
+      "aliases": [
+        "latin capital letter a with ogonek"
+      ],
+      "codepoints": [
+        "U+0104"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0105",
+      "text": "ą",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with ogonek",
+      "aliases": [
+        "latin small letter a with ogonek"
+      ],
+      "codepoints": [
+        "U+0105"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0106",
+      "text": "Ć",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter c with acute",
+      "aliases": [
+        "latin capital letter c with acute"
+      ],
+      "codepoints": [
+        "U+0106"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0107",
+      "text": "ć",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter c with acute",
+      "aliases": [
+        "latin small letter c with acute"
+      ],
+      "codepoints": [
+        "U+0107"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0118",
+      "text": "Ę",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with ogonek",
+      "aliases": [
+        "latin capital letter e with ogonek"
+      ],
+      "codepoints": [
+        "U+0118"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0119",
+      "text": "ę",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with ogonek",
+      "aliases": [
+        "latin small letter e with ogonek"
+      ],
+      "codepoints": [
+        "U+0119"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0141",
+      "text": "Ł",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter l with stroke",
+      "aliases": [
+        "latin capital letter l with stroke"
+      ],
+      "codepoints": [
+        "U+0141"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0142",
+      "text": "ł",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter l with stroke",
+      "aliases": [
+        "latin small letter l with stroke"
+      ],
+      "codepoints": [
+        "U+0142"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0143",
+      "text": "Ń",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter n with acute",
+      "aliases": [
+        "latin capital letter n with acute"
+      ],
+      "codepoints": [
+        "U+0143"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0144",
+      "text": "ń",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter n with acute",
+      "aliases": [
+        "latin small letter n with acute"
+      ],
+      "codepoints": [
+        "U+0144"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-015a",
+      "text": "Ś",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter s with acute",
+      "aliases": [
+        "latin capital letter s with acute"
+      ],
+      "codepoints": [
+        "U+015A"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-015b",
+      "text": "ś",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter s with acute",
+      "aliases": [
+        "latin small letter s with acute"
+      ],
+      "codepoints": [
+        "U+015B"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0179",
+      "text": "Ź",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter z with acute",
+      "aliases": [
+        "latin capital letter z with acute"
+      ],
+      "codepoints": [
+        "U+0179"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-017a",
+      "text": "ź",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter z with acute",
+      "aliases": [
+        "latin small letter z with acute"
+      ],
+      "codepoints": [
+        "U+017A"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-017b",
+      "text": "Ż",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter z with dot above",
+      "aliases": [
+        "latin capital letter z with dot above"
+      ],
+      "codepoints": [
+        "U+017B"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-017c",
+      "text": "ż",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "pl"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter z with dot above",
+      "aliases": [
+        "latin small letter z with dot above"
+      ],
+      "codepoints": [
+        "U+017C"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00dd",
+      "text": "Ý",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter y with acute",
+      "aliases": [
+        "latin capital letter y with acute"
+      ],
+      "codepoints": [
+        "U+00DD"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00fd",
+      "text": "ý",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs",
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter y with acute",
+      "aliases": [
+        "latin small letter y with acute"
+      ],
+      "codepoints": [
+        "U+00FD"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-010c",
+      "text": "Č",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter c with caron",
+      "aliases": [
+        "latin capital letter c with caron"
+      ],
+      "codepoints": [
+        "U+010C"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-010d",
+      "text": "č",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter c with caron",
+      "aliases": [
+        "latin small letter c with caron"
+      ],
+      "codepoints": [
+        "U+010D"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-010e",
+      "text": "Ď",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter d with caron",
+      "aliases": [
+        "latin capital letter d with caron"
+      ],
+      "codepoints": [
+        "U+010E"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-010f",
+      "text": "ď",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter d with caron",
+      "aliases": [
+        "latin small letter d with caron"
+      ],
+      "codepoints": [
+        "U+010F"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-011a",
+      "text": "Ě",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with caron",
+      "aliases": [
+        "latin capital letter e with caron"
+      ],
+      "codepoints": [
+        "U+011A"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-011b",
+      "text": "ě",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with caron",
+      "aliases": [
+        "latin small letter e with caron"
+      ],
+      "codepoints": [
+        "U+011B"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0147",
+      "text": "Ň",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter n with caron",
+      "aliases": [
+        "latin capital letter n with caron"
+      ],
+      "codepoints": [
+        "U+0147"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0148",
+      "text": "ň",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter n with caron",
+      "aliases": [
+        "latin small letter n with caron"
+      ],
+      "codepoints": [
+        "U+0148"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0158",
+      "text": "Ř",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter r with caron",
+      "aliases": [
+        "latin capital letter r with caron"
+      ],
+      "codepoints": [
+        "U+0158"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0159",
+      "text": "ř",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter r with caron",
+      "aliases": [
+        "latin small letter r with caron"
+      ],
+      "codepoints": [
+        "U+0159"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0160",
+      "text": "Š",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter s with caron",
+      "aliases": [
+        "latin capital letter s with caron"
+      ],
+      "codepoints": [
+        "U+0160"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0161",
+      "text": "š",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter s with caron",
+      "aliases": [
+        "latin small letter s with caron"
+      ],
+      "codepoints": [
+        "U+0161"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0164",
+      "text": "Ť",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter t with caron",
+      "aliases": [
+        "latin capital letter t with caron"
+      ],
+      "codepoints": [
+        "U+0164"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0165",
+      "text": "ť",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter t with caron",
+      "aliases": [
+        "latin small letter t with caron"
+      ],
+      "codepoints": [
+        "U+0165"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-016e",
+      "text": "Ů",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with ring above",
+      "aliases": [
+        "latin capital letter u with ring above"
+      ],
+      "codepoints": [
+        "U+016E"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-016f",
+      "text": "ů",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with ring above",
+      "aliases": [
+        "latin small letter u with ring above"
+      ],
+      "codepoints": [
+        "U+016F"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-017d",
+      "text": "Ž",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter z with caron",
+      "aliases": [
+        "latin capital letter z with caron"
+      ],
+      "codepoints": [
+        "U+017D"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-017e",
+      "text": "ž",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "cs"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter z with caron",
+      "aliases": [
+        "latin small letter z with caron"
+      ],
+      "codepoints": [
+        "U+017E"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0049",
+      "text": "I",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i",
+      "aliases": [
+        "latin capital letter i"
+      ],
+      "codepoints": [
+        "U+0049"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-011e",
+      "text": "Ğ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter g with breve",
+      "aliases": [
+        "latin capital letter g with breve"
+      ],
+      "codepoints": [
+        "U+011E"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-011f",
+      "text": "ğ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter g with breve",
+      "aliases": [
+        "latin small letter g with breve"
+      ],
+      "codepoints": [
+        "U+011F"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0130",
+      "text": "İ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with dot above",
+      "aliases": [
+        "latin capital letter i with dot above"
+      ],
+      "codepoints": [
+        "U+0130"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0131",
+      "text": "ı",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter dotless i",
+      "aliases": [
+        "latin small letter dotless i"
+      ],
+      "codepoints": [
+        "U+0131"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-015e",
+      "text": "Ş",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter s with cedilla",
+      "aliases": [
+        "latin capital letter s with cedilla"
+      ],
+      "codepoints": [
+        "U+015E"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-015f",
+      "text": "ş",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "tr"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter s with cedilla",
+      "aliases": [
+        "latin small letter s with cedilla"
+      ],
+      "codepoints": [
+        "U+015F"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00cc",
+      "text": "Ì",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with grave",
+      "aliases": [
+        "latin capital letter i with grave"
+      ],
+      "codepoints": [
+        "U+00CC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00d2",
+      "text": "Ò",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with grave",
+      "aliases": [
+        "latin capital letter o with grave"
+      ],
+      "codepoints": [
+        "U+00D2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00ec",
+      "text": "ì",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter i with grave",
+      "aliases": [
+        "latin small letter i with grave"
+      ],
+      "codepoints": [
+        "U+00EC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-00f2",
+      "text": "ò",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with grave",
+      "aliases": [
+        "latin small letter o with grave"
+      ],
+      "codepoints": [
+        "U+00F2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0102",
+      "text": "Ă",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with breve",
+      "aliases": [
+        "latin capital letter a with breve"
+      ],
+      "codepoints": [
+        "U+0102"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0103",
+      "text": "ă",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with breve",
+      "aliases": [
+        "latin small letter a with breve"
+      ],
+      "codepoints": [
+        "U+0103"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0110",
+      "text": "Đ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter d with stroke",
+      "aliases": [
+        "latin capital letter d with stroke"
+      ],
+      "codepoints": [
+        "U+0110"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0111",
+      "text": "đ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter d with stroke",
+      "aliases": [
+        "latin small letter d with stroke"
+      ],
+      "codepoints": [
+        "U+0111"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0128",
+      "text": "Ĩ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with tilde",
+      "aliases": [
+        "latin capital letter i with tilde"
+      ],
+      "codepoints": [
+        "U+0128"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0129",
+      "text": "ĩ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter i with tilde",
+      "aliases": [
+        "latin small letter i with tilde"
+      ],
+      "codepoints": [
+        "U+0129"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0168",
+      "text": "Ũ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with tilde",
+      "aliases": [
+        "latin capital letter u with tilde"
+      ],
+      "codepoints": [
+        "U+0168"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-0169",
+      "text": "ũ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with tilde",
+      "aliases": [
+        "latin small letter u with tilde"
+      ],
+      "codepoints": [
+        "U+0169"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-01a0",
+      "text": "Ơ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with horn",
+      "aliases": [
+        "latin capital letter o with horn"
+      ],
+      "codepoints": [
+        "U+01A0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-01a1",
+      "text": "ơ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with horn",
+      "aliases": [
+        "latin small letter o with horn"
+      ],
+      "codepoints": [
+        "U+01A1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-01af",
+      "text": "Ư",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with horn",
+      "aliases": [
+        "latin capital letter u with horn"
+      ],
+      "codepoints": [
+        "U+01AF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-01b0",
+      "text": "ư",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with horn",
+      "aliases": [
+        "latin small letter u with horn"
+      ],
+      "codepoints": [
+        "U+01B0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea0",
+      "text": "Ạ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with dot below",
+      "aliases": [
+        "latin capital letter a with dot below"
+      ],
+      "codepoints": [
+        "U+1EA0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea1",
+      "text": "ạ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with dot below",
+      "aliases": [
+        "latin small letter a with dot below"
+      ],
+      "codepoints": [
+        "U+1EA1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea2",
+      "text": "Ả",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with hook above",
+      "aliases": [
+        "latin capital letter a with hook above"
+      ],
+      "codepoints": [
+        "U+1EA2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea3",
+      "text": "ả",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with hook above",
+      "aliases": [
+        "latin small letter a with hook above"
+      ],
+      "codepoints": [
+        "U+1EA3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea4",
+      "text": "Ấ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with circumflex and acute",
+      "aliases": [
+        "latin capital letter a with circumflex and acute"
+      ],
+      "codepoints": [
+        "U+1EA4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea5",
+      "text": "ấ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with circumflex and acute",
+      "aliases": [
+        "latin small letter a with circumflex and acute"
+      ],
+      "codepoints": [
+        "U+1EA5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea6",
+      "text": "Ầ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with circumflex and grave",
+      "aliases": [
+        "latin capital letter a with circumflex and grave"
+      ],
+      "codepoints": [
+        "U+1EA6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea7",
+      "text": "ầ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with circumflex and grave",
+      "aliases": [
+        "latin small letter a with circumflex and grave"
+      ],
+      "codepoints": [
+        "U+1EA7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea8",
+      "text": "Ẩ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with circumflex and hook above",
+      "aliases": [
+        "latin capital letter a with circumflex and hook above"
+      ],
+      "codepoints": [
+        "U+1EA8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ea9",
+      "text": "ẩ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with circumflex and hook above",
+      "aliases": [
+        "latin small letter a with circumflex and hook above"
+      ],
+      "codepoints": [
+        "U+1EA9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eaa",
+      "text": "Ẫ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with circumflex and tilde",
+      "aliases": [
+        "latin capital letter a with circumflex and tilde"
+      ],
+      "codepoints": [
+        "U+1EAA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eab",
+      "text": "ẫ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with circumflex and tilde",
+      "aliases": [
+        "latin small letter a with circumflex and tilde"
+      ],
+      "codepoints": [
+        "U+1EAB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eac",
+      "text": "Ậ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with circumflex and dot below",
+      "aliases": [
+        "latin capital letter a with circumflex and dot below"
+      ],
+      "codepoints": [
+        "U+1EAC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ead",
+      "text": "ậ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with circumflex and dot below",
+      "aliases": [
+        "latin small letter a with circumflex and dot below"
+      ],
+      "codepoints": [
+        "U+1EAD"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eae",
+      "text": "Ắ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with breve and acute",
+      "aliases": [
+        "latin capital letter a with breve and acute"
+      ],
+      "codepoints": [
+        "U+1EAE"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eaf",
+      "text": "ắ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with breve and acute",
+      "aliases": [
+        "latin small letter a with breve and acute"
+      ],
+      "codepoints": [
+        "U+1EAF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb0",
+      "text": "Ằ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with breve and grave",
+      "aliases": [
+        "latin capital letter a with breve and grave"
+      ],
+      "codepoints": [
+        "U+1EB0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb1",
+      "text": "ằ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with breve and grave",
+      "aliases": [
+        "latin small letter a with breve and grave"
+      ],
+      "codepoints": [
+        "U+1EB1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb2",
+      "text": "Ẳ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with breve and hook above",
+      "aliases": [
+        "latin capital letter a with breve and hook above"
+      ],
+      "codepoints": [
+        "U+1EB2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb3",
+      "text": "ẳ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with breve and hook above",
+      "aliases": [
+        "latin small letter a with breve and hook above"
+      ],
+      "codepoints": [
+        "U+1EB3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb4",
+      "text": "Ẵ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with breve and tilde",
+      "aliases": [
+        "latin capital letter a with breve and tilde"
+      ],
+      "codepoints": [
+        "U+1EB4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb5",
+      "text": "ẵ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with breve and tilde",
+      "aliases": [
+        "latin small letter a with breve and tilde"
+      ],
+      "codepoints": [
+        "U+1EB5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb6",
+      "text": "Ặ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter a with breve and dot below",
+      "aliases": [
+        "latin capital letter a with breve and dot below"
+      ],
+      "codepoints": [
+        "U+1EB6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb7",
+      "text": "ặ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter a with breve and dot below",
+      "aliases": [
+        "latin small letter a with breve and dot below"
+      ],
+      "codepoints": [
+        "U+1EB7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb8",
+      "text": "Ẹ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with dot below",
+      "aliases": [
+        "latin capital letter e with dot below"
+      ],
+      "codepoints": [
+        "U+1EB8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eb9",
+      "text": "ẹ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with dot below",
+      "aliases": [
+        "latin small letter e with dot below"
+      ],
+      "codepoints": [
+        "U+1EB9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eba",
+      "text": "Ẻ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with hook above",
+      "aliases": [
+        "latin capital letter e with hook above"
+      ],
+      "codepoints": [
+        "U+1EBA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ebb",
+      "text": "ẻ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with hook above",
+      "aliases": [
+        "latin small letter e with hook above"
+      ],
+      "codepoints": [
+        "U+1EBB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ebc",
+      "text": "Ẽ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with tilde",
+      "aliases": [
+        "latin capital letter e with tilde"
+      ],
+      "codepoints": [
+        "U+1EBC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ebd",
+      "text": "ẽ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with tilde",
+      "aliases": [
+        "latin small letter e with tilde"
+      ],
+      "codepoints": [
+        "U+1EBD"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ebe",
+      "text": "Ế",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with circumflex and acute",
+      "aliases": [
+        "latin capital letter e with circumflex and acute"
+      ],
+      "codepoints": [
+        "U+1EBE"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ebf",
+      "text": "ế",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with circumflex and acute",
+      "aliases": [
+        "latin small letter e with circumflex and acute"
+      ],
+      "codepoints": [
+        "U+1EBF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec0",
+      "text": "Ề",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with circumflex and grave",
+      "aliases": [
+        "latin capital letter e with circumflex and grave"
+      ],
+      "codepoints": [
+        "U+1EC0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec1",
+      "text": "ề",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with circumflex and grave",
+      "aliases": [
+        "latin small letter e with circumflex and grave"
+      ],
+      "codepoints": [
+        "U+1EC1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec2",
+      "text": "Ể",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with circumflex and hook above",
+      "aliases": [
+        "latin capital letter e with circumflex and hook above"
+      ],
+      "codepoints": [
+        "U+1EC2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec3",
+      "text": "ể",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with circumflex and hook above",
+      "aliases": [
+        "latin small letter e with circumflex and hook above"
+      ],
+      "codepoints": [
+        "U+1EC3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec4",
+      "text": "Ễ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with circumflex and tilde",
+      "aliases": [
+        "latin capital letter e with circumflex and tilde"
+      ],
+      "codepoints": [
+        "U+1EC4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec5",
+      "text": "ễ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with circumflex and tilde",
+      "aliases": [
+        "latin small letter e with circumflex and tilde"
+      ],
+      "codepoints": [
+        "U+1EC5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec6",
+      "text": "Ệ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter e with circumflex and dot below",
+      "aliases": [
+        "latin capital letter e with circumflex and dot below"
+      ],
+      "codepoints": [
+        "U+1EC6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec7",
+      "text": "ệ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter e with circumflex and dot below",
+      "aliases": [
+        "latin small letter e with circumflex and dot below"
+      ],
+      "codepoints": [
+        "U+1EC7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec8",
+      "text": "Ỉ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with hook above",
+      "aliases": [
+        "latin capital letter i with hook above"
+      ],
+      "codepoints": [
+        "U+1EC8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ec9",
+      "text": "ỉ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter i with hook above",
+      "aliases": [
+        "latin small letter i with hook above"
+      ],
+      "codepoints": [
+        "U+1EC9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eca",
+      "text": "Ị",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter i with dot below",
+      "aliases": [
+        "latin capital letter i with dot below"
+      ],
+      "codepoints": [
+        "U+1ECA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ecb",
+      "text": "ị",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter i with dot below",
+      "aliases": [
+        "latin small letter i with dot below"
+      ],
+      "codepoints": [
+        "U+1ECB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ecc",
+      "text": "Ọ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with dot below",
+      "aliases": [
+        "latin capital letter o with dot below"
+      ],
+      "codepoints": [
+        "U+1ECC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ecd",
+      "text": "ọ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with dot below",
+      "aliases": [
+        "latin small letter o with dot below"
+      ],
+      "codepoints": [
+        "U+1ECD"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ece",
+      "text": "Ỏ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with hook above",
+      "aliases": [
+        "latin capital letter o with hook above"
+      ],
+      "codepoints": [
+        "U+1ECE"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ecf",
+      "text": "ỏ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with hook above",
+      "aliases": [
+        "latin small letter o with hook above"
+      ],
+      "codepoints": [
+        "U+1ECF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed0",
+      "text": "Ố",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with circumflex and acute",
+      "aliases": [
+        "latin capital letter o with circumflex and acute"
+      ],
+      "codepoints": [
+        "U+1ED0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed1",
+      "text": "ố",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with circumflex and acute",
+      "aliases": [
+        "latin small letter o with circumflex and acute"
+      ],
+      "codepoints": [
+        "U+1ED1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed2",
+      "text": "Ồ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with circumflex and grave",
+      "aliases": [
+        "latin capital letter o with circumflex and grave"
+      ],
+      "codepoints": [
+        "U+1ED2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed3",
+      "text": "ồ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with circumflex and grave",
+      "aliases": [
+        "latin small letter o with circumflex and grave"
+      ],
+      "codepoints": [
+        "U+1ED3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed4",
+      "text": "Ổ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with circumflex and hook above",
+      "aliases": [
+        "latin capital letter o with circumflex and hook above"
+      ],
+      "codepoints": [
+        "U+1ED4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed5",
+      "text": "ổ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with circumflex and hook above",
+      "aliases": [
+        "latin small letter o with circumflex and hook above"
+      ],
+      "codepoints": [
+        "U+1ED5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed6",
+      "text": "Ỗ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with circumflex and tilde",
+      "aliases": [
+        "latin capital letter o with circumflex and tilde"
+      ],
+      "codepoints": [
+        "U+1ED6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed7",
+      "text": "ỗ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with circumflex and tilde",
+      "aliases": [
+        "latin small letter o with circumflex and tilde"
+      ],
+      "codepoints": [
+        "U+1ED7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed8",
+      "text": "Ộ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with circumflex and dot below",
+      "aliases": [
+        "latin capital letter o with circumflex and dot below"
+      ],
+      "codepoints": [
+        "U+1ED8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ed9",
+      "text": "ộ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with circumflex and dot below",
+      "aliases": [
+        "latin small letter o with circumflex and dot below"
+      ],
+      "codepoints": [
+        "U+1ED9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eda",
+      "text": "Ớ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with horn and acute",
+      "aliases": [
+        "latin capital letter o with horn and acute"
+      ],
+      "codepoints": [
+        "U+1EDA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1edb",
+      "text": "ớ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with horn and acute",
+      "aliases": [
+        "latin small letter o with horn and acute"
+      ],
+      "codepoints": [
+        "U+1EDB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1edc",
+      "text": "Ờ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with horn and grave",
+      "aliases": [
+        "latin capital letter o with horn and grave"
+      ],
+      "codepoints": [
+        "U+1EDC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1edd",
+      "text": "ờ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with horn and grave",
+      "aliases": [
+        "latin small letter o with horn and grave"
+      ],
+      "codepoints": [
+        "U+1EDD"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ede",
+      "text": "Ở",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with horn and hook above",
+      "aliases": [
+        "latin capital letter o with horn and hook above"
+      ],
+      "codepoints": [
+        "U+1EDE"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1edf",
+      "text": "ở",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with horn and hook above",
+      "aliases": [
+        "latin small letter o with horn and hook above"
+      ],
+      "codepoints": [
+        "U+1EDF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee0",
+      "text": "Ỡ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with horn and tilde",
+      "aliases": [
+        "latin capital letter o with horn and tilde"
+      ],
+      "codepoints": [
+        "U+1EE0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee1",
+      "text": "ỡ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with horn and tilde",
+      "aliases": [
+        "latin small letter o with horn and tilde"
+      ],
+      "codepoints": [
+        "U+1EE1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee2",
+      "text": "Ợ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter o with horn and dot below",
+      "aliases": [
+        "latin capital letter o with horn and dot below"
+      ],
+      "codepoints": [
+        "U+1EE2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee3",
+      "text": "ợ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter o with horn and dot below",
+      "aliases": [
+        "latin small letter o with horn and dot below"
+      ],
+      "codepoints": [
+        "U+1EE3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee4",
+      "text": "Ụ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with dot below",
+      "aliases": [
+        "latin capital letter u with dot below"
+      ],
+      "codepoints": [
+        "U+1EE4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee5",
+      "text": "ụ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with dot below",
+      "aliases": [
+        "latin small letter u with dot below"
+      ],
+      "codepoints": [
+        "U+1EE5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee6",
+      "text": "Ủ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with hook above",
+      "aliases": [
+        "latin capital letter u with hook above"
+      ],
+      "codepoints": [
+        "U+1EE6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee7",
+      "text": "ủ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with hook above",
+      "aliases": [
+        "latin small letter u with hook above"
+      ],
+      "codepoints": [
+        "U+1EE7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee8",
+      "text": "Ứ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with horn and acute",
+      "aliases": [
+        "latin capital letter u with horn and acute"
+      ],
+      "codepoints": [
+        "U+1EE8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ee9",
+      "text": "ứ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with horn and acute",
+      "aliases": [
+        "latin small letter u with horn and acute"
+      ],
+      "codepoints": [
+        "U+1EE9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eea",
+      "text": "Ừ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with horn and grave",
+      "aliases": [
+        "latin capital letter u with horn and grave"
+      ],
+      "codepoints": [
+        "U+1EEA"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eeb",
+      "text": "ừ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with horn and grave",
+      "aliases": [
+        "latin small letter u with horn and grave"
+      ],
+      "codepoints": [
+        "U+1EEB"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eec",
+      "text": "Ử",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with horn and hook above",
+      "aliases": [
+        "latin capital letter u with horn and hook above"
+      ],
+      "codepoints": [
+        "U+1EEC"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eed",
+      "text": "ử",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with horn and hook above",
+      "aliases": [
+        "latin small letter u with horn and hook above"
+      ],
+      "codepoints": [
+        "U+1EED"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eee",
+      "text": "Ữ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with horn and tilde",
+      "aliases": [
+        "latin capital letter u with horn and tilde"
+      ],
+      "codepoints": [
+        "U+1EEE"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1eef",
+      "text": "ữ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with horn and tilde",
+      "aliases": [
+        "latin small letter u with horn and tilde"
+      ],
+      "codepoints": [
+        "U+1EEF"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef0",
+      "text": "Ự",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter u with horn and dot below",
+      "aliases": [
+        "latin capital letter u with horn and dot below"
+      ],
+      "codepoints": [
+        "U+1EF0"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef1",
+      "text": "ự",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter u with horn and dot below",
+      "aliases": [
+        "latin small letter u with horn and dot below"
+      ],
+      "codepoints": [
+        "U+1EF1"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef2",
+      "text": "Ỳ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter y with grave",
+      "aliases": [
+        "latin capital letter y with grave"
+      ],
+      "codepoints": [
+        "U+1EF2"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef3",
+      "text": "ỳ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter y with grave",
+      "aliases": [
+        "latin small letter y with grave"
+      ],
+      "codepoints": [
+        "U+1EF3"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef4",
+      "text": "Ỵ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter y with dot below",
+      "aliases": [
+        "latin capital letter y with dot below"
+      ],
+      "codepoints": [
+        "U+1EF4"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef5",
+      "text": "ỵ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter y with dot below",
+      "aliases": [
+        "latin small letter y with dot below"
+      ],
+      "codepoints": [
+        "U+1EF5"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef6",
+      "text": "Ỷ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter y with hook above",
+      "aliases": [
+        "latin capital letter y with hook above"
+      ],
+      "codepoints": [
+        "U+1EF6"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef7",
+      "text": "ỷ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter y with hook above",
+      "aliases": [
+        "latin small letter y with hook above"
+      ],
+      "codepoints": [
+        "U+1EF7"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef8",
+      "text": "Ỹ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin capital letter y with tilde",
+      "aliases": [
+        "latin capital letter y with tilde"
+      ],
+      "codepoints": [
+        "U+1EF8"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    },
+    {
+      "id": "orthography-1ef9",
+      "text": "ỹ",
+      "kind": "orthography",
+      "category": "orthography",
+      "tags": [
+        "orthography",
+        "latin"
+      ],
+      "languages": [
+        "vi"
+      ],
+      "scripts": [
+        "Latn"
+      ],
+      "name": "latin small letter y with tilde",
+      "aliases": [
+        "latin small letter y with tilde"
+      ],
+      "codepoints": [
+        "U+1EF9"
+      ],
+      "description": "Curated Latin-script character; language association is not a TTS capability claim.",
+      "examples": [],
+      "sources": [
+        "unicode17",
+        "cldr47"
+      ],
+      "license": "CC-BY-4.0"
+    }
+  ]
+}

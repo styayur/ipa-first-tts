@@ -65,7 +65,7 @@ def main():
     if chrome:
         require(Path(chrome).is_file(), 'Chrome executable does not exist')
         browser_config = out / 'puppeteer.json'
-        browser_config.write_text(json.dumps({'executablePath': chrome}), encoding='utf-8')
+        browser_config.write_text(json.dumps({'executablePath': chrome, 'timeout': 90000, 'pipe': True}), encoding='utf-8')
         browser_args = ['-p', str(browser_config)]
     renders = []
     for theme, name in [('default', 'light'), ('default', 'light-repeat'), ('dark', 'dark')]:
