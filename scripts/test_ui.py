@@ -65,7 +65,7 @@ with sync_playwright() as p:
     page.get_by_role("button", name="Generate IPA", exact=True).click()
     expect(page.locator("#validation")).to_have_text("Valid IPA", timeout=15000)
     page.set_viewport_size({"width": 390, "height": 844})
-    assert page.evaluate("document.documentElement.scrollWidth <= window.innerWidth")
+    assert page.evaluate("() => document.documentElement.scrollWidth <= window.innerWidth")
     page.screenshot(path=str(OUTPUT / "desktop-mobile.png"), full_page=True)
     assert not errors, errors
     (OUTPUT / "ui-verification.json").write_text(json.dumps({

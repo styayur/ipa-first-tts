@@ -18,6 +18,18 @@ Recent entries are deduplicated, newest first, capped at 30. Favorites are cappe
 at 1000. Both store stable catalog IDs, not a second set of symbol definitions.
 Unknown IDs left by a newer/different catalog are retained but not displayed.
 
+The grid shows compact symbols with exact codepoint labels; the full selected
+name/description remains in details. Reset clears search and both filters.
+Ctrl+F focuses/selects search, Ctrl+D toggles a favorite, and Shift+Enter copies.
+With no valid target, Insert is disabled and Enter copies; the target/mode line
+and ↵ button label make the current action explicit. Recalling from another
+foreground application captures that new target even if the panel was already
+visible. Only a shortcut while the panel itself is foreground hides it.
+The themed native window appears in Alt+Tab while visible and has an explicit
+Menu button for the same commands as the tray, including Exit. A dedicated IPA
+icon distinguishes it from generic application tray icons. Its embedded manifest
+enables common-controls v6, per-monitor DPI and asInvoker privileges.
+
 Settings and the action selector persist in version 2 config under
 `%LOCALAPPDATA%/IPA-first-TTS/palette.json`. Version 1 migrates by adding the
 default Insert action. A 128 KiB limit, schema validation, exclusive temporary

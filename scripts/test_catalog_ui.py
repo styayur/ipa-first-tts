@@ -37,10 +37,10 @@ with sync_playwright() as p:
     expect(page.locator('#validation')).to_have_text('Valid IPA')
     page.locator('#symbol-search').fill('e\u0301')
     page.locator('#symbol-language').select_option('fr')
-    page.wait_for_function("document.querySelector('#symbol-results button')?.textContent === 'é'")
+    expect(page.locator('#symbol-results button').first).to_have_text('é')
     page.locator('#symbol-copy').click()
     expect(page.locator('#status')).to_contain_text('Copied exact catalog string')
-    assert page.evaluate('navigator.clipboard.readText()') == 'é'
+    assert page.evaluate('() => navigator.clipboard.readText()') == 'é'
     page.locator('#symbol-search').fill('definitely-no-matching-symbol-999')
     expect(page.locator('#symbol-results button')).to_have_count(0)
     expect(page.locator('#symbol-details')).to_have_text('No results / 没有结果')
@@ -67,7 +67,7 @@ with sync_playwright() as p:
     expect(page.locator('#symbol-results button')).to_have_count(1)
     page.locator('#symbol-copy').click()
     expect(page.locator('#status')).to_contain_text('Copied exact catalog string')
-    assert page.evaluate('navigator.clipboard.readText()') == '\U0001df00'
+    assert page.evaluate('() => navigator.clipboard.readText()') == '\U0001df00'
     # Unsupported catalog symbols remain copyable; IPA Core rejects explicitly.
     page.locator('#ipa').fill('')
     page.locator('#symbol-results button').click()
@@ -75,13 +75,13 @@ with sync_playwright() as p:
     expect(page.locator('#validation')).to_contain_text('unsupported IPA')
     page.screenshot(path=str(OUT/'catalog-desktop.png'),full_page=True)
     page.set_viewport_size({'width':390,'height':844})
-    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+    assert page.evaluate('() => document.documentElement.scrollWidth <= innerWidth')
     page.screenshot(path=str(OUT/'catalog-narrow.png'),full_page=True)
     # Fragment transfer preserves bytes in editor and is removed from address/history.
     page.goto(URL+'/#ipa=%74%CD%A1%CA%83')
     page.wait_for_load_state('networkidle')
     expect(page.locator('#ipa')).to_have_value('t͡ʃ')
-    assert page.evaluate('location.hash') == ''
+    assert page.evaluate('() => location.hash') == ''
     # Verify API security using the real server, not interception or mocks.
     assert context.request.get(URL+'/api/catalog',headers={'Host':'evil.example'}).status==403
     assert context.request.post(URL+'/api/symbols',headers={'Origin':'https://evil.example'},data={'query':'a'}).status==403
