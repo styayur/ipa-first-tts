@@ -30,7 +30,10 @@ def main():
                 'source':package['source'] or ('first-party' if package['id'] in metadata['workspace_members'] else 'local Apache-2.0 security patch'), 'notices':[]}
         if package['id'] not in metadata['workspace_members']:
             directory=Path(package['manifest_path']).parent
-            files=sorted({p for pattern in ['LICENSE*','COPYING*','COPYRIGHT*','NOTICE*','UNLICENSE*'] for p in directory.glob(pattern) if p.is_file()})
+            # Crate archives use both LICENSE-* and license-*; Windows globbing
+            # hides this distinction while Linux correctly treats case literally.
+            files=sorted(p for p in directory.iterdir() if p.is_file() and
+                         p.name.upper().startswith(('LICENSE','COPYING','COPYRIGHT','NOTICE','UNLICENSE')))
             if package.get('license_file'): files.append(directory/package['license_file'])
             if not files and package['name']=='r-efi':
                 # This upstream crate places its full license notices in AUTHORS.

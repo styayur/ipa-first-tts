@@ -1820,4 +1820,160 @@ mod tests {
             assert!(target.validate().is_err());
         }
     }
+    #[test]
+    fn native_controls_resize_filter_and_persist_without_external_input() {
+        // Hidden test-owned controls only. No foreground changes, input injection,
+        // clipboard writes or interaction with the user's running app.
+        unsafe {
+            let window = CreateWindowExW(
+                0,
+                wide("STATIC").as_ptr(),
+                wide("Palette control test").as_ptr(),
+                WS_POPUP,
+                0,
+                0,
+                600,
+                700,
+                null_mut(),
+                null_mut(),
+                GetModuleHandleW(null()),
+                null(),
+            );
+            assert!(!window.is_null());
+            let directory = std::env::temp_dir().join(format!(
+                "ipa-native-controls-{}-{:?}",
+                std::process::id(),
+                std::thread::current().id()
+            ));
+            std::fs::create_dir(&directory).unwrap();
+            let mut app = App {
+                window,
+                controls: vec![],
+                catalog: Catalog::bundled().unwrap(),
+                settings: Settings::default(),
+                config: directory.join("palette.json"),
+                target: None,
+                results: vec![],
+                registration: None,
+                tray: zeroed(),
+                font: null_mut(),
+                symbol_font: null_mut(),
+                studio: None,
+                studio_port: None,
+                settings_window: null_mut(),
+                settings_controls: vec![],
+                explorer_message: 0,
+            };
+            for id in [SEARCH_LABEL, TARGET_LABEL, COMPOSE_LABEL, STATUS] {
+                app.child(id, "STATIC", "", 0).unwrap();
+            }
+            for id in [SEARCH, DETAILS, BUFFER] {
+                app.child(id, "EDIT", "", ES_AUTOHSCROLL as u32).unwrap();
+            }
+            for id in [CATEGORY, LANGUAGE, UI_LANGUAGE, ACTION] {
+                app.child(id, "COMBOBOX", "", CBS_DROPDOWNLIST as u32)
+                    .unwrap();
+            }
+            for id in [
+                COPY, INSERT, FAVORITE, COMPOSE, CLEAR, STUDIO, SETTINGS, RESET, MENU,
+            ] {
+                app.child(id, "BUTTON", "", 0).unwrap();
+            }
+            app.child(
+                GRID,
+                "LISTBOX",
+                "",
+                LBS_MULTICOLUMN as u32
+                    | LBS_OWNERDRAWFIXED as u32
+                    | LBS_HASSTRINGS as u32
+                    | LBS_NOINTEGRALHEIGHT as u32,
+            )
+            .unwrap();
+            app.fonts();
+            app.localize();
+            app.refresh();
+            assert_eq!(app.results.len(), 368);
+            assert_eq!(app.enter_action(), COPY);
+            assert_eq!(IsWindowEnabled(app.get(INSERT)), 0);
+            let dpi = GetDpiForWindow(window).max(96) as i32;
+            for (width, height) in [(400, 560), (576, 700), (900, 900)] {
+                SetWindowPos(
+                    window,
+                    null_mut(),
+                    0,
+                    0,
+                    width * dpi / 96,
+                    height * dpi / 96,
+                    SWP_NOACTIVATE | SWP_NOZORDER,
+                );
+                app.layout();
+                let mut client = zeroed();
+                GetClientRect(window, &mut client);
+                for id in [
+                    SEARCH,
+                    GRID,
+                    DETAILS,
+                    BUFFER,
+                    COPY,
+                    INSERT,
+                    FAVORITE,
+                    COMPOSE,
+                    STUDIO,
+                    SETTINGS,
+                    MENU,
+                    UI_LANGUAGE,
+                    STATUS,
+                ] {
+                    let mut rect: RECT = zeroed();
+                    assert_ne!(GetWindowRect(app.get(id), &mut rect), 0);
+                    let mut start = POINT {
+                        x: rect.left,
+                        y: rect.top,
+                    };
+                    let mut end = POINT {
+                        x: rect.right,
+                        y: rect.bottom,
+                    };
+                    ScreenToClient(window, &mut start);
+                    ScreenToClient(window, &mut end);
+                    assert!(
+                        start.x >= 0
+                            && start.y >= 0
+                            && end.x <= client.right
+                            && end.y <= client.bottom,
+                        "control {id}, {width}x{height}"
+                    );
+                }
+                let mut grid: RECT = zeroed();
+                GetClientRect(app.get(GRID), &mut grid);
+                let row = SendMessageW(app.get(GRID), LB_GETITEMHEIGHT, 0, 0) as i32;
+                assert!(grid.bottom / row >= 3, "native grid must show >=3 rows");
+            }
+            set_text(app.get(SEARCH), "tsh");
+            app.refresh();
+            assert_eq!(app.selected().unwrap().text, "t͡ʃ");
+            app.act(FAVORITE);
+            app.settings.used("combinations-0074-0361-0283");
+            app.persist();
+            let persisted = config::load(&app.config).unwrap().0;
+            assert_eq!(persisted.favorites.len(), 1);
+            assert_eq!(persisted.recent.len(), 1);
+            app.act(COMPOSE);
+            assert_eq!(text(app.get(BUFFER)), "t͡ʃ");
+            set_text(app.get(SEARCH), "no-result-999");
+            app.refresh();
+            assert!(app.results.is_empty());
+            assert_eq!(IsWindowEnabled(app.get(COPY)), 0);
+            app.act(RESET);
+            assert_eq!(app.results.len(), 368);
+            app.settings.ui_language = "zh-CN".into();
+            app.localize();
+            app.refresh();
+            assert!(text(app.get(SEARCH_LABEL)).contains("搜索"));
+            assert_eq!(text(app.get(BUFFER)), "t͡ʃ");
+            drop(app);
+            // Exclusively-created test directory; no user configuration is touched.
+            std::fs::remove_dir_all(directory).unwrap();
+        }
+    }
 }
