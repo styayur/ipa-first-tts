@@ -131,6 +131,8 @@ def main():
         copy(options.target_dir.resolve()/'release'/name, stage/name)
     for name in ['README.md','README.zh-CN.md','docs','LICENSE','NOTICE','THIRD_PARTY_NOTICES.md','licenses']:
         copy(ROOT/name,stage/name)
+    copy(options.native_evidence,stage/'NATIVE_VALIDATION.json')
+    copy(ROOT/'apps/palette/palette.example.json',stage/'palette.example.json')
     copy(ROOT/'tools/espeak-ng',stage/'tools/espeak-ng')
     redist = options.vc_redist_dir
     if redist is None:
@@ -162,6 +164,8 @@ def main():
     with wave.open(str(stage/'outputs/release-smoke.wav')) as wav:
         assert wav.getframerate()==24000 and wav.getnchannels()==1 and wav.getnframes()>24000
     verification = {'source_revision':revision,'release':f'v{VERSION}','doctor':doctor,'real_kokoro_demo':demo}
+    verification.update({'authenticode_signed':False,'physical_network_disabled':False,
+                         'clean_vm_without_development_tools_tested':False})
     (stage/'RELEASE_VERIFICATION.json').write_text(json.dumps(verification,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     inventory = [{'path':str(p.relative_to(stage)).replace('\\','/'),'bytes':p.stat().st_size,'sha256':hash_file(p)}
                  for p in sorted(stage.rglob('*')) if p.is_file()]

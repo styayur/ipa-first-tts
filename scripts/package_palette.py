@@ -61,6 +61,7 @@ def main():
     for name in ['LICENSE','NOTICE','THIRD_PARTY_NOTICES.md']: shutil.copy2(ROOT/name,stage/name)
     shutil.copytree(ROOT/'licenses',stage/'licenses')
     shutil.copytree(ROOT/'crates/symbol-catalog/data',stage/'catalog-data')
+    shutil.copy2(ROOT/'apps/palette/palette.example.json',stage/'palette.example.json')
     (stage/'START.txt').write_text(f'''IPA Symbol Palette v{VERSION} — Windows x64{' LOCAL CANDIDATE / NOT RELEASE-VERIFIED' if args.candidate else ''}
 Run ipa-symbol-palette.exe. No model, Rust, Python, Node or WebView is required.
 Ctrl+Alt+Shift+I toggles the window; search immediately, arrows select, Enter
@@ -78,6 +79,7 @@ nonempty composition overrides the selected candidate for Copy/Insert/Studio.
 Supplementary characters may require a font installed in your target app.
 IPA Studio is optional and requires the full sibling ipa-tts package.
 Config: %LOCALAPPDATA%/IPA-first-TTS/palette.json (not included in this ZIP).
+palette.example.json is a default configuration example, never loaded automatically.
 Corrupt settings are preserved as palette.corrupt-*; unknown future versions
 are never overwritten. No autostart, installer, accounts or telemetry.
 Source revision: {revision}
