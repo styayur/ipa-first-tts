@@ -1760,6 +1760,27 @@ mod tests {
         }
     }
     #[test]
+    fn native_instance_mutex_excludes_duplicates_and_releases() {
+        // An isolated session-local test name; never signals a live application.
+        unsafe {
+            let name = wide(&format!(
+                "Local\\IPAFirstPalette-Mutex-Test-{}",
+                std::process::id()
+            ));
+            let first = Handle(CreateMutexW(null(), 0, name.as_ptr()));
+            assert!(!first.0.is_null());
+            assert_ne!(GetLastError(), ERROR_ALREADY_EXISTS);
+            let second = Handle(CreateMutexW(null(), 0, name.as_ptr()));
+            assert!(!second.0.is_null());
+            assert_eq!(GetLastError(), ERROR_ALREADY_EXISTS);
+            drop(second);
+            drop(first);
+            let restarted = Handle(CreateMutexW(null(), 0, name.as_ptr()));
+            assert!(!restarted.0.is_null());
+            assert_ne!(GetLastError(), ERROR_ALREADY_EXISTS);
+        }
+    }
+    #[test]
     fn invalid_target_and_packet_flags() {
         unsafe {
             assert!(Target {
@@ -1972,6 +1993,11 @@ mod tests {
             assert!(text(app.get(SEARCH_LABEL)).contains("搜索"));
             assert_eq!(text(app.get(BUFFER)), "t͡ʃ");
             drop(app);
+            assert_eq!(
+                IsWindow(window),
+                0,
+                "owned native window survives App cleanup"
+            );
             // Exclusively-created test directory; no user configuration is touched.
             std::fs::remove_dir_all(directory).unwrap();
         }
