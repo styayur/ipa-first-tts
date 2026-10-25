@@ -9,6 +9,9 @@ This repository follows the studio's [License Policy](https://github.com/styayur
 | `apps/desktop/**`, `apps/palette/**`: complete applications, CLI, browser/native UI, application tests | **GPL-3.0-or-later** | [GPL](GPL-3.0-or-later.txt) |
 | `crates/ipa-core/**`, `crates/g2p-espeak/**`, `crates/tts-core/**`, `crates/tts-kokoro/**`, `crates/alignment-core/**`, `crates/symbol-catalog/**` excluding catalog data: reusable libraries | **MPL-2.0** | [MPL](MPL-2.0.txt) |
 | Authored symbol catalog selection, aliases and descriptions | **CC-BY-4.0**; Unicode-derived names/data retain Unicode-3.0 | [Data provenance](../docs/data-sources.md) |
+| `crates/language-mapping/` code/schema/adapter policies (excluding data and reference excerpts) | **MPL-2.0** | [MPL](MPL-2.0.txt) |
+| Mapping data: CLDR / selected CMUdict / IANA / original registry descriptions | **Unicode-3.0 / BSD-2-Clause / CC0-1.0 / CC-BY-4.0** by scope | [Mapping data notice](../crates/language-mapping/data/README.md) |
+| Independent Wiktionary pronunciation reference facts in mapping test fixtures | Attribution per entry; copyrightable excerpts **CC-BY-SA-4.0**, not a production lexicon | [Reference fixture](../crates/language-mapping/tests/fixtures/external.json) |
 | `third_party/sherpa-onnx-sys/**` | **Apache-2.0**, upstream preserved with documented manifest patch | [License](../third_party/sherpa-onnx-sys/LICENSE) |
 | `scripts/**`, `.github/workflows/**`: small scripts and CI automation | **MIT** | [MIT](MIT.txt) |
 | Standalone first-party README/Markdown documentation | **CC-BY-4.0** | [CC BY 4.0](CC-BY-4.0.txt) |

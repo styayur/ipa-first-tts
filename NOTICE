@@ -24,6 +24,14 @@ ZIP build-dependency security patch; no native DLL source is relicensed.
 Rust dependency notices and exact versions are in licenses/rust/ and
 licenses/rust-dependencies.json. No Authenticode signing is claimed.
 
+The language-mapping core and adapter policies are MPL-2.0; imported CLDR 49
+transforms retain Unicode-3.0, selected CMUdict entries retain BSD-2-Clause
+(Copyright 1993-2015 Carnegie Mellon University), and IANA registry records
+retain the IANA/IETF CC0-1.0 dedication. Original mapping descriptions are
+CC-BY-4.0. Source/byte hashes and per-rule provenance are retained in
+crates/language-mapping/data/. Paid ISO publications, IPA artwork, ALA-LC
+tables and CLTS/PHOIBLE/Epitran data are not redistributed in this mapping engine.
+
 The repository's outputs/ audio and screenshots demonstrate this application.
 The audio was generated with the original third-party Kokoro model. Attribution
 does not change upstream asset or model terms.

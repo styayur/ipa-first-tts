@@ -1,6 +1,19 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 # Changes
 
+## 0.3.0-alpha.1 — experimental language mapping
+
+- Independent typed local mapping engine: versioned language/script/scheme/source
+  registry, explicit conversion edges, candidate provenance, uncertainty and limits.
+- Pinned CLDR 49 kana/Russian alphabet subsets and Han default readings with three
+  phrase contexts; selected CMUdict / explicit ARPAbet adapter and finite exact P2G.
+- Optional separately selected eSpeak 1.52.0 G2P for en-US, French and Spanish;
+  no new synthesis languages. Fixed Windows stdin EOF handling by appending LF.
+- Shared JSON CLI (`ipa-map` and `ipa-tts`), Studio workbench and native mapping
+  window with Copy, composition transfer and eligible English Studio transfer.
+- Source/data byte manifests, independent per-language fixtures and evaluation
+  policies; light/full packaging retains all license and capability boundaries.
+
 ## 0.2.0-alpha.1 — experimental preview
 
 - Independent Rust/Win32 Symbol Palette with shared validated offline catalog

@@ -3,6 +3,19 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IPA Studio</title><link rel="stylesheet" href="/style.css"></head>
 <body><main>
 <header><div class="mark" aria-hidden="true">/a/</div><div><h1>IPA Studio</h1><p>Edit the pronunciation. Hear the change.</p></div><span class="local">Local audio</span></header>
+<section id="mapping-panel" class="mapping-panel" aria-labelledby="mapping-title">
+<div class="section-title"><h2 id="mapping-title">Language mapping / 语言映射</h2><span>Local rules, visible choices</span></div>
+<p class="hint">Convert spelling, a named romanization, or IPA. This does not translate text or enable new speech languages.</p>
+<div class="mapping-fields"><label>Language / 语言<select id="map-language"></select></label><label>Conversion / 转换<select id="map-direction"></select></label><label class="map-scheme-field">Scheme / 方案<select id="map-scheme"></select></label><label>Source script / 源文字<select id="map-script"></select></label><label>Target language<input id="map-target-language" readonly aria-label="Mapping target language"></label></div>
+<p id="map-coverage" class="hint"></p>
+<label for="map-input">Input / 原始文本</label><textarea id="map-input" rows="2" maxlength="4096" spellcheck="false" placeholder="Choose a language and scheme, then enter text"></textarea>
+<label for="map-context">Context / 语境（可选）</label><input id="map-context" maxlength="4096" placeholder="For an isolated 重, enter 重庆; other edges retain context without inferring word sense">
+<div class="mapping-actions"><button id="map-convert">Convert / 转换</button><span class="hint">Ctrl+Enter converts from the input field</span></div>
+<p id="map-status" role="status" aria-live="polite">Choose an explicit scheme. No silent fallback.</p>
+<div id="map-candidates" role="group" aria-label="Mapping candidates"></div>
+<div class="mapping-actions"><button id="map-copy" class="secondary" disabled>Copy result / 复制结果</button><button id="map-studio" class="secondary" hidden>Use in English IPA editor / 发送至英语 IPA 编辑器</button></div>
+<details id="map-evidence"><summary>Sources, rules and limits / 来源、规则与限制</summary><div id="map-provenance" class="hint"></div><pre id="map-traces"></pre></details>
+</section>
 <section><div class="section-title"><label for="text">Text</label><select id="language" aria-label="English accent"><option value="en-US">English · US</option><option value="en-GB">English · UK</option></select></div>
 <textarea id="text" rows="3" maxlength="4096" spellcheck="false">The quick brown fox jumps over the lazy dog.</textarea>
 <button id="generate" class="secondary">Generate IPA</button></section>

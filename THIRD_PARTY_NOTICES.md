@@ -89,6 +89,33 @@ in their original bundle. No claims of ownership, model training or relicensing
 are made. The included model is copied unchanged; only a runtime temporary copy's
 voice metadata is adjusted, as described in models/README.md.
 
+## Language mapping data and reference boundaries
+
+The reusable mapping code is MPL-2.0; combined applications remain GPL.
+CLDR 49 data is fixed to `96e54b273d2da4ec6fbad350ba19ff23fa24a588`, with
+original `CLDR-49-LICENSE` under licenses/upstream and raw transform files under
+crates/language-mapping/data/upstream. Its Unicode-3.0 grant covers data/software;
+the separate restriction on the LDML specification publication is retained and
+that publication is not copied. These are named bounded project subsets, not
+complete ICU, Hepburn or ISO 9 conformance.
+
+CMUdict is fixed to `74790861f652b15e4ac49015a90074ad62a27690`. The selected
+443 spellings/all 549 distinct pronunciation variants and phone inventory retain
+CMU's BSD-2-Clause notice (`licenses/upstream/CMUdict-LICENSE`). The project
+ARPAbet adapter is explicit; dictionary P2G is finite exact candidate lookup.
+IANA protocol registry records use its CC0-1.0 dedication; script-code facts use
+Unicode's public ISO 15924 Registration Authority list. The CC0 legal text is
+retained from SPDX license-list-data v3.27.0 at
+https://github.com/spdx/license-list-data/blob/v3.27.0/text/CC0-1.0.txt .
+
+Original registry descriptions/docs use CC-BY-4.0. Six independently attributed
+Wiktionary pronunciation facts are test references, with per-entry URLs; any
+copyrightable excerpts retain CC-BY-SA-4.0, and are not a production lexicon.
+No CLTS/PHOIBLE inventory, Epitran map, IPA chart/font/audio, ALA-LC table or ISO
+standard text is included. Their distinct reviewed scopes and licenses are in
+docs/research/authority-sources.json. Public access alone is not redistribution
+permission. No Python/ICU runtime or remote conversion service is introduced.
+
 ## Microsoft Visual C++ app-local runtime
 
 Windows release packages also contain unchanged x64 `vcruntime140.dll`,

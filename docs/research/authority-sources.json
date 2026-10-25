@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "retrieved": "2026-10-25",
+  "production_manifest": "../../crates/language-mapping/data/sources.json",
+  "sources": [
+    {
+      "id": "ipa",
+      "organization": "International Phonetic Association",
+      "title": "IPA chart and notation scope",
+      "urls": [
+        "https://www.internationalphoneticassociation.org/",
+        "https://www.internationalphoneticassociation.org/content/ipa-chart"
+      ],
+      "version": "2015/2005 revision; annual issue policy since 2025",
+      "retrieved": "2026-10-25",
+      "license": "Chart artwork CC-BY-SA-4.0; no chart/font/audio copied",
+      "attribution": "International Phonetic Association",
+      "actual_use": "reference only",
+      "languages": "all",
+      "directions": "IPA symbol/diacritic classification; not language G2P",
+      "validation": "Conservative grammar tests; no added phonology claims"
+    },
+    {
+      "id": "cldr",
+      "organization": "Unicode Consortium",
+      "title": "CLDR transforms and guidelines",
+      "urls": [
+        "https://cldr.unicode.org/index/cldr-spec/transliteration-guidelines",
+        "https://cldr.unicode.org/index/downloads",
+        "https://github.com/unicode-org/cldr/tree/96e54b273d2da4ec6fbad350ba19ff23fa24a588"
+      ],
+      "version": "CLDR 49, 2026-10-22; commit 96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0 data/software; restricted LDML specification publication is excluded",
+      "attribution": "Unicode Consortium",
+      "actual_use": "copied/transformed transform data; original notices retained",
+      "languages": "ja, ru, cmn-Hans",
+      "directions": "Orthography→named Latin romanization; Russian bounded inverse; not G2P",
+      "validation": "25 builtin fixtures + source/hash/import tests; production per-rule CLDR references"
+    },
+    {
+      "id": "ungegn",
+      "organization": "UN Statistics Division / UNGEGN",
+      "title": "Romanization systems",
+      "urls": [
+        "https://unstats.un.org/unsd/ungegn/romanization/"
+      ],
+      "version": "Chinese/Japanese tables v4.0 2013-09-24; Russian v4.0 2016-03-30",
+      "retrieved": "2026-10-25",
+      "license": "Reference only; no UN publication/table redistribution asserted",
+      "attribution": "UN Statistics Division / UNGEGN",
+      "actual_use": "reference only",
+      "languages": "zh, ja, ru",
+      "directions": "Geographical-name romanization; not ordinary-vocabulary pronunciation",
+      "validation": "Architecture/scheme naming review; not a production scheme"
+    },
+    {
+      "id": "alalc",
+      "organization": "Library of Congress / ALA",
+      "title": "ALA-LC Romanization Tables",
+      "urls": [
+        "https://www.loc.gov/catdir/cpso/roman.html"
+      ],
+      "version": "Japanese 2022; Chinese/Russian 2012 as listed on official page",
+      "retrieved": "2026-10-25",
+      "license": "Reference only; table/source-file-specific rights not adopted",
+      "attribution": "Library of Congress / ALA",
+      "actual_use": "reference only",
+      "languages": "ja, zh, ru",
+      "directions": "Bibliographic transliteration; public source documents are distinct from PDF editions",
+      "validation": "No ALA-LC tables or conformance claims shipped"
+    },
+    {
+      "id": "clts",
+      "organization": "List, Anderson, Tresoldi, Forkel / CLTS",
+      "title": "Cross-Linguistic Transcription Systems",
+      "urls": [
+        "https://clts.clld.org/",
+        "https://github.com/cldf-clts/clts/tree/v2.3.0"
+      ],
+      "version": "v2.3.0, commit ec67f56a9197b072b2c15a5954a1b316864954fc, 2024",
+      "retrieved": "2026-10-25",
+      "license": "CC-BY-4.0 for the published dataset; top-level LICENSE URL was absent, website and CLDF documentation consulted",
+      "attribution": "List, Anderson, Tresoldi, Forkel / CLTS",
+      "actual_use": "reference only; no CLTS rows bundled",
+      "languages": "cross-language notation",
+      "directions": "Notation systems/categories, not a natural-language pronunciation dictionary",
+      "validation": "IPA normalization remains a conservative independent parser"
+    },
+    {
+      "id": "phoible",
+      "organization": "Moran and McCloy / PHOIBLE",
+      "title": "PHOIBLE inventories",
+      "urls": [
+        "https://phoible.org/",
+        "https://github.com/phoible/dev/tree/v2.0"
+      ],
+      "version": "PHOIBLE 2.0 (2019); repository ref 862bec9af5db42e3c9ceedeaa378bf4c6fa0ec8b",
+      "retrieved": "2026-10-25",
+      "license": "Website dataset CC-BY-SA-3.0; repository root LICENSE is GPL-3.0. File-specific data reuse not adopted",
+      "attribution": "Moran and McCloy / PHOIBLE",
+      "actual_use": "reference only; no inventories bundled",
+      "languages": "cross-language inventories",
+      "directions": "Phoneme inventories and donor-source differences; not word G2P",
+      "validation": "No inventory-as-dictionary validation claim"
+    },
+    {
+      "id": "epitran",
+      "organization": "David Mortensen and contributors",
+      "title": "Epitran architecture and maps",
+      "urls": [
+        "https://github.com/dmort27/epitran/tree/v1.35.3"
+      ],
+      "version": "v1.35.3; commit 2387d95820d6d9b8f459c35141e6239f4de5dbfb",
+      "retrieved": "2026-10-25",
+      "license": "MIT root LICENSE.txt; no map/preprocessor code copied",
+      "attribution": "David Mortensen and contributors",
+      "actual_use": "reference only",
+      "languages": "en, fr, es, cmn",
+      "directions": "Preprocessing, longest graphemes, postprocessing and dictionary backoff; English Flite and Chinese dictionary prerequisites reviewed",
+      "validation": "No Python runtime or simplistic Spanish table imported"
+    },
+    {
+      "id": "espeak",
+      "organization": "eSpeak NG contributors",
+      "title": "Language voice data, dictionaries and IPA CLI",
+      "urls": [
+        "https://github.com/espeak-ng/espeak-ng/tree/1.52.0"
+      ],
+      "version": "1.52.0, commit 4870adfa25b1a32b4361592f1be8a40337c58d6c",
+      "retrieved": "2026-10-25",
+      "license": "GPL-3.0-or-later; existing full package retains matching sources/notices",
+      "attribution": "eSpeak NG contributors",
+      "actual_use": "optional executable adapter; existing bundled tool reused; research dictsource files not newly copied",
+      "languages": "en-US, fr-fr, es",
+      "directions": "Orthography→broad rule-based IPA; mnemonic encoding remains separate",
+      "validation": "Explicit real French/Spanish dictionary references; stdin-LF regression; actual English TTS regressions"
+    },
+    {
+      "id": "cmudict",
+      "organization": "Carnegie Mellon University / CMUSphinx",
+      "title": "CMU Pronouncing Dictionary",
+      "urls": [
+        "https://github.com/cmusphinx/cmudict/tree/74790861f652b15e4ac49015a90074ad62a27690"
+      ],
+      "version": "commit 74790861f652b15e4ac49015a90074ad62a27690",
+      "retrieved": "2026-10-25",
+      "license": "BSD-2-Clause; copyright 1993–2015 Carnegie Mellon University",
+      "attribution": "Carnegie Mellon University / CMUSphinx",
+      "actual_use": "443 original entries and all variants selected; explicit ARPAbet adapter",
+      "languages": "en-US",
+      "directions": "Dictionary spelling→IPA approximation and finite exact IPA→spelling candidates",
+      "validation": "6 manually authored CMU fixtures; heteronym/homophone and exact-P2G tests"
+    },
+    {
+      "id": "iana",
+      "organization": "IANA / IETF Trust",
+      "title": "Language Subtag Registry",
+      "urls": [
+        "https://www.iana.org/assignments/language-subtags-tags-extensions",
+        "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+        "https://www.iana.org/help/licensing-terms"
+      ],
+      "version": "File-Date 2026-09-17; copyright dedication statement 2021-11-10",
+      "retrieved": "2026-10-25",
+      "license": "CC0-1.0 protocol registry dedication; no RFC text copied",
+      "attribution": "IANA / IETF Trust",
+      "actual_use": "selected registry records; not invented language/region identifiers",
+      "languages": "en, fr, es, ja, cmn, ru; regions US/FR/ES",
+      "directions": "Identifier validation, not conversion rules",
+      "validation": "Registry invalid/unknown tag tests; source byte hashes"
+    },
+    {
+      "id": "iso15924",
+      "organization": "ISO 15924 Registration Authority / Unicode",
+      "title": "Script codes",
+      "urls": [
+        "https://unicode.org/iso15924/iso15924-codes.html",
+        "https://unicode.org/iso15924/iso15924.txt"
+      ],
+      "version": "official public list snapshot 2026-10-25",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0 public code data; no paid ISO publication copied",
+      "attribution": "ISO 15924 Registration Authority / Unicode",
+      "actual_use": "selected code facts",
+      "languages": "Latn, Cyrl, Hani, Hans, Hrkt, Hira, Kana, Zyyy",
+      "directions": "Script identification, distinct from language and scheme",
+      "validation": "Registry code/script/type mismatch tests"
+    },
+    {
+      "id": "ssml",
+      "organization": "W3C",
+      "title": "Speech Synthesis Markup Language 1.1",
+      "urls": [
+        "https://www.w3.org/TR/speech-synthesis11/",
+        "https://www.w3.org/TR/2010/REC-speech-synthesis11-20100907/"
+      ],
+      "version": "W3C Recommendation 2010-09-07",
+      "retrieved": "2026-10-25",
+      "license": "W3C document-use rules; no specification text or SSML parser bundled",
+      "attribution": "W3C",
+      "actual_use": "reference only",
+      "languages": "IPA interface, all languages conceptually",
+      "directions": "phoneme alphabet=ipa is an interface, not G2P or a backend vocabulary guarantee",
+      "validation": "Existing explicit phoneme adapters remain separate; no SSML support claim"
+    },
+    {
+      "id": "iso7098",
+      "organization": "ISO",
+      "title": "Romanization of Chinese",
+      "urls": [
+        "https://www.iso.org/standard/61420.html"
+      ],
+      "version": "ISO 7098:2015 edition 3; published/current, confirmed 2026",
+      "retrieved": "2026-10-25",
+      "license": "Copyright ISO; reference metadata only, no paid standard/table copied",
+      "attribution": "ISO",
+      "actual_use": "reference only",
+      "languages": "Putonghua romanization",
+      "directions": "Scope/edition/status research, not an ISO-conformant implementation",
+      "validation": "Scheme names deliberately identify CLDR subsets"
+    },
+    {
+      "id": "iso9",
+      "organization": "ISO",
+      "title": "Cyrillic transliteration",
+      "urls": [
+        "https://www.iso.org/standard/3589.html",
+        "https://www.iso.org/standard/84561.html",
+        "https://www.iso.org/standard/89763.html"
+      ],
+      "version": "ISO 9:1995 edition 2 + Amd 1:2024 published; ISO/DIS 9 remains a draft",
+      "retrieved": "2026-10-25",
+      "license": "Copyright ISO; reference metadata only, no paid standard/table copied",
+      "attribution": "ISO",
+      "actual_use": "reference only",
+      "languages": "Cyrillic scripts",
+      "directions": "Version/status distinction; CLDR subset is not ISO 9 conformance",
+      "validation": "Russian exact alphabet round trips tested only for declared subset"
+    },
+    {
+      "id": "iso15919",
+      "organization": "ISO",
+      "title": "Indic script transliteration",
+      "urls": [
+        "https://www.iso.org/standard/28333.html",
+        "https://www.iso.org/standard/87130.html"
+      ],
+      "version": "ISO 15919:2001 edition 1 published; ISO/DIS 15919 under development",
+      "retrieved": "2026-10-25",
+      "license": "Copyright ISO; reference metadata only; draft is not a published replacement",
+      "attribution": "ISO",
+      "actual_use": "reference only",
+      "languages": "Devanagari and related Indic scripts; not in this release",
+      "directions": "Scope/status research, no Indic mapping implemented",
+      "validation": "Unsupported language/capability paths remain explicit"
+    },
+    {
+      "id": "wiktionary",
+      "organization": "Wiktionary contributors",
+      "title": "Independent pronunciation reference facts",
+      "urls": [
+        "https://en.wiktionary.org/wiki/eau#French",
+        "https://en.wiktionary.org/wiki/chat#French",
+        "https://en.wiktionary.org/wiki/queso#Spanish",
+        "https://en.wiktionary.org/wiki/ni%C3%B1o#Spanish",
+        "https://en.wiktionary.org/wiki/caf%C3%A9#French",
+        "https://en.wiktionary.org/wiki/caf%C3%A9#Spanish"
+      ],
+      "version": "entry snapshot consulted 2026-10-25; six IPA facts retained with URLs",
+      "retrieved": "2026-10-25",
+      "license": "CC-BY-SA-4.0 for copyrightable text; pronunciation facts attributed per entry",
+      "attribution": "Wiktionary contributors",
+      "actual_use": "test reference only, not production lexicon",
+      "languages": "fr, es",
+      "directions": "Independent segmental agreement; stress/dots omitted only in evaluation metric",
+      "validation": "6 external fixtures; no whole-language accuracy claim"
+    }
+  ],
+  "research_only_snapshot_hashes": [
+    {
+      "name": "clts-README.md",
+      "sha256": "4529e24c08c789e42c3f9cec9df8bb172f49d8f393a86d2178fbba260ca46e65",
+      "redistributed": false
+    },
+    {
+      "name": "clts-metadata.json",
+      "sha256": "b8ae8fb874ec797584891b01b5cbbde293a43ce35457352b981fe35908024537",
+      "redistributed": false
+    },
+    {
+      "name": "phoible-LICENSE",
+      "sha256": "fe3eea6c599e23a00c08c5f5cb2320c30adc8f8687db5fcec9b79a662c53ff6b",
+      "redistributed": false
+    },
+    {
+      "name": "phoible-README.md",
+      "sha256": "fe88779ba92cd10e8e43386e9822a9c6434806fa551b83827d10f04b87376e30",
+      "redistributed": false
+    },
+    {
+      "name": "epitran-LICENSE",
+      "sha256": "bd46b34e5bc6a0b5042a7fb115058213b7ffa112a864124b0a67ecb92cf040d5",
+      "redistributed": false
+    },
+    {
+      "name": "epitran-README.md",
+      "sha256": "a1b99dc1cd3ce48e452144736987727fd3e5142934511b084bde182b720927f2",
+      "redistributed": false
+    },
+    {
+      "name": "epitran-spa-Latn.csv",
+      "sha256": "3031981ef71124f83f7e52d8bd5e92d94a402c47baa59708ae4534b8306cb89e",
+      "redistributed": false
+    },
+    {
+      "name": "espeak-fr_list",
+      "sha256": "b47e0fb49e62ea433de8e0c1b3b28a8843f5e1843c6236be1f6f1c551e7bf985",
+      "redistributed": false
+    },
+    {
+      "name": "espeak-es_list",
+      "sha256": "02ce8850eeea125d3fbd4b1985a35a341435571804a0b40b66d3c728a8697bed",
+      "redistributed": false
+    },
+    {
+      "name": "espeak-en_list",
+      "sha256": "78519730c462888dd9445042e48ebe07d461a1ed57ff70f1139f4cc9a732b9e0",
+      "redistributed": false
+    }
+  ],
+  "license_note": "Different files/projects have different terms. Research availability is not permission to redistribute. Only reviewed CLDR/CMU/registry data is embedded; no charts, ISO standards, ALA-LC tables, CLTS/PHOIBLE inventories or Epitran maps are shipped."
+}

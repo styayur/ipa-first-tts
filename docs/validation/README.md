@@ -1,5 +1,10 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
-# v0.2.0-alpha.1 verification status
+# Validation records
+
+The current work is [v0.3.0-alpha.1](v0.3.0-alpha.1.md), with its own
+[native matrix](v0.3.0-alpha.1-native.json). The v0.2 record below is historical.
+
+## v0.2.0-alpha.1 verification status
 
 2026-10-25, Windows x64. This is a release candidate; publication is tracked separately.
 The [native matrix](native-results.json) and [reproducible checklist](native-checklist.md)

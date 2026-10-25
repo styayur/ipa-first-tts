@@ -19,6 +19,13 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 VERSION=tomllib.loads((ROOT/'Cargo.toml').read_text(encoding='utf-8'))['workspace']['package']['version']
 NATIVE_GATES=['notepad','browser','vscode','hotkey_toggle','tray','focus_restore','continuous_insert','copy_exact','favorites_recent','bilingual','resize_dpi','exit_cleanup','single_instance']
+MAPPING_GATES=['mapping_ui','mapping_copy','mapping_to_palette']
+
+def check_evidence(evidence,revision):
+    if evidence.get('version')!=VERSION or evidence.get('source_revision')!=revision:
+        raise SystemExit('Native evidence must identify the exact package version/commit')
+    for gate in NATIVE_GATES+MAPPING_GATES:
+        if evidence.get('checks',{}).get(gate,{}).get('status')!='passed':raise SystemExit('Native release gate not passed: '+gate)
 def digest(path):
     with path.open('rb') as file: return hashlib.file_digest(file,'sha256').hexdigest()
 def archive_tree(directory,destination):
@@ -31,7 +38,7 @@ def inventory(stage,revision):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--candidate',action='store_true')
-    parser.add_argument('--evidence',type=Path,default=ROOT/'docs/validation/native-results.json')
+    parser.add_argument('--evidence',type=Path,default=ROOT/f'docs/validation/v{VERSION}-native.json')
     parser.add_argument('--output',type=Path,default=ROOT/'dist')
     parser.add_argument('--vc-redist-dir',type=Path)
     parser.add_argument('--target-dir',type=Path,default=ROOT/'target',help='Isolated Cargo build directory, useful while a development EXE is running')
@@ -41,9 +48,7 @@ def main():
     revision=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     evidence=json.loads(args.evidence.read_text(encoding='utf-8'))
     if not args.candidate:
-        for gate in NATIVE_GATES:
-            if evidence.get('checks',{}).get(gate,{}).get('status')!='passed': raise SystemExit('Native release gate not passed: '+gate)
-        if evidence.get('source_revision')!=revision: raise SystemExit('Native evidence must correspond to packaging HEAD')
+        check_evidence(evidence,revision)
     subprocess.run(['cargo','build','-p','ipa-palette','--release','--locked','--target-dir',str(args.target_dir.resolve())],cwd=ROOT,check=True)
     executable=args.target_dir.resolve()/'release/ipa-symbol-palette.exe'
     if not executable.is_file(): raise SystemExit('Run cargo build -p ipa-palette --release --locked first')
@@ -57,16 +62,21 @@ def main():
     stage=args.output/f'ipa-symbol-palette-v{VERSION}-windows-x64{suffix}'
     stage.mkdir()
     shutil.copy2(executable,stage/executable.name)
+    shutil.copy2(args.target_dir.resolve()/'release/ipa-map.exe',stage/'ipa-map.exe')
     for file in ['vcruntime140.dll','vcruntime140_1.dll','msvcp140.dll']: shutil.copy2(redist/file,stage/file)
     for name in ['LICENSE','NOTICE','THIRD_PARTY_NOTICES.md']: shutil.copy2(ROOT/name,stage/name)
     shutil.copytree(ROOT/'licenses',stage/'licenses')
     shutil.copytree(ROOT/'crates/symbol-catalog/data',stage/'catalog-data')
+    shutil.copytree(ROOT/'crates/language-mapping/data',stage/'mapping-data')
+    shutil.copy2(ROOT/'docs/language-mapping.md',stage/'LANGUAGE_MAPPING.md')
     shutil.copy2(ROOT/'apps/palette/palette.example.json',stage/'palette.example.json')
     (stage/'START.txt').write_text(f'''IPA Symbol Palette v{VERSION} — Windows x64{' LOCAL CANDIDATE / NOT RELEASE-VERIFIED' if args.candidate else ''}
 Run ipa-symbol-palette.exe. No model, Rust, Python, Node or WebView is required.
 Ctrl+Alt+Shift+I toggles the window; search immediately, arrows select, Enter
 inserts (change Enter action to Copy), Esc hides. Tray: show/hide, Studio,
-Settings, Exit. Closing hides; Exit ends the background app.
+Settings, Exit. Closing hides; the visible Exit button ends the background app.
+The title shows the version and the tray tooltip shows your saved shortcut.
+Launching another location warns when an older copy already owns the instance.
 Settings changes the shortcut; conflicts preserve the previous registration.
 English / 简体中文 switches the interface. All languages is a catalog filter,
 not a speech capability. The catalog is a curated selection, not full coverage.
@@ -78,6 +88,15 @@ Compose + appends the entire selected string to the composition field. A
 nonempty composition overrides the selected candidate for Copy/Insert/Studio.
 Supplementary characters may require a font installed in your target app.
 IPA Studio is optional and requires the full sibling ipa-tts package.
+Mapping / 语言映射 opens the native local mapping window. Ctrl+Enter converts.
+Choose language, typed direction/scheme and script. Candidate ambiguity and
+source limits remain visible. Copy replaces the clipboard; Palette fills the
+composition and does not inject input. English IPA can be sent to Studio.
+ipa-map.exe languages
+ipa-map.exe romanize --language ja --scheme cldr49-kana-subset --input コーヒー
+Embedded mapping needs no model/network. French/Spanish/general English G2P
+requires optional eSpeak; the light package does not ship it or a speech model.
+See LANGUAGE_MAPPING.md. Romanization is not IPA, P2G is bounded dictionary search.
 Config: %LOCALAPPDATA%/IPA-first-TTS/palette.json (not included in this ZIP).
 palette.example.json is a default configuration example, never loaded automatically.
 Corrupt settings are preserved as palette.corrupt-*; unknown future versions
@@ -96,8 +115,11 @@ SHA-256 is an integrity checksum, NOT Authenticode signing. Binary is unsigned.
         subprocess.run([str(clean/executable.name),'--check',str(check)],cwd=clean,env=environment,check=True,timeout=20)
         result=json.loads(check.read_text(encoding='utf-8'))
         assert result['symbols']==368 and result['tie']=='t͡ʃ' and result['model_required'] is False
+        mapped=subprocess.run([str(clean/'ipa-map.exe'),'romanize','--language','ja','--scheme','cldr49-kana-subset','--input','コーヒー'],cwd=clean,env=environment,check=True,capture_output=True,text=True,encoding='utf-8',timeout=20)
+        mapping_result=json.loads(mapped.stdout)
+        assert mapping_result['candidates'][0]['text']=='kōhī' and mapping_result['output_type']=='romanization'
     verification={'source_revision':revision,'candidate':args.candidate,'release_executable_sha256':digest(executable),
-                  'clean_directory_self_check':result,'sanitized_path':True,'physical_network_disabled':False,
+                  'clean_directory_self_check':result,'clean_directory_mapping_check':mapping_result,'sanitized_path':True,'physical_network_disabled':False,
                   'clean_vm_without_development_tools_tested':False,'authenticode_signed':False}
     (stage/'RELEASE_VERIFICATION.json').write_text(json.dumps(verification,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     inventory(stage,revision)
@@ -115,7 +137,7 @@ SHA-256 is an integrity checksum, NOT Authenticode signing. Binary is unsigned.
             if file.is_file(): archive.write(file,top+'vendor/'+file.relative_to(vendor).as_posix())
         archive.writestr(top+'.cargo/config.toml','[source.crates-io]\nreplace-with="vendored-sources"\n[source.vendored-sources]\ndirectory="vendor"\n')
         archive.writestr(top+'PALETTE_SOURCE_BUILD.txt',f'Source: {revision}\nBuild: cargo build -p ipa-palette --release --offline --locked\nRust stable MSVC + licensed C++ Build Tools / Windows SDK required for compilation only.\nThird-party licenses retain their scope.\n')
-    sums=args.output/f'SHA256SUMS-palette{suffix}.txt'
+    sums=args.output/f'SHA256SUMS-v{VERSION}-palette{suffix}.txt'
     with sums.open('x',encoding='ascii') as file:
         for asset in [binary,source]: file.write(f'{digest(asset)}  {asset.name}\n')
     for asset in [binary,source]:

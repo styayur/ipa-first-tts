@@ -1,15 +1,55 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 # IPA-first TTS
 
-[English](README.md) · [v0.2.0-alpha.1 实验包](https://github.com/styayur/ipa-first-tts/releases/tag/v0.2.0-alpha.1)
+[English](README.md) · [v0.3.0-alpha.1 实验包](https://github.com/styayur/ipa-first-tts/releases/tag/v0.3.0-alpha.1)
 
 **Alpha 预览版。** 当前语音仅支持英语，时间戳为估算，尚未达到稳定产品阶段。
 
 **IPA-first TTS — An offline-first multilingual symbol palette and IPA-first speech tool.**
 
-`v0.2.0-alpha.1` 实验预览版包含两个独立能力：Windows 原生 **Symbol Palette 字符面板**，以及保留现有浏览器界面与 Rust 引擎的 **IPA Studio**。首批目录有 368 条精选记录，涉及常见 IPA，以及法语、德语、西班牙语、葡萄牙语、波兰语、捷克语、土耳其语和越南语的部分拉丁字符。目录覆盖、IPA Core 解析、后端词表支持和真实语言流程验证是四项不同能力；语音仍仅启用英语。
+`v0.3.0-alpha.1` 实验预览版保留原有两个独立能力，并增加本地语言映射引擎：Windows 原生 **Symbol Palette 字符面板**，以及保留现有浏览器界面与 Rust 引擎的 **IPA Studio**。首批目录有 368 条精选记录，涉及常见 IPA，以及法语、德语、西班牙语、葡萄牙语、波兰语、捷克语、土耳其语和越南语的部分拉丁字符。目录覆盖、IPA Core 解析、后端词表支持和真实语言流程验证是四项不同能力；语音仍仅启用英语。
 
-面板不链接或初始化 Kokoro、eSpeak、浏览器运行时或 HTTP 服务；`ipa-core` 与 `symbol-catalog` 都是独立可复用库。[验证记录](docs/validation/README.md) 区分原生实测、用户反馈、自动化检查与未验证范围。请仅下载 Release 实际列出的资产。
+打开面板或执行内置映射不加载 TTS 模型、浏览器运行时或 HTTP 服务；明确选择可选 G2P 方向时才启动本地 eSpeak 进程；`ipa-core` 与 `symbol-catalog` 都是独立可复用库。[验证记录](docs/validation/README.md) 区分原生实测、用户反馈、自动化检查与未验证范围。请仅下载 Release 实际列出的资产。
+
+## v0.3.0-alpha.1 语言映射
+
+面板点 **Mapping / 语言映射**，或使用 Studio 新增的 Language mapping 区域。
+选择语言、方向、具名方案和源文字，输入后按 Ctrl+Enter；多候选需自行选择。
+来源、规则、版本和限制随结果展示。“送入面板”只填写组合框，不自动插入；
+复制明确替换剪贴板，英语 IPA 可送至现有 Studio 编辑器。
+轻量包新增独立 `ipa-map.exe`，无需 TTS 模型或 speech DLL。
+
+| 已登记档案 | 罗马化 | G2P | IPA 解析 | TTS |
+|---|---|---|---|---|
+| en-US | 不适用 | 443 词 CMUdict 子集 / 549 个读音；可选 eSpeak en-us | 保守语法解析 | 仍仅已有英语后端 |
+| fr | 未实现 | 可选 eSpeak fr-fr | 同一保守解析器 | 未开放 |
+| es | 未实现 | 可选 eSpeak es（西班牙档案） | 同一保守解析器 | 未开放 |
+| ja | CLDR 49 具名假名子集；不含汉字读音 | 未实现 | 不代表日语音系覆盖 | 未开放 |
+| cmn-Hans | 44,498 个 NFC 汉字默认读音、3 个词语语境；仍有多音歧义 | 未实现 | 不代表普通话音系覆盖 | 未开放 |
+| ru | CLDR 49 俄语字母子集及限定逆向；不宣称 ISO 9 符合性 | 未实现 | 不代表俄语音系覆盖 | 未开放 |
+
+上述能力分别登记，不使用笼统的“支持该语言”标签。普通话输出是带调拼音形式，
+不是 IPA，不处理通用多音字、分词或变调；`重` 显示候选，语境 `重庆` 才选 `chóng`。
+日语 `コーヒー → kōhī`、`がっこう → gakkou`、`ぢづ → djidzu` 属于指定子集，
+不是通用 Hepburn 或语音转写。俄语 `Щука → Ŝuka` 的限定往返也不是 IPA 到拼写。
+英语 P2G 仅查所附词典的精确 IPA 候选，保留重音，不逐音素替换字母后声称还原原文。
+
+```powershell
+ipa-map languages
+ipa-map romanize --language ja --scheme cldr49-kana-subset --input コーヒー
+ipa-map map --language en-US --scheme cmudict-us-sample --input read --target ipa
+ipa-map ipa-to-text --language en-US --input /sˈi/
+ipa-map map --language fr --scheme espeak-fr-fr --input eau --target ipa
+```
+
+`ipa-tts` 接受相同命令并输出 JSON。内置映射无需联网；通用英语、法语、西语 G2P
+需要可选 eSpeak / 完整包，不在运行时下载规则，也不引入云 API 或 Python 运行时。
+未知语言/方案、文字不匹配与未覆盖字符明确失败，不静默换方案或丢字。
+
+参考用例规模：英语 6、日语 9、俄语 5、汉字 5 个精确子集用例；法/西语各 3 个独立
+词典参考按明确的“去重音/音节点后比较音段”指标验证。它们不是整种语言准确率。
+详见[映射使用与限制](docs/language-mapping.md)、[权威资料与许可登记](docs/research/authority-sources.json)、
+[架构决策](docs/decisions/0002-typed-language-mapping.md)。
 
 ## Windows 字符面板
 
@@ -20,7 +60,9 @@ cargo build -p ipa-palette --release --locked
 
 聚焦目标编辑器，按 **Ctrl+Alt+Shift+I** 呼出后直接搜索字符、英文名称、别名、语言名/代码或 `U+0252` 等码位。方向键移动选择，Enter 按当前动作插入或复制，Esc 隐藏，Tab 切换控件。托盘提供显示、隐藏、IPA Studio、设置、退出。关闭窗口只隐藏；退出会注销快捷键并停止由面板启动的 Studio。重复启动会显示已有实例。
 
-紧凑字符格显示字形与码位，完整名称保留在详情区。重置清除搜索和筛选；Ctrl+F 返回搜索，Ctrl+D 切换收藏，Shift+Enter 复制。目标提示与 ↵ 按钮标识当前动作；无有效目标时 Enter 复制，插入按钮禁用。“菜单”按钮也可直接退出，无需寻找托盘图标。
+紧凑字符格显示字形与码位，完整名称保留在详情区。重置清除搜索和筛选；Ctrl+F 返回搜索，Ctrl+D 切换收藏，Shift+Enter 复制。目标提示与 ↵ 按钮标识当前动作；无有效目标时 Enter 复制，插入按钮禁用。主面板的“退出”按钮可直接结束应用，无需寻找托盘图标。
+
+标题显示当前版本，托盘提示显示实际保存的快捷键。快捷键也会一并隐藏映射与设置窗口。从其他目录启动副本时，会提示已有实例的位置，便于先退出旧版再切换。
 
 分类包含最近使用、收藏、IPA、语言字符、附加符号与组合。**复制**会明确替换剪贴板内容；**插入**校验原目标窗口及前台焦点后发送目录原始 UTF-16 序列，不改动剪贴板。请从目标应用用快捷键呼出；从托盘打开时使用复制。权限、远程会话或目标应用限制可能拒绝输入；应检查错误并主动选择复制。本轮无自动剪贴板粘贴回退，也不提升权限。
 
@@ -30,7 +72,7 @@ cargo build -p ipa-palette --release --locked
 
 完整包中将 `ipa-tts.exe` 与面板放在同一目录，即可发送至 IPA Studio；轻量面板无需它。Studio 的 IPA 编辑器也使用同一份可搜索目录。不支持的字符仍可复制；IPA 解析与后端适配明确报错，不静默删除。
 
-发布资产名为 `ipa-symbol-palette-v0.2.0-alpha.1-windows-x64.zip`（无模型），以及 `ipa-first-tts-v0.2.0-alpha.1-windows-x64-offline.zip`。请仅下载 [Releases](https://github.com/styayur/ipa-first-tts/releases) 实际列出的资产，并核对 SHA-256 与对应源码。SHA-256 不是代码签名；本轮无 Authenticode 证书。
+发布资产名为 `ipa-symbol-palette-v0.3.0-alpha.1-windows-x64.zip`（无模型），以及 `ipa-first-tts-v0.3.0-alpha.1-windows-x64-offline.zip`。请仅下载 [Releases](https://github.com/styayur/ipa-first-tts/releases) 实际列出的资产，并核对 SHA-256 与对应源码。SHA-256 不是代码签名；本轮无 Authenticode 证书。
 
 首期支持英语（en-US / en-GB）。语言标识为开放字符串，`zh`、`ja`、`fr`、`de` 可以由新 backend 启用；当前入口会明确拒绝这些语言，避免声称已经支持。
 

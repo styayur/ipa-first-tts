@@ -1,12 +1,35 @@
 {
-  "source_commit": "e200900ff27c98807c7c1fad3e27c266282241da",
-  "scope": "v0.2.0-alpha.1 candidate source additions; execution evidence is separate",
-  "reviewed_on": "2026-10-24",
+  "source_commit": "74a2c8aa795b82d57203acfef4bc2722dc3661f2",
+  "scope": "v0.3.0-alpha.1 source additions; execution and accuracy evidence is separate",
+  "reviewed_on": "2026-10-25",
   "diagram_source": "README.md",
   "sources": [
-    {"path":"crates/symbol-catalog/src/lib.rs","anchors":["pub fn from_jsons","pub fn search","#![forbid(unsafe_code)]"]},
-    {"path":"apps/palette/src/windows.rs","anchors":["RegisterHotKey","SendInput","target.validate()?","GetForegroundWindow() != target.window","Shell_NotifyIconW"]},
-    {"path":"apps/palette/src/config.rs","anchors":["pub fn load","pub fn save","MOVEFILE_REPLACE_EXISTING"]},
+    {
+      "path": "crates/symbol-catalog/src/lib.rs",
+      "anchors": [
+        "pub fn from_jsons",
+        "pub fn search",
+        "#![forbid(unsafe_code)]"
+      ]
+    },
+    {
+      "path": "apps/palette/src/windows.rs",
+      "anchors": [
+        "RegisterHotKey",
+        "SendInput",
+        "target.validate()?",
+        "GetForegroundWindow() != target.window",
+        "Shell_NotifyIconW"
+      ]
+    },
+    {
+      "path": "apps/palette/src/config.rs",
+      "anchors": [
+        "pub fn load",
+        "pub fn save",
+        "MOVEFILE_REPLACE_EXISTING"
+      ]
+    },
     {
       "path": "apps/desktop/src/server.rs",
       "anchors": [
@@ -58,6 +81,42 @@
       "path": "apps/desktop/tests/pipeline.rs",
       "anchors": [
         "#[test]"
+      ]
+    },
+    {
+      "path": "crates/language-mapping/src/lib.rs",
+      "anchors": [
+        "pub fn convert",
+        "Status::NeedsSelection",
+        "No typed conversion path"
+      ]
+    },
+    {
+      "path": "crates/language-mapping/src/romanization.rs",
+      "anchors": [
+        "fn han",
+        "Kind::RussianInverse"
+      ]
+    },
+    {
+      "path": "crates/language-mapping/src/espeak.rs",
+      "anchors": [
+        "Duration::from_secs(8)",
+        "bytes.push"
+      ]
+    },
+    {
+      "path": "apps/palette/src/mapping_window.rs",
+      "anchors": [
+        "MappingAction::Palette",
+        "std::thread::spawn"
+      ]
+    },
+    {
+      "path": "scripts/check_mapping_data.py",
+      "anchors": [
+        "hashlib.sha256",
+        "reference"
       ]
     }
   ]

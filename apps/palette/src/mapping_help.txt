@@ -1,0 +1,18 @@
+Language mapping (ipa-map or ipa-tts; no speech model required)
+
+  languages                                  Registered profiles and actual capabilities
+  schemes --language ja                      Named schemes and tool availability
+  map --language en-US --scheme cmudict-us-sample --input read --target ipa
+  romanize --language ja --scheme cldr49-kana-subset --input コーヒー
+  ipa-to-text --language en-US --input /sˈi/    Finite dictionary candidates
+  reverse-romanize --language ru --scheme cldr49-ru-inverse --input Ŝuka
+  normalize-ipa --language fr --input /gã/     Notation, not language phonology
+  map --json                                 Read a strict JSON request from stdin
+
+Flags: --language, --input, --scheme, --from, --target, --script,
+       --target-language, --context. Representations: orthography, romanization, ipa.
+Use exact profiles: en-US, fr, es, ja, cmn-Hans, ru. No language is guessed.
+Results are JSON; exit 2 means invalid, unsupported or a required selection.
+Romanization is not IPA. French/Spanish/general English G2P needs optional local
+eSpeak (full package). Speech synthesis remains English only.
+Guide: LANGUAGE_MAPPING.md (light), docs/language-mapping.md (full/source).

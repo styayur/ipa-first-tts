@@ -10,7 +10,7 @@ checksum = "320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa"
 
 [[package]]
 name = "alignment-core"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
  "ipa-core",
  "serde",
@@ -163,7 +163,7 @@ dependencies = [
 
 [[package]]
 name = "g2p-espeak"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
  "ipa-core",
  "tts-core",
@@ -321,7 +321,7 @@ dependencies = [
 
 [[package]]
 name = "ipa-core"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
  "serde",
  "unicode-normalization",
@@ -329,11 +329,12 @@ dependencies = [
 
 [[package]]
 name = "ipa-desktop"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
  "alignment-core",
  "g2p-espeak",
  "ipa-core",
+ "language-mapping",
  "serde",
  "serde_json",
  "symbol-catalog",
@@ -344,8 +345,9 @@ dependencies = [
 
 [[package]]
 name = "ipa-palette"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
+ "language-mapping",
  "serde",
  "serde_json",
  "symbol-catalog",
@@ -366,6 +368,16 @@ checksum = "7883d941dae510fb2d978fc3fe018c71c9e2892fd38854de3e8b92c2e5ad9cc5"
 dependencies = [
  "cfg-if",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "language-mapping"
+version = "0.3.0-alpha.1"
+dependencies = [
+ "ipa-core",
+ "serde",
+ "serde_json",
+ "unicode-normalization",
 ]
 
 [[package]]
@@ -635,7 +647,7 @@ checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
 
 [[package]]
 name = "symbol-catalog"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
  "serde",
  "serde_json",
@@ -705,7 +717,7 @@ checksum = "fd3ca314f692efd6c868f8408f53fe444634a845f96c028b97d35f6a1f79f0ee"
 
 [[package]]
 name = "tts-core"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
  "ipa-core",
  "serde",
@@ -713,7 +725,7 @@ dependencies = [
 
 [[package]]
 name = "tts-kokoro"
-version = "0.2.0-alpha.1"
+version = "0.3.0-alpha.1"
 dependencies = [
  "ipa-core",
  "sherpa-onnx",

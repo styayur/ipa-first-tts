@@ -49,7 +49,7 @@ def main():
                     raise SystemExit('Missing/changed notice: '+str(destination.relative_to(ROOT)))
                 record['notices'].append({'path':destination.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(raw).hexdigest()})
         records.append(record)
-    output=json.dumps({'format_version':1,'license_reviewed':'2026-10-24','packages':records},indent=2)+'\n'
+    output=json.dumps({'format_version':1,'license_reviewed':'2026-10-25','packages':records},indent=2)+'\n'
     path=ROOT/'licenses/rust-dependencies.json'
     if args.write: path.write_text(output,encoding='utf-8')
     elif not path.exists() or path.read_text(encoding='utf-8')!=output: raise SystemExit('Dependency inventory changed; review and run --write')

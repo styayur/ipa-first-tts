@@ -1,0 +1,14 @@
+#
+# ISO 15924 - Codes for the representation of names of scripts
+#             Codes pour la représentation des noms d’écritures
+# Format: 
+#             Code;N°;English Name;Nom français;PVA;Unicode Version;Date
+#
+Cyrl;220;Cyrillic;cyrillique;Cyrillic;1.1;2004-05-01
+Hani;500;Han (Hanzi, Kanji, Hanja);idéogrammes han (sinogrammes);Han;1.1;2009-02-23
+Hans;501;Han (Simplified variant);idéogrammes han (variante simplifiée);;1.1;2004-05-29
+Hira;410;Hiragana;hiragana;Hiragana;1.1;2004-05-01
+Hrkt;412;Japanese syllabaries (alias for Hiragana + Katakana);syllabaires japonais (alias pour hiragana + katakana);Katakana_Or_Hiragana;1.1;2011-06-21
+Kana;411;Katakana;katakana;Katakana;1.1;2004-05-01
+Latn;215;Latin;latin;Latin;1.1;2004-05-01
+Zyyy;998;Code for undetermined script;codet pour écriture indéterminée;Common;;2004-05-29

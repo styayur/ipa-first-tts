@@ -8,5 +8,6 @@
 licenses/upstream/** -text -whitespace
 licenses/rust/** -text -whitespace
 third_party/** -text -whitespace
+crates/language-mapping/data/upstream/** -text -whitespace
 licenses/*.txt -whitespace
 crates/*/LICENSE -whitespace

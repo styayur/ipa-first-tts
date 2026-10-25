@@ -13,6 +13,9 @@ use std::{
     ptr::{null, null_mut},
 };
 use symbol_catalog::{Catalog, Symbol};
+#[path = "mapping_window.rs"]
+mod mapping_window;
+use mapping_window::{MappingAction, MappingWindow};
 use windows_sys::Win32::{
     Foundation::*,
     Graphics::Gdi::*,
@@ -45,6 +48,7 @@ const TARGET_LABEL: usize = 120;
 const COMPOSE_LABEL: usize = 121;
 const RESET: usize = 122;
 const MENU: usize = 123;
+const MAPPING: usize = 124;
 const SHOW: usize = 201;
 const HIDE: usize = 202;
 const QUIT: usize = 203;
@@ -64,6 +68,36 @@ const CATEGORIES: &[&str] = &[
 ];
 fn wide(value: &str) -> Vec<u16> {
     value.encode_utf16().chain([0]).collect()
+}
+fn tray_tip(hotkey: &str) -> [u16; 128] {
+    let mut tip = [0; 128];
+    for (slot, unit) in tip.iter_mut().take(127).zip(
+        format!(
+            "IPA Symbol Palette v{} · {hotkey}",
+            env!("CARGO_PKG_VERSION")
+        )
+        .encode_utf16(),
+    ) {
+        *slot = unit;
+    }
+    tip
+}
+unsafe fn window_executable(window: HWND) -> Option<PathBuf> {
+    use std::os::windows::ffi::OsStringExt;
+    let mut process = 0;
+    GetWindowThreadProcessId(window, &mut process);
+    let handle = Handle(OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, 0, process));
+    if handle.0.is_null() {
+        return None;
+    }
+    let mut buffer = vec![0u16; 32768];
+    let mut length = buffer.len() as u32;
+    if QueryFullProcessImageNameW(handle.0, 0, buffer.as_mut_ptr(), &mut length) == 0 {
+        return None;
+    }
+    Some(PathBuf::from(std::ffi::OsString::from_wide(
+        &buffer[..length as usize],
+    )))
 }
 pub fn error(message: &str) {
     // SAFETY: valid terminated strings and no borrowed window state.
@@ -378,6 +412,10 @@ unsafe extern "system" fn procedure(hwnd: HWND, message: u32, w: WPARAM, l: LPAR
             PostMessageW(hwnd, EVENT, w, l);
             0
         }
+        WM_TIMER => {
+            PostMessageW(hwnd, EVENT, w, 0);
+            0
+        }
         WM_CLOSE => {
             PostMessageW(hwnd, EVENT, HIDE, 0);
             0
@@ -513,10 +551,12 @@ struct App {
     studio_port: Option<u16>,
     settings_window: HWND,
     settings_controls: Vec<(usize, HWND)>,
+    mapping: Option<MappingWindow>,
     explorer_message: u32,
 }
 impl Drop for App {
     fn drop(&mut self) {
+        self.mapping.take();
         self.registration.take();
         if let Some(mut child) = self.studio.take() {
             let _ = child.kill();
@@ -658,12 +698,20 @@ impl App {
         for (i, id) in [COPY, INSERT, FAVORITE, COMPOSE].iter().enumerate() {
             place(*id, 12 + i as i32 * (bw + 8), height - 126, bw, 32);
         }
-        place(STUDIO, 12, height - 86, 100, 29);
-        place(SETTINGS, 120, height - 86, 76, 29);
-        place(MENU, 204, height - 86, 68, 29);
+        let command_width = (width - 156) / 4;
+        for (index, id) in [MAPPING, STUDIO, SETTINGS, MENU].iter().enumerate() {
+            place(
+                *id,
+                12 + index as i32 * (command_width + 4),
+                height - 86,
+                command_width,
+                29,
+            );
+        }
         place(UI_LANGUAGE, width - 124, height - 86, 112, 250);
-        place(ACTION, 12, height - 49, 138, 160);
-        place(STATUS, 158, height - 49, width - 170, 45);
+        place(ACTION, 12, height - 49, 126, 160);
+        place(STATUS, 146, height - 49, width - 226, 45);
+        place(QUIT, width - 72, height - 49, 60, 29);
     }
     unsafe fn localize(&self) {
         for (id, en, zh) in [
@@ -672,16 +720,22 @@ impl App {
             (FAVORITE, "&Favorite", "收藏(&F)"),
             (COMPOSE, "Compose +", "组合 +"),
             (CLEAR, "Clear", "清空"),
-            (STUDIO, "IPA Studio", "IPA Studio"),
+            (STUDIO, "Studio", "Studio"),
+            (MAPPING, "Mapping", "语言映射"),
             (SETTINGS, "Settings", "设置"),
             (RESET, "Reset", "重置"),
             (MENU, "Menu ▾", "菜单 ▾"),
+            (QUIT, "Exit", "退出"),
         ] {
             set_text(self.get(id), self.label(en, zh));
         }
         set_text(
             self.window,
-            self.label("IPA Symbol Palette", "IPA 字符面板"),
+            &format!(
+                "{} · v{}",
+                self.label("IPA Symbol Palette", "IPA 字符面板"),
+                env!("CARGO_PKG_VERSION")
+            ),
         );
         SendMessageW(
             self.get(SEARCH),
@@ -997,12 +1051,41 @@ impl App {
             },
         );
     }
+    unsafe fn owns_window(&self, window: HWND) -> bool {
+        !window.is_null()
+            && (window == self.window
+                || window == self.settings_window
+                || self.mapping.as_ref().is_some_and(|m| m.active(window)))
+    }
+    unsafe fn reveal(&self) {
+        self.hide_auxiliary();
+        ShowWindow(
+            self.window,
+            if IsIconic(self.window) != 0 {
+                SW_RESTORE
+            } else {
+                SW_SHOW
+            },
+        );
+        SetForegroundWindow(self.window);
+        SetFocus(self.get(SEARCH));
+        SendMessageW(self.get(SEARCH), 0x00b1, 0, -1);
+    }
     unsafe fn show(&mut self) {
-        if IsWindowVisible(self.window) != 0 && GetForegroundWindow() == self.window {
+        let minimized = IsIconic(self.window) != 0;
+        if !minimized
+            && IsWindowVisible(self.window) != 0
+            && self.owns_window(GetForegroundWindow())
+        {
             self.hide();
             return;
         }
         self.target = Target::capture(self.window);
+        // GetWindowRect on an iconic window describes the minimized icon, not
+        // the palette. Capture the editor first, then restore before sizing it.
+        if minimized {
+            ShowWindow(self.window, SW_SHOWNOACTIVATE);
+        }
         let mut point = zeroed();
         if GetCursorPos(&mut point) == 0 {
             ShowWindow(self.window, SW_SHOWNORMAL);
@@ -1046,7 +1129,16 @@ impl App {
             ));
         }
     }
+    unsafe fn hide_auxiliary(&self) {
+        if let Some(mapping) = &self.mapping {
+            ShowWindow(mapping.window, SW_HIDE);
+        }
+        if !self.settings_window.is_null() {
+            ShowWindow(self.settings_window, SW_HIDE);
+        }
+    }
     unsafe fn hide(&self) {
+        self.hide_auxiliary();
         ShowWindow(self.window, SW_HIDE);
         if let Some(target) = self.target.as_ref() {
             if target.validate().is_ok() {
@@ -1246,6 +1338,15 @@ impl App {
         );
         Ok(())
     }
+    unsafe fn mapping(&mut self) -> Result<(), String> {
+        if let Some(mapping) = &mut self.mapping {
+            mapping.localize(self.settings.ui_language == "zh-CN");
+            mapping.show();
+        } else {
+            self.mapping = Some(MappingWindow::new(self.window, self.zh(), true)?);
+        }
+        Ok(())
+    }
     unsafe fn save_hotkey(&mut self) -> Result<(), String> {
         let hotkey_text = text(
             self.settings_controls
@@ -1274,6 +1375,8 @@ impl App {
             self.registration = Some(Registration::new(self.window, HOTKEY_ID, key)?);
         }
         ShowWindow(self.settings_window, SW_HIDE);
+        self.tray.szTip = tray_tip(&self.settings.hotkey);
+        Shell_NotifyIconW(NIM_MODIFY, &self.tray);
         self.status(self.label("Shortcut saved", "快捷键已保存"));
         Ok(())
     }
@@ -1284,12 +1387,20 @@ impl App {
             (HIDE, "Hide palette", "隐藏面板"),
             (STUDIO, "IPA Studio", "IPA Studio"),
             (SETTINGS, "Settings", "设置"),
+            (MAPPING, "Language mapping", "语言映射"),
             (QUIT, "Exit", "退出"),
         ] {
             AppendMenuW(menu, MF_STRING, id, wide(self.label(en, zh)).as_ptr());
         }
         let mut point = zeroed();
-        GetCursorPos(&mut point);
+        if GetCursorPos(&mut point) == 0 {
+            // A keyboard-opened menu remains reachable without a cursor query.
+            let mut rect = zeroed();
+            if GetWindowRect(self.get(MENU), &mut rect) != 0 {
+                point.x = rect.left;
+                point.y = rect.bottom;
+            }
+        }
         SetForegroundWindow(self.window);
         let choice = TrackPopupMenu(
             menu,
@@ -1303,13 +1414,9 @@ impl App {
         DestroyMenu(menu);
         match choice as usize {
             SHOW => {
-                if IsWindowVisible(self.window) != 0 {
-                    SetFocus(self.get(SEARCH));
-                } else {
-                    self.show();
-                    self.target = None;
-                    self.target_hint();
-                }
+                self.reveal();
+                self.target = None;
+                self.target_hint();
             }
             HIDE => {
                 self.hide();
@@ -1322,6 +1429,11 @@ impl App {
             }
             SETTINGS => {
                 if let Err(e) = self.settings() {
+                    self.status(&e);
+                }
+            }
+            MAPPING => {
+                if let Err(e) = self.mapping() {
                     self.status(&e);
                 }
             }
@@ -1416,7 +1528,23 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
     if GetLastError() == ERROR_ALREADY_EXISTS {
         let existing = FindWindowW(wide("IPAFirstPalette").as_ptr(), null());
         if !existing.is_null() {
+            let mut process = 0;
+            GetWindowThreadProcessId(existing, &mut process);
+            // A user-launched second process may grant foreground permission to
+            // the existing owner; it never grants permission to every process.
+            // https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-allowsetforegroundwindow
+            AllowSetForegroundWindow(process);
             PostMessageW(existing, EVENT, SHOW, 0);
+            if let (Some(running), Ok(requested)) =
+                (window_executable(existing), std::env::current_exe())
+            {
+                if running.canonicalize().ok() != requested.canonicalize().ok() {
+                    MessageBoxW(existing, wide(&format!(
+                        "A palette from another location is already running:\n{}\n\nExit that copy with Menu → Exit, then launch this copy.\n\n已有其他位置的面板正在运行。请在旧面板中选择菜单 → 退出，再启动当前副本。",
+                        running.display()
+                    )).as_ptr(), wide("IPA Symbol Palette · Existing copy / 已有实例").as_ptr(), MB_OK | MB_ICONINFORMATION);
+                }
+            }
             return Ok(());
         }
         return Err("Another palette instance is starting; try again shortly".into());
@@ -1477,6 +1605,7 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
         studio_port: None,
         settings_window: null_mut(),
         settings_controls: vec![],
+        mapping: None,
         explorer_message: RegisterWindowMessageW(wide("TaskbarCreated").as_ptr()),
     };
     for (id, class, title, style) in [
@@ -1520,9 +1649,11 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
         (COMPOSE, "BUTTON", "Compose +", 0),
         (CLEAR, "BUTTON", "Clear", 0),
         (STUDIO, "BUTTON", "IPA Studio", 0),
+        (MAPPING, "BUTTON", "Mapping", 0),
         (SETTINGS, "BUTTON", "Settings", 0),
         (RESET, "BUTTON", "Reset", 0),
         (MENU, "BUTTON", "Menu", 0),
+        (QUIT, "BUTTON", "Exit", 0),
         (TARGET_LABEL, "STATIC", "", 0),
         (
             UI_LANGUAGE,
@@ -1560,8 +1691,7 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
     app.tray.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
     app.tray.uCallbackMessage = TRAY;
     app.tray.hIcon = icon.0;
-    let tip = wide("IPA Symbol Palette · Ctrl+Alt+Shift+I");
-    app.tray.szTip[..tip.len()].copy_from_slice(&tip);
+    app.tray.szTip = tray_tip(&app.settings.hotkey);
     if Shell_NotifyIconW(NIM_ADD, &app.tray) == 0 {
         return Err("Cannot add tray icon".into());
     }
@@ -1608,18 +1738,45 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
         if message.message == EVENT {
             let id = message.wParam & 0xffff;
             let notification = (message.wParam >> 16) as u32;
+            if app
+                .mapping
+                .as_ref()
+                .is_some_and(|m| m.window == message.hwnd)
+            {
+                let action = app.mapping.as_mut().unwrap().handle(id, notification);
+                match action {
+                    Ok(Some(MappingAction::Palette(value))) => {
+                        app.act(RESET);
+                        set_text(app.get(BUFFER), &value);
+                        ShowWindow(app.mapping.as_ref().unwrap().window, SW_HIDE);
+                        ShowWindow(app.window, SW_SHOW);
+                        SetForegroundWindow(app.window);
+                        SetFocus(app.get(BUFFER));
+                        app.target_hint();
+                        app.status(app.label(
+                            "Mapping result is the composition. Insert remains explicit.",
+                            "映射结果已置入组合框；插入仍需明确操作。",
+                        ));
+                    }
+                    Ok(Some(MappingAction::Studio(value))) => {
+                        if let Err(e) = app.open_studio(&value) {
+                            error(&e);
+                        }
+                    }
+                    Err(e) => error(&e),
+                    _ => {}
+                }
+                continue;
+            }
             if id == 300 {
                 app.layout();
             } else if id == 301 {
                 app.fonts();
                 app.layout();
             } else if id == SHOW {
-                if IsWindowVisible(hwnd) == 0 {
-                    app.show();
-                } else {
-                    SetForegroundWindow(hwnd);
-                    SetFocus(app.get(SEARCH));
-                }
+                app.reveal();
+                app.target = None;
+                app.target_hint();
             } else if id == HIDE {
                 if message.hwnd == app.settings_window {
                     ShowWindow(app.settings_window, SW_HIDE);
@@ -1660,6 +1817,10 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
                 if let Err(e) = app.settings() {
                     error(&e);
                 }
+            } else if id == MAPPING {
+                if let Err(e) = app.mapping() {
+                    error(&e);
+                }
             } else if id == MENU {
                 app.tray_menu();
             } else if id == SAVE_SETTINGS {
@@ -1677,8 +1838,23 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
         let settings_active = !app.settings_window.is_null()
             && (message.hwnd == app.settings_window
                 || IsChild(app.settings_window, message.hwnd) != 0);
+        let mapping_active = app.mapping.as_ref().is_some_and(|m| m.active(message.hwnd));
         if message.message == WM_KEYDOWN {
-            if !settings_active && GetKeyState(VK_CONTROL as i32) < 0 {
+            if mapping_active
+                && message.wParam == VK_RETURN as usize
+                && GetKeyState(VK_CONTROL as i32) < 0
+            {
+                if let Err(e) = app
+                    .mapping
+                    .as_mut()
+                    .unwrap()
+                    .handle(mapping_window::MAP_CONVERT, 0)
+                {
+                    error(&e);
+                }
+                continue;
+            }
+            if !settings_active && !mapping_active && GetKeyState(VK_CONTROL as i32) < 0 {
                 if message.wParam == b'F' as usize {
                     SetFocus(app.get(SEARCH));
                     SendMessageW(app.get(SEARCH), 0x00b1, 0, -1);
@@ -1690,22 +1866,30 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
                 }
             }
             if message.wParam == VK_ESCAPE as usize {
-                if settings_active {
+                if mapping_active {
+                    ShowWindow(app.mapping.as_ref().unwrap().window, SW_HIDE);
+                } else if settings_active {
                     ShowWindow(app.settings_window, SW_HIDE);
                 } else {
                     app.hide();
                 }
                 continue;
             }
-            if !settings_active && message.wParam == VK_RETURN as usize {
+            if !settings_active && !mapping_active && message.wParam == VK_RETURN as usize {
                 let focus = GetFocus();
                 let button = app.controls.iter().find(|(_, c)| *c == focus).map(|p| p.0);
                 if button == Some(SETTINGS) {
                     if let Err(e) = app.settings() {
                         error(&e);
                     }
+                } else if button == Some(MAPPING) {
+                    if let Err(e) = app.mapping() {
+                        error(&e);
+                    }
                 } else if button == Some(MENU) {
                     app.tray_menu();
+                } else if button == Some(QUIT) {
+                    PostQuitMessage(0);
                 } else if button.is_some_and(|id| {
                     matches!(
                         id,
@@ -1723,6 +1907,7 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
                 continue;
             }
             if !settings_active
+                && !mapping_active
                 && message.hwnd == app.get(SEARCH)
                 && matches!(message.wParam, 0x25..=0x28)
             {
@@ -1731,7 +1916,9 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
                 continue;
             }
         }
-        let dialog = if settings_active {
+        let dialog = if mapping_active {
+            app.mapping.as_ref().unwrap().window
+        } else if settings_active {
             app.settings_window
         } else {
             hwnd
@@ -1821,6 +2008,10 @@ mod tests {
                 null(),
             );
             assert!(!window.is_null());
+            assert_eq!(
+                window_executable(window).unwrap().canonicalize().unwrap(),
+                std::env::current_exe().unwrap().canonicalize().unwrap()
+            );
             let mut process = 0;
             let thread = GetWindowThreadProcessId(window, &mut process);
             assert_ne!(
@@ -1883,6 +2074,7 @@ mod tests {
                 studio_port: None,
                 settings_window: null_mut(),
                 settings_controls: vec![],
+                mapping: None,
                 explorer_message: 0,
             };
             for id in [SEARCH_LABEL, TARGET_LABEL, COMPOSE_LABEL, STATUS] {
@@ -1896,7 +2088,8 @@ mod tests {
                     .unwrap();
             }
             for id in [
-                COPY, INSERT, FAVORITE, COMPOSE, CLEAR, STUDIO, SETTINGS, RESET, MENU,
+                COPY, INSERT, FAVORITE, COMPOSE, CLEAR, STUDIO, SETTINGS, RESET, MENU, MAPPING,
+                QUIT,
             ] {
                 app.child(id, "BUTTON", "", 0).unwrap();
             }
@@ -1942,6 +2135,8 @@ mod tests {
                     STUDIO,
                     SETTINGS,
                     MENU,
+                    MAPPING,
+                    QUIT,
                     UI_LANGUAGE,
                     STATUS,
                 ] {
@@ -1991,6 +2186,12 @@ mod tests {
             app.localize();
             app.refresh();
             assert!(text(app.get(SEARCH_LABEL)).contains("搜索"));
+            assert!(text(app.window).contains(env!("CARGO_PKG_VERSION")));
+            assert_eq!(text(app.get(QUIT)), "退出");
+            let tip = tray_tip("Ctrl+Alt+Shift+F6");
+            let tip = String::from_utf16_lossy(&tip[..tip.iter().position(|c| *c == 0).unwrap()]);
+            assert!(tip.contains("Ctrl+Alt+Shift+F6"));
+            assert!(!tip.contains("Ctrl+Alt+Shift+I"));
             assert_eq!(text(app.get(BUFFER)), "t͡ʃ");
             drop(app);
             assert_eq!(

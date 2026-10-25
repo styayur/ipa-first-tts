@@ -97,6 +97,8 @@ struct SymbolQuery {
 }
 pub fn serve(mut engine: Engine, port: u16) -> Result<(), String> {
     let catalog = symbol_catalog::Catalog::bundled()?;
+    let mapping = language_mapping::Engine::bundled()?;
+    let mapping_backend = language_mapping::espeak::EspeakG2p::discover();
     let server = tiny_http::Server::http(("127.0.0.1", port))
         .map_err(|e| format!("Cannot bind local UI port {port}: {e}"))?;
     let expected_host = format!("127.0.0.1:{port}");
@@ -163,6 +165,12 @@ pub fn serve(mut engine: Engine, port: u16) -> Result<(), String> {
                         json!({"schema_version":1,"languages":catalog.languages,"sources":catalog.sources,"count":catalog.symbols.len()}),
                     ),
                 ),
+                "/api/mapping" => json_response(
+                    request,
+                    Ok(
+                        json!({"schema_version":1,"languages":mapping.registry().languages,"scripts":mapping.registry().scripts,"sources":mapping.registry().sources,"capabilities":mapping.capabilities(Some(&mapping_backend))}),
+                    ),
+                ),
                 _ => {
                     let id = url
                         .strip_prefix("/audio/")
@@ -179,6 +187,13 @@ pub fn serve(mut engine: Engine, port: u16) -> Result<(), String> {
                     }
                 }
             }
+        } else if request.method() == &Method::Post && url == "/api/map" {
+            let result = (|| {
+                let input: language_mapping::MappingRequest = read_json(&mut request)?;
+                serde_json::to_value(mapping.convert(&input, Some(&mapping_backend)))
+                    .map_err(|e| e.to_string())
+            })();
+            json_response(request, result);
         } else if request.method() == &Method::Post && url == "/api/symbols" {
             let result = (|| {
                 let input: SymbolQuery = read_json(&mut request)?;
