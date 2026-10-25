@@ -17,6 +17,18 @@ checks include build tools; a known-vulnerable build dependency is not dismissed
 merely because the executable is offline. Native model ABI compatibility and
 upstream binary security still need separate review.
 
+Language mapping adds strict typed requests and validated embedded source/rule
+registries; input/context and candidate/output limits are separate. It performs
+no runtime rule download, shell invocation or implicit scheme fallback. The
+optional eSpeak mapping adapter passes literal arguments, appends stdin LF,
+bounds both output pipes and terminates/reaps after 8 seconds. ESPEAK_NG/PATH
+overrides are trusted local program choices; their runtime version is unverified.
+Host/Origin, body bounds and CSP also cover the mapping API. Text and sources are
+rendered as text, never injected HTML. Mapping output is not proof of phonology
+or synthesis compatibility; only eligible English IPA is sent to the speech
+editor. Native mapping workers do not send global input; Palette only fills the
+composition, and Insert retains its existing explicit target guards.
+
 Send vulnerability reports privately to [yurstya@gmail.com](mailto:yurstya@gmail.com), the maintainer's published contact. GitHub private vulnerability reporting is not currently enabled for this repository. Do not publish exploit details, personal paths, secrets, voice recordings or unpublished content in a public issue.
 
 Include the affected version/commit, platform, backend, minimal reproduction and expected impact. Share only the data needed to reproduce the issue. Response is best effort; no response-time guarantee or mature security-support period is promised for this MVP.

@@ -1,13 +1,53 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 # IPA-first TTS
 
-**An offline-first multilingual symbol palette and IPA-first speech tool.**
+**Local spelling, named romanization and IPA mapping, with a native symbol palette and English speech tool.**
 
-[简体中文与完整技术参考](README.zh-CN.md) · [v0.2.0-alpha.1 experimental packages](https://github.com/styayur/ipa-first-tts/releases/tag/v0.2.0-alpha.1) · [Model setup](models/README.md)
+[简体中文与完整技术参考](README.zh-CN.md) · [v0.3.0-alpha.1 experimental packages](https://github.com/styayur/ipa-first-tts/releases/tag/v0.3.0-alpha.1) · [Model setup](models/README.md)
 
-**v0.2.0-alpha.1 experimental preview.** Symbol Palette is an independent Rust/Win32 app; IPA Studio retains its Rust loopback HTTP server and plain browser UI. The offline catalog contains 368 curated IPA and Latin-script records associated with French, German, Spanish, Portuguese, Polish, Czech, Turkish and Vietnamese. This is selected character coverage. Speech remains English en-US/en-GB only. Catalog membership, IPA grammar acceptance, backend vocabulary and real language pipeline verification are four separate capabilities.
+**v0.3.0-alpha.1 experimental preview.** Symbol Palette is an independent Rust/Win32 app; IPA Studio retains its Rust loopback HTTP server and plain browser UI. The offline catalog contains 368 curated IPA and Latin-script records associated with French, German, Spanish, Portuguese, Polish, Czech, Turkish and Vietnamese. This is selected character coverage. Speech remains English en-US/en-GB only. Catalog membership, IPA grammar acceptance, backend vocabulary and real language pipeline verification are four separate capabilities.
 
-The palette does not link or initialize Kokoro, eSpeak, a browser runtime or an HTTP server. Both `ipa-core` and `symbol-catalog` remain independent reusable libraries. No npm/CDN/React/Tauri runtime is added. Native desktop verification and release status are tracked in [validation](docs/validation/README.md). Download only assets listed on the linked release.
+Opening the palette and embedded mappings does not initialize speech models, a browser runtime or an HTTP server. An explicitly selected optional mapping G2P edge can run local eSpeak without synthesis. Both `ipa-core` and `symbol-catalog` remain independent reusable libraries. No npm/CDN/React/Tauri runtime is added. Native desktop verification and release status are tracked in [validation](docs/validation/README.md). Download only assets listed on the linked release.
+
+## Language mapping / v0.3.0-alpha.1
+
+Open **Mapping** in the native palette or **Language mapping** in Studio. Choose
+a language, typed direction, named scheme and script; convert, select a candidate
+and inspect its source/limits. Ctrl+Enter converts. Copy is explicit; **Palette**
+fills the native composition without injecting input. Eligible English IPA can
+be sent into Studio. The independent `ipa-map.exe` CLI is included in the light
+ZIP and needs no speech model or native speech DLLs.
+
+| Registered profile | Romanization | G2P | IPA grammar | TTS |
+|---|---|---|---|---|
+| en-US | Not applicable | 443 selected CMUdict spellings (549 variants); optional explicit eSpeak en-us | Conservative parser | Existing English backends only |
+| fr | Not implemented | Optional eSpeak fr-fr | Same conservative parser | Not enabled |
+| es | Not implemented | Optional eSpeak es (Spain) | Same conservative parser | Not enabled |
+| ja | Named CLDR 49 kana subset; no Kanji | Not implemented | Same conservative parser, not phonology | Not enabled |
+| cmn-Hans | CLDR 49 Han defaults (44,498 NFC characters), three phrase contexts, unresolved polyphony | Not implemented | Same conservative parser, not Mandarin coverage | Not enabled |
+| ru | CLDR 49 modern Russian alphabet subset + bounded inverse; not ISO 9 | Not implemented | Same conservative parser, not phonology | Not enabled |
+
+These are distinct capabilities, not a generic “supported language” promise.
+The light package contains embedded conversions; optional general G2P needs the
+local eSpeak tool/full package. No runtime rule download or cloud API is used.
+English P2G is finite exact dictionary lookup: homophones/heteronyms remain
+explicit, not an inverse reconstruction of original text. Unknown schemes,
+language/script mismatches and unmapped characters fail without substitution.
+
+```powershell
+ipa-map languages
+ipa-map romanize --language ja --scheme cldr49-kana-subset --input コーヒー
+ipa-map map --language en-US --scheme cmudict-us-sample --input read --target ipa
+ipa-map ipa-to-text --language en-US --input /sˈi/
+ipa-map map --language fr --scheme espeak-fr-fr --input eau --target ipa
+```
+
+`ipa-tts` accepts the same JSON-output commands. Independent fixtures check
+declared subsets: en-US 6, ja 9, ru 5, cmn-Hans 5 exact cases; fr/es 3 each compare
+independently sourced segments with an explicit stress/dot policy. These small
+sets are not whole-language accuracy estimates. [Mapping guide and limits](docs/language-mapping.md),
+[source/license register](docs/research/authority-sources.json),
+[architecture decision](docs/decisions/0002-typed-language-mapping.md).
 
 ## Symbol Palette / Windows x64
 
@@ -34,7 +74,7 @@ Settings changes the shortcut, detecting conflicts while retaining the previous 
 
 The full package can place `ipa-tts.exe` beside the palette for **IPA Studio** transfer; the light package works without it. Studio also exposes the shared searchable catalog inside its IPA editor. Unsupported catalog characters stay copyable; IPA parsing and speech adapters fail explicitly instead of dropping them.
 
-Release asset names are `ipa-symbol-palette-v0.2.0-alpha.1-windows-x64.zip` (model-free) and `ipa-first-tts-v0.2.0-alpha.1-windows-x64-offline.zip`. Use only assets actually listed on [Releases](https://github.com/styayur/ipa-first-tts/releases), with their SHA-256 and corresponding source. Checksums are not signatures; these builds have no Authenticode certificate.
+Release asset names are `ipa-symbol-palette-v0.3.0-alpha.1-windows-x64.zip` (model-free) and `ipa-first-tts-v0.3.0-alpha.1-windows-x64-offline.zip`. Use only assets actually listed on [Releases](https://github.com/styayur/ipa-first-tts/releases), with their SHA-256 and corresponding source. Checksums are not signatures; these builds have no Authenticode certificate.
 
 ![Actual IPA Studio browser interface with editable phonemes, synthesis and playback controls](outputs/desktop.png)
 
@@ -94,29 +134,37 @@ This is text-to-IPA evidence, not a new Kokoro synthesis measurement or phoneme-
 <!-- architecture:overview:start -->
 ```mermaid
 flowchart TB
-  Palette[Windows native Symbol Palette] --> Catalog[symbol-catalog: offline validated JSON and search]
-  Catalog --> Unicode[Original Unicode strings: Copy / guarded Insert]
-  Palette --> Settings[(Local versioned favorites / recent / hotkey)]
-  Palette -->|explicit optional fragment transfer| UI
-  Server -->|catalog and search endpoints| Catalog
-  UI[Browser UI: text and editable IPA] -->|loopback HTTP; Host / Origin checks| Server[Rust server / Engine]
-  Text[Text] --> G2P[eSpeak-NG child process: G2P]
-  G2P --> IPA[ipa-core: parse / edit / validate IPA]
-  Server -->|g2p endpoint| G2P
-  Server -->|edited IPA endpoint| IPA
-  IPA --> Backend{Explicit backend selection}
+  Palette[Native palette / hotkey / tray] --> Catalog[symbol-catalog: original Unicode strings]
+  Catalog --> Input[Explicit Copy / guarded Unicode Insert]
+  Palette --> Settings[(Atomic user settings)]
+  Palette --> MappingUI[Native mapping window]
+  Studio[Studio mapping workbench] -->|loopback Host / Origin checks| Server[Rust HTTP application]
+  CLI[ipa-map and ipa-tts mapping CLI] --> Mapping[language-mapping: typed edges and provenance]
+  MappingUI --> Mapping
+  Server --> Mapping
+  Registry[(Pinned language / script / scheme / source data)] --> Mapping
+  Orthography[Original spelling] --> Mapping
+  Mapping --> Romanization[Named CLDR romanization subsets: not IPA]
+  Mapping --> Dictionary[CMUdict / optional eSpeak G2P]
+  Dictionary --> IPA[IPA notation]
+  IPA --> P2G[Finite exact dictionary P2G candidates]
+  P2G --> Spellings[Possible spellings: not original-text recovery]
+  Mapping --> Normalize[ipa-core conservative normalization]
+  Normalize --> IPA
+  Romanization -->|explicit fill only| MappingUI
+  IPA -->|explicit English selection; model support checked| Backend[TTS adapters]
   Backend --> Kokoro[KokoroAdapter / sherpa-onnx FFI]
-  Backend --> Espeak[eSpeak phoneme fallback]
+  Backend --> Espeak[eSpeak English phoneme fallback]
   Models[(Local Kokoro model / tokens / voices)] --> Kokoro
   Kokoro --> Audio[PCM audio / WAV]
   Espeak --> Audio
   Audio --> Align[UniformAligner: estimated timing]
   IPA -.-> Align
-  Align --> Result[UI playback and phoneme highlighting]
+  Align --> Playback[Studio playback and highlights]
 ```
 <!-- architecture:overview:end -->
 
-The CLI uses the same Engine directly. G2P runs eSpeak-NG as a child process; Kokoro adapts edited `IpaSequence` through a temporary phoneme lexicon and a native session. eSpeak is an explicitly selected fallback, not automatic recovery. `UniformAligner` divides duration across phones and reports estimated timing; no forced aligner is implemented. See [source evidence](docs/architecture/README.md), [model/runtime details](models/README.md) and the [full technical reference](README.zh-CN.md).
+The mapping CLI uses the independent language-mapping engine; the speech CLI uses its separate speech Engine. G2P runs eSpeak-NG as a child process; Kokoro adapts edited `IpaSequence` through a temporary phoneme lexicon and a native session. eSpeak is an explicitly selected fallback, not automatic recovery. `UniformAligner` divides duration across phones and reports estimated timing; no forced aligner is implemented. See [source evidence](docs/architecture/README.md), [model/runtime details](models/README.md) and the [full technical reference](README.zh-CN.md).
 
 ## Tests and platform support
 
@@ -130,6 +178,8 @@ cargo test -p ipa-desktop --test pipeline -- --ignored --test-threads=1
 cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo audit
 python scripts/check_dependencies.py
+python scripts/check_mapping_data.py
+cargo test -p language-mapping --test real_g2p --locked -- --ignored --test-threads=1
 ```
 
 Ordinary tests do not need models. The explicitly ignored pipeline tests require real eSpeak/Kokoro and matching DLLs. [CI](https://github.com/styayur/ipa-first-tts/actions/workflows/ci.yml) runs model-independent core checks on Ubuntu/Windows and native Windows build/unit tests; it does not silently certify every platform's real audio.

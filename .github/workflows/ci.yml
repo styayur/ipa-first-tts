@@ -22,7 +22,7 @@ jobs:
       - name: Format
         run: cargo fmt --all -- --check
       - name: Model-independent core tests
-        run: cargo test -p ipa-core -p tts-core -p alignment-core -p g2p-espeak -p tts-kokoro -p symbol-catalog -p ipa-palette --no-default-features --locked
+        run: cargo test -p ipa-core -p tts-core -p alignment-core -p g2p-espeak -p tts-kokoro -p symbol-catalog -p language-mapping -p ipa-palette --no-default-features --locked
       - name: Fallback application lint
         run: cargo clippy -p ipa-desktop --no-default-features --all-targets --locked -- -D warnings
       - name: Palette and catalog lint
@@ -32,6 +32,13 @@ jobs:
           python-version: '3.12'
       - name: Dependency license inventory
         run: python scripts/check_dependencies.py
+      - name: Mapping data sources and fixtures
+        run: python scripts/check_mapping_data.py
+      - name: Offline mapping data regeneration is byte-identical
+        shell: bash
+        run: |
+          python scripts/import_mapping_data.py --source-dir crates/language-mapping/data/upstream
+          git diff --exit-code -- crates/language-mapping/data
       - name: Install security auditor
         run: cargo install cargo-audit --locked --version 0.22.2
       - name: Audit locked dependencies
@@ -45,6 +52,14 @@ jobs:
       - name: Real catalog UI and HTTP boundary checks
         shell: bash
         run: python scripts/run_studio_test.py --exe target/debug/ipa-tts${{ runner.os == 'Windows' && '.exe' || '' }} --test scripts/test_catalog_ui.py --without-assets
+      - name: Real mapping UI and typed boundaries without speech assets
+        shell: bash
+        run: python scripts/run_studio_test.py --exe target/debug/ipa-tts${{ runner.os == 'Windows' && '.exe' || '' }} --test scripts/test_mapping_ui.py --without-assets
+      - name: Model-free mapping CLI evaluation
+        shell: bash
+        run: |
+          cargo build -p ipa-palette --bin ipa-map --locked
+          python scripts/test_mapping_cli.py --exe target/debug/ipa-map${{ runner.os == 'Windows' && '.exe' || '' }}
   windows-native:
     name: Windows native build
     runs-on: windows-latest
@@ -61,3 +76,7 @@ jobs:
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - name: Palette standalone self-check
         run: ./target/release/ipa-symbol-palette.exe --check palette-check.json
+      - name: Prepare pinned portable eSpeak without a model
+        run: ./scripts/setup.ps1 -SkipModel
+      - name: Independent real French and Spanish G2P references
+        run: cargo test -p language-mapping --test real_g2p --locked -- --ignored --test-threads=1

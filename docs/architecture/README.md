@@ -1,6 +1,6 @@
 # Architecture evidence
 
-Source review: v0.2.0-alpha.1 source candidate, based on `e200900ff27c98807c7c1fad3e27c266282241da` (2026-10-24). Native execution status is tracked separately in [validation](../validation/README.md).
+Source review: v0.3.0-alpha.1 source candidate, based on `74a2c8aa795b82d57203acfef4bc2722dc3661f2` (2026-10-25). Native execution status is tracked separately in [validation](../validation/README.md).
 
 The marked Mermaid block in [README](../../README.md) is the only maintained diagram source. GitHub renders it natively in the reader's theme. No duplicate SVG or independent `.mmd` is committed; extracted Mermaid and SVG files are disposable verification artifacts.
 

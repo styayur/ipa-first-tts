@@ -1,6 +1,6 @@
 {
   "format_version": 1,
-  "license_reviewed": "2026-10-24",
+  "license_reviewed": "2026-10-25",
   "packages": [
     {
       "name": "adler2",
@@ -24,7 +24,7 @@
     },
     {
       "name": "alignment-core",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "MPL-2.0",
       "source": "first-party",
       "notices": []
@@ -319,7 +319,7 @@
     },
     {
       "name": "g2p-espeak",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "MPL-2.0",
       "source": "first-party",
       "notices": []
@@ -522,21 +522,21 @@
     },
     {
       "name": "ipa-core",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "MPL-2.0",
       "source": "first-party",
       "notices": []
     },
     {
       "name": "ipa-desktop",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "GPL-3.0-or-later",
       "source": "first-party",
       "notices": []
     },
     {
       "name": "ipa-palette",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "GPL-3.0-or-later",
       "source": "first-party",
       "notices": []
@@ -572,6 +572,13 @@
           "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
         }
       ]
+    },
+    {
+      "name": "language-mapping",
+      "version": "0.3.0-alpha.1",
+      "license": "MPL-2.0",
+      "source": "first-party",
+      "notices": []
     },
     {
       "name": "libc",
@@ -1075,7 +1082,7 @@
     },
     {
       "name": "symbol-catalog",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "MPL-2.0",
       "source": "first-party",
       "notices": []
@@ -1174,14 +1181,14 @@
     },
     {
       "name": "tts-core",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "MPL-2.0",
       "source": "first-party",
       "notices": []
     },
     {
       "name": "tts-kokoro",
-      "version": "0.2.0-alpha.1",
+      "version": "0.3.0-alpha.1",
       "license": "MPL-2.0",
       "source": "first-party",
       "notices": []

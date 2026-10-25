@@ -1,11 +1,13 @@
 [package]
 name = "ipa-palette"
+default-run = "ipa-symbol-palette"
 version.workspace = true
 edition.workspace = true
 license = "GPL-3.0-or-later"
 repository.workspace = true
 [dependencies]
 symbol-catalog.workspace = true
+language-mapping.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 [target.'cfg(windows)'.dependencies]
@@ -13,3 +15,6 @@ windows-sys = { version = "=0.61.2", features = ["Win32_Foundation", "Win32_UI_C
 [[bin]]
 name = "ipa-symbol-palette"
 path = "src/main.rs"
+[[bin]]
+name = "ipa-map"
+path = "src/map_main.rs"

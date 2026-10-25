@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "upstream/cldr-Hiragana-Latin.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/transforms/Hiragana-Latin.xml",
+      "version": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Reference for transform-chain semantics only; no full ICU rule interpreter. Original data copied; no LDML specification publication text copied.",
+      "sha256": "202fd8b8405518f8730f8ac19ecc150294af822b51cd1f964c3899c5bafee414"
+    },
+    {
+      "path": "upstream/Latin-Katakana.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/transforms/Latin-Katakana.xml",
+      "version": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Selected literal rows and common context policies adapted for the named kana subset. Original data copied; no LDML specification publication text copied.",
+      "sha256": "3b69b71ff72b25431c2b3e74d459ae61e0e914700d2afc5bcf18fad6e3ea8017"
+    },
+    {
+      "path": "upstream/Hiragana-Katakana.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/transforms/Hiragana-Katakana.xml",
+      "version": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Reference for the explicit selected Hiragana/Katakana block fold; NFKC/iteration/exception repertoire not fully implemented. Original data copied; no LDML specification publication text copied.",
+      "sha256": "e34df2a945fa4a136241c7356e7de357ea803acdd99e3d82f3ec9741aafb966a"
+    },
+    {
+      "path": "upstream/cldr-Cyrillic-Latin.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/transforms/Cyrillic-Latin.xml",
+      "version": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Modern Russian alphabet rows and NFD/case policy adapted; no other Cyrillic language or ISO conformance claim. Original data copied; no LDML specification publication text copied.",
+      "sha256": "c2ee7f8abdfbd36b7eb3b3f248e53889a23f9d1fbd4e6a6749bfeb6c98bc98d5"
+    },
+    {
+      "path": "upstream/cldr-Han-Latin.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/transforms/Han-Latin.xml",
+      "version": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Han default-reading groups and three explicit right-context rules transformed; non-Han radical aliases excluded. Original data copied; no LDML specification publication text copied.",
+      "sha256": "99994c296037d251178f599b0acff242d2d4d0f4be6fdd2e1d64672a6802e9f2"
+    },
+    {
+      "path": "upstream/cldr-Latin-NumericPinyin.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/transforms/Latin-NumericPinyin.xml",
+      "version": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Copied reference snapshot only; numeric Pinyin conversion is NOT implemented. Original data copied; no LDML specification publication text copied.",
+      "sha256": "828d0cb02f87e9d324653d42de4731ee4d820816e9392b9a3c6014d246135b20"
+    },
+    {
+      "path": "upstream/cldr-LICENSE",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/LICENSE",
+      "version": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Original combined notice retained, including specification/data distinction.",
+      "sha256": "65eb33419e22a297550a811b5b535f5e532f9a7e0114b516c0ea18afd53c3804"
+    },
+    {
+      "path": "upstream/cmudict-LICENSE",
+      "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/LICENSE",
+      "version": "74790861f652b15e4ac49015a90074ad62a27690",
+      "retrieved": "2026-10-25",
+      "license": "BSD-2-Clause",
+      "usage": "Original CMU notice for selected dictionary entries.",
+      "sha256": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a"
+    },
+    {
+      "path": "upstream/cmudict.phones",
+      "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.phones",
+      "version": "74790861f652b15e4ac49015a90074ad62a27690",
+      "retrieved": "2026-10-25",
+      "license": "BSD-2-Clause",
+      "usage": "ARPAbet inventory; not IPA.",
+      "sha256": "ffb588a5e55684723582c7256e1d2f9fadb130011392d9e59237c76e34c2cfd6"
+    },
+    {
+      "path": "upstream/cmudict-selected.dict",
+      "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+      "version": "74790861f652b15e4ac49015a90074ad62a27690",
+      "retrieved": "2026-10-25",
+      "license": "BSD-2-Clause",
+      "usage": "Selected complete entries and all variants; full upstream SHA-256 81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22.",
+      "sha256": "c90e67b985f2b27ec4e23209dd094bb76cd1aba0beb4219dae6730356a87c60b"
+    },
+    {
+      "path": "upstream/iana-selected.txt",
+      "url": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry",
+      "version": "File-Date: 2026-09-17",
+      "retrieved": "2026-10-25",
+      "license": "CC0-1.0",
+      "usage": "Selected registry records; IANA/IETF dedication: https://www.iana.org/help/licensing-terms (2021-11-10).",
+      "sha256": "be018465cb191b596ae6c6a58fa80b53ea04374d5c8d47daa45bfd780bc3277f"
+    },
+    {
+      "path": "upstream/iso15924-selected.txt",
+      "url": "https://unicode.org/iso15924/iso15924.txt",
+      "version": "snapshot 2026-10-25",
+      "retrieved": "2026-10-25",
+      "license": "Unicode-3.0",
+      "usage": "Selected official script identifiers; no invented IPA script code.",
+      "sha256": "7206e9b2be81ca32f42795b55a190195d167a7963d4744237c0cc59556b399ff"
+    },
+    {
+      "path": "registry.json",
+      "url": "scripts/import_mapping_data.py",
+      "version": "1",
+      "retrieved": "2026-10-25",
+      "license": "mixed: Unicode-3.0 / BSD-2-Clause; see per-rule sources",
+      "usage": "Generated selected rules and registry facts; project adapter code is MPL-2.0.",
+      "sha256": "81720e9f82beb5836d73198e76cc284438d0a8b57b62e08702b22ac0f4e342f1"
+    }
+  ]
+}

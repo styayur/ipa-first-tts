@@ -1,0 +1,121 @@
+{
+  "format_version": 1,
+  "version": "0.3.0-alpha.1",
+  "date": "2026-10-25",
+  "source_revision": null,
+  "environment": "Windows x64; native helper launch failed GetCursorPos: access denied (0x80070005); recovered window capture did not provide reliable usable state. No further app input attempted.",
+  "blocker": "Mapping interaction confirmed by user; remaining new-version editor/tray/exit regression checks and extracted-package smoke test are pending.",
+  "tested_candidate_executable_sha256": "0c25b38168f8d7a0ca643f53cd50af6e4b5a8a2a5bd1818108ce6c597ee9f1c0",
+  "baseline_reference": "v0.2.0-alpha.1 native evidence is historical and not relabeled as this release.",
+  "checks": {
+    "notepad": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "browser": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "vscode": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "hotkey_toggle": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "tray": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "focus_restore": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "continuous_insert": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "copy_exact": {
+      "status": "passed",
+      "method": "user manual test, independent-config Release candidate",
+      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+    },
+    "favorites_recent": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "bilingual": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "resize_dpi": {
+      "status": "passed",
+      "method": "hidden native controls, scoped",
+      "evidence": "Palette control bounds and mapping window layout/conversion/transfer tested at three sizes. No external UI/input/clipboard controlled. Physical mixed-monitor and 150%/200% DPI remain unverified."
+    },
+    "exit_cleanup": {
+      "status": "unverified",
+      "method": "pending user/native interaction",
+      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+    },
+    "single_instance": {
+      "status": "passed",
+      "method": "native API automated, scoped",
+      "evidence": "Isolated session-local mutex excludes duplicates and releases after Drop. Interactive second-process reveal is separately unverified."
+    },
+    "mapping_ui": {
+      "status": "passed",
+      "method": "user manual test, independent-config Release candidate",
+      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+    },
+    "mapping_copy": {
+      "status": "passed",
+      "method": "user manual test, independent-config Release candidate",
+      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+    },
+    "mapping_to_palette": {
+      "status": "passed",
+      "method": "user manual test, independent-config Release candidate",
+      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+    },
+    "uipi": {
+      "status": "unverified",
+      "evidence": "No new physical or external interactive certification."
+    },
+    "remote_desktop": {
+      "status": "unverified",
+      "evidence": "No new physical or external interactive certification."
+    },
+    "mixed_dpi": {
+      "status": "unverified",
+      "evidence": "No new physical or external interactive certification."
+    },
+    "physical_network_disconnection": {
+      "status": "unverified",
+      "evidence": "No new physical or external interactive certification."
+    },
+    "clean_vm": {
+      "status": "unverified",
+      "evidence": "No new physical or external interactive certification."
+    },
+    "interactive_duplicate_reveal": {
+      "status": "unverified",
+      "evidence": "No new physical or external interactive certification."
+    },
+    "owned_studio_exit": {
+      "status": "unverified",
+      "evidence": "No new physical or external interactive certification."
+    }
+  },
+  "user_report": "上述映射和面板操作均正常"
+}

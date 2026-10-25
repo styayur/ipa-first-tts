@@ -3,9 +3,65 @@
 const $ = id => document.getElementById(id);
 let revision = 0, validationId = 0, busy = false, valid = false, sequence = [], aligned = false, timer;
 const audio = $('audio');
+let mappingMetadata, mappingResult, mappingChoice = 0, mappingRevision = 0;
+const mapLabel = type => ({orthography:'Spelling / 正字法',romanization:'Romanization / 拉丁转写',ipa:'IPA'})[type];
+function mappingClear() {
+  ++mappingRevision;mappingResult=null;mappingChoice=0;
+  $('map-candidates').replaceChildren();$('map-copy').disabled=true;$('map-studio').hidden=true;
+  $('map-status').textContent='Input or scheme changed. Convert to refresh candidates.';
+  $('map-provenance').textContent='';$('map-traces').textContent='';
+  if(mappingMetadata)$('map-convert').disabled=!$('map-scheme').value;
+}
+function mappingSchemes() {
+  const language=$('map-language').value;
+  const all=mappingMetadata.capabilities.filter(c=>c.scheme.language===language);
+  const available=all.filter(c=>c.available);
+  const pairs=[...new Set(available.map(c=>c.scheme.input_type+'|'+c.scheme.output_type))];
+  $('map-direction').replaceChildren(...pairs.map(pair=>{const o=document.createElement('option');o.value=pair;const [a,b]=pair.split('|');o.textContent=mapLabel(a)+' → '+mapLabel(b);return o;}));
+  const l=mappingMetadata.languages.find(l=>l.id===language);$('map-target-language').value=l.name+' (same language)';
+  $('map-coverage').textContent=l.coverage+(all.some(c=>!c.available)?' · General G2P requires the optional local eSpeak tool/full package.':'');
+  mappingDirections();
+}
+function mappingDirections() {
+  const pair=$('map-direction').value;
+  const schemes=mappingMetadata.capabilities.filter(c=>c.available && c.scheme.language===$('map-language').value && c.scheme.input_type+'|'+c.scheme.output_type===pair);
+  $('map-scheme').replaceChildren(...schemes.map(c=>{const o=document.createElement('option');o.value=c.scheme.id;o.textContent=c.scheme.name;return o;}));mappingScheme();
+}
+function mappingScheme() {
+  mappingClear();const scheme=mappingMetadata.capabilities.find(c=>c.scheme.id===$('map-scheme').value)?.scheme;
+  $('map-script').replaceChildren(...(scheme?.input_scripts||[]).map(code=>{const o=document.createElement('option');o.value=code;o.textContent=code+' / '+mappingMetadata.scripts.find(s=>s.code===code).name;return o;}));
+  $('map-convert').disabled=!scheme;
+  $('map-provenance').textContent=scheme?.limitations||'No available conversion. Choose another language or install optional local tools.';
+}
+function mappingSelected() {
+  const r=mappingResult,c=r?.candidates[mappingChoice];$('map-copy').disabled=!c;
+  $('map-studio').hidden=!(c && r.output_type==='ipa' && r.language==='en-US' && c.ipa_grammar_accepted===true);
+  for(const [i,b] of [...$('map-candidates').children].entries())b.setAttribute('aria-pressed',String(i===mappingChoice));
+  if(!r)return;
+  $('map-provenance').textContent=[...r.warnings,...r.sources.map(s=>`${s.title}\n${s.version}\n${s.license} · ${s.attribution}\n${s.url}`)].join('\n\n');
+  $('map-traces').textContent=c?JSON.stringify({transcription:c.transcription,ranking:c.ranking_basis,normalization:r.normalization,rules:c.traces},null,2):'';
+}
+async function mappingConvert() {
+  const revision=++mappingRevision;const scheme=mappingMetadata.capabilities.find(c=>c.scheme.id===$('map-scheme').value)?.scheme;if(!scheme)return;
+  $('map-convert').disabled=true;$('map-copy').disabled=true;$('map-studio').hidden=true;$('map-status').textContent='Converting locally…';
+  try {
+    const r=await api('map',{language:$('map-language').value,target_language:$('map-language').value,input:$('map-input').value,input_type:scheme.input_type,target:scheme.output_type,scheme:scheme.id,source_script:$('map-script').value,context:$('map-context').value||null});
+    if(revision!==mappingRevision)return;mappingResult=r;mappingChoice=0;
+    $('map-status').textContent=r.unsupported_reason||`${r.candidates.length} candidate${r.candidates.length===1?'':'s'} · ${r.ambiguous?'Ambiguous / not guaranteed unique':'Determined within this scheme'} · ${r.scheme}`;
+    $('map-candidates').replaceChildren(...r.candidates.map((c,i)=>{const b=document.createElement('button');b.type='button';b.textContent=c.text;b.setAttribute('aria-label','Candidate '+(i+1)+': '+c.text);b.addEventListener('click',()=>{mappingChoice=i;mappingSelected();});return b;}));mappingSelected();
+  } catch(e){if(revision===mappingRevision)$('map-status').textContent=e.message;}
+  finally {if(revision===mappingRevision)$('map-convert').disabled=false;}
+}
+for(const id of ['map-input','map-context'])$(id).addEventListener('input',mappingClear);
+$('map-language').addEventListener('change',mappingSchemes);$('map-direction').addEventListener('change',mappingDirections);$('map-scheme').addEventListener('change',mappingScheme);$('map-script').addEventListener('change',mappingClear);
+$('map-input').addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();mappingConvert();}});$('map-convert').addEventListener('click',mappingConvert);
+$('map-copy').addEventListener('click',async()=>{const c=mappingResult?.candidates[mappingChoice];if(!c)return;try{await navigator.clipboard.writeText(c.text);$('map-status').textContent='Copied exact result. Clipboard replaced.';}catch(e){$('map-status').textContent='Copy failed: '+e.message;}});
+$('map-studio').addEventListener('click',()=>{const r=mappingResult,c=r?.candidates[mappingChoice];if(busy||!c||r.output_type!=='ipa'||r.language!=='en-US'||c.ipa_grammar_accepted!==true)return;$('language').value='en-US';$('ipa').value=c.text;edited();$('ipa').focus();message('Selected English IPA copied into the editor. Model support is checked separately.');});
+fetch('/api/mapping').then(r=>{if(!r.ok)throw new Error('Mapping metadata unavailable');return r.json();}).then(data=>{mappingMetadata=data;$('map-language').replaceChildren(...data.languages.map(l=>{const o=document.createElement('option');o.value=l.id;o.textContent=l.name+' / '+l.native_name+' ('+l.tag+')';return o;}));mappingSchemes();}).catch(e=>{$('map-convert').disabled=true;$('map-status').textContent=e.message;});
 const stress = p => (p.stress === 'Primary' ? 'ˈ' : p.stress === 'Secondary' ? 'ˌ' : '') + p.symbol;
 const message = (text, error = false) => { $('status').textContent = text; $('status').className = error ? 'error' : ''; };
 function controls() {
+  $('map-studio').disabled=busy;
   $('generate').disabled = busy; $('synthesize').disabled = busy || !valid;
   for (const id of ['ipa','text','language','backend','speed','speaker']) $(id).disabled = busy;
   document.querySelectorAll('.symbols button').forEach(b => b.disabled = busy);

@@ -44,3 +44,15 @@ After reviewing dependency changes, regenerate notices with
 `python scripts/check_dependencies.py --write`; never override upstream terms.
 
 Preserve file-level SPDX headers and [component license boundaries](licenses/README.md). The GPL application, MPL crates, MIT automation and CC BY documentation have separate scopes; third-party terms do not change with a contribution.
+
+Mapping changes additionally require `python scripts/check_mapping_data.py`,
+`cargo test -p language-mapping --locked`, CLI fixture evaluation and the real
+mapping browser test through run_studio_test.py. Explicitly prepare the pinned
+portable eSpeak (setup.ps1 -SkipModel) and run the opt-in real_g2p integration
+test. Reference fixtures must be independently reviewed, retain source URLs and
+state their comparison policy. Never generate the only oracle from the rule
+being tested or report fixture agreement as whole-language accuracy. New data
+must be version-pinned, hashed and licensed per file. Update capabilities and
+the bilingual matrix with each adapter; do not enable speech because a symbol
+parses or a language has romanization. Test the native mapping window separately
+from headless UI, and retain user-vs-agent-vs-hidden-control evidence labels.

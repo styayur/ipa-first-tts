@@ -71,7 +71,10 @@ impl Espeak {
             .map_err(|e| self.launch_error(e))?;
         // Concurrent writer avoids pipe deadlocks even for large Unicode output.
         let mut stdin = child.stdin.take().ok_or("eSpeak stdin unavailable")?;
-        let owned = text.as_bytes().to_vec();
+        // The Windows CLI mishandles an EOF-terminated last line without LF.
+        // Terminate the line explicitly; otherwise even "eau" can become "e".
+        let mut owned = text.as_bytes().to_vec();
+        owned.push(b'\n');
         let writer = std::thread::spawn(move || stdin.write_all(&owned));
         let output = child
             .wait_with_output()

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "comparison": "Independent dictionary segmental agreement: NFC, remove stress and syllable dots only for this metric. Full engine results retain them. This does not measure stress, allophony, sentence context or whole-language accuracy.",
+  "license": "Selected pronunciation facts; Wiktionary attribution and CC-BY-SA-4.0 apply to any copyrightable excerpts. Test reference only, not a production lexicon.",
+  "retrieved": "2026-10-25",
+  "cases": [
+    {
+      "language": "fr",
+      "scheme": "espeak-fr-fr",
+      "input": "eau",
+      "segmental": "o",
+      "source": "https://en.wiktionary.org/wiki/eau#French",
+      "reference": "/o/"
+    },
+    {
+      "language": "fr",
+      "scheme": "espeak-fr-fr",
+      "input": "chat",
+      "segmental": "ʃa",
+      "source": "https://en.wiktionary.org/wiki/chat#French",
+      "reference": "/ʃa/"
+    },
+    {
+      "language": "es",
+      "scheme": "espeak-es",
+      "input": "queso",
+      "segmental": "keso",
+      "source": "https://en.wiktionary.org/wiki/queso#Spanish",
+      "reference": "/ˈkeso/"
+    },
+    {
+      "language": "es",
+      "scheme": "espeak-es",
+      "input": "niño",
+      "segmental": "niɲo",
+      "source": "https://en.wiktionary.org/wiki/ni%C3%B1o#Spanish",
+      "reference": "/ˈniɲo/"
+    },
+    {
+      "language": "fr",
+      "scheme": "espeak-fr-fr",
+      "input": "café",
+      "segmental": "kafe",
+      "source": "https://en.wiktionary.org/wiki/caf%C3%A9#French",
+      "reference": "/ka.fe/; original input deliberately decomposed"
+    },
+    {
+      "language": "es",
+      "scheme": "espeak-es",
+      "input": "café",
+      "segmental": "kafe",
+      "source": "https://en.wiktionary.org/wiki/caf%C3%A9#Spanish",
+      "reference": "/kaˈfe/"
+    }
+  ]
+}
