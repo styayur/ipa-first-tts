@@ -69,6 +69,36 @@ const CATEGORIES: &[&str] = &[
 fn wide(value: &str) -> Vec<u16> {
     value.encode_utf16().chain([0]).collect()
 }
+fn tray_tip(hotkey: &str) -> [u16; 128] {
+    let mut tip = [0; 128];
+    for (slot, unit) in tip.iter_mut().take(127).zip(
+        format!(
+            "IPA Symbol Palette v{} · {hotkey}",
+            env!("CARGO_PKG_VERSION")
+        )
+        .encode_utf16(),
+    ) {
+        *slot = unit;
+    }
+    tip
+}
+unsafe fn window_executable(window: HWND) -> Option<PathBuf> {
+    use std::os::windows::ffi::OsStringExt;
+    let mut process = 0;
+    GetWindowThreadProcessId(window, &mut process);
+    let handle = Handle(OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, 0, process));
+    if handle.0.is_null() {
+        return None;
+    }
+    let mut buffer = vec![0u16; 32768];
+    let mut length = buffer.len() as u32;
+    if QueryFullProcessImageNameW(handle.0, 0, buffer.as_mut_ptr(), &mut length) == 0 {
+        return None;
+    }
+    Some(PathBuf::from(std::ffi::OsString::from_wide(
+        &buffer[..length as usize],
+    )))
+}
 pub fn error(message: &str) {
     // SAFETY: valid terminated strings and no borrowed window state.
     unsafe {
@@ -679,8 +709,9 @@ impl App {
             );
         }
         place(UI_LANGUAGE, width - 124, height - 86, 112, 250);
-        place(ACTION, 12, height - 49, 138, 160);
-        place(STATUS, 158, height - 49, width - 170, 45);
+        place(ACTION, 12, height - 49, 126, 160);
+        place(STATUS, 146, height - 49, width - 226, 45);
+        place(QUIT, width - 72, height - 49, 60, 29);
     }
     unsafe fn localize(&self) {
         for (id, en, zh) in [
@@ -694,12 +725,17 @@ impl App {
             (SETTINGS, "Settings", "设置"),
             (RESET, "Reset", "重置"),
             (MENU, "Menu ▾", "菜单 ▾"),
+            (QUIT, "Exit", "退出"),
         ] {
             set_text(self.get(id), self.label(en, zh));
         }
         set_text(
             self.window,
-            self.label("IPA Symbol Palette", "IPA 字符面板"),
+            &format!(
+                "{} · v{}",
+                self.label("IPA Symbol Palette", "IPA 字符面板"),
+                env!("CARGO_PKG_VERSION")
+            ),
         );
         SendMessageW(
             self.get(SEARCH),
@@ -1015,8 +1051,28 @@ impl App {
             },
         );
     }
+    unsafe fn owns_window(&self, window: HWND) -> bool {
+        !window.is_null()
+            && (window == self.window
+                || window == self.settings_window
+                || self.mapping.as_ref().is_some_and(|m| m.active(window)))
+    }
+    unsafe fn reveal(&self) {
+        self.hide_auxiliary();
+        ShowWindow(
+            self.window,
+            if IsIconic(self.window) != 0 {
+                SW_RESTORE
+            } else {
+                SW_SHOW
+            },
+        );
+        SetForegroundWindow(self.window);
+        SetFocus(self.get(SEARCH));
+        SendMessageW(self.get(SEARCH), 0x00b1, 0, -1);
+    }
     unsafe fn show(&mut self) {
-        if IsWindowVisible(self.window) != 0 && GetForegroundWindow() == self.window {
+        if IsWindowVisible(self.window) != 0 && self.owns_window(GetForegroundWindow()) {
             self.hide();
             return;
         }
@@ -1064,7 +1120,16 @@ impl App {
             ));
         }
     }
+    unsafe fn hide_auxiliary(&self) {
+        if let Some(mapping) = &self.mapping {
+            ShowWindow(mapping.window, SW_HIDE);
+        }
+        if !self.settings_window.is_null() {
+            ShowWindow(self.settings_window, SW_HIDE);
+        }
+    }
     unsafe fn hide(&self) {
+        self.hide_auxiliary();
         ShowWindow(self.window, SW_HIDE);
         if let Some(target) = self.target.as_ref() {
             if target.validate().is_ok() {
@@ -1301,6 +1366,8 @@ impl App {
             self.registration = Some(Registration::new(self.window, HOTKEY_ID, key)?);
         }
         ShowWindow(self.settings_window, SW_HIDE);
+        self.tray.szTip = tray_tip(&self.settings.hotkey);
+        Shell_NotifyIconW(NIM_MODIFY, &self.tray);
         self.status(self.label("Shortcut saved", "快捷键已保存"));
         Ok(())
     }
@@ -1317,7 +1384,14 @@ impl App {
             AppendMenuW(menu, MF_STRING, id, wide(self.label(en, zh)).as_ptr());
         }
         let mut point = zeroed();
-        GetCursorPos(&mut point);
+        if GetCursorPos(&mut point) == 0 {
+            // A keyboard-opened menu remains reachable without a cursor query.
+            let mut rect = zeroed();
+            if GetWindowRect(self.get(MENU), &mut rect) != 0 {
+                point.x = rect.left;
+                point.y = rect.bottom;
+            }
+        }
         SetForegroundWindow(self.window);
         let choice = TrackPopupMenu(
             menu,
@@ -1331,13 +1405,9 @@ impl App {
         DestroyMenu(menu);
         match choice as usize {
             SHOW => {
-                if IsWindowVisible(self.window) != 0 {
-                    SetFocus(self.get(SEARCH));
-                } else {
-                    self.show();
-                    self.target = None;
-                    self.target_hint();
-                }
+                self.reveal();
+                self.target = None;
+                self.target_hint();
             }
             HIDE => {
                 self.hide();
@@ -1449,7 +1519,23 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
     if GetLastError() == ERROR_ALREADY_EXISTS {
         let existing = FindWindowW(wide("IPAFirstPalette").as_ptr(), null());
         if !existing.is_null() {
+            let mut process = 0;
+            GetWindowThreadProcessId(existing, &mut process);
+            // A user-launched second process may grant foreground permission to
+            // the existing owner; it never grants permission to every process.
+            // https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-allowsetforegroundwindow
+            AllowSetForegroundWindow(process);
             PostMessageW(existing, EVENT, SHOW, 0);
+            if let (Some(running), Ok(requested)) =
+                (window_executable(existing), std::env::current_exe())
+            {
+                if running.canonicalize().ok() != requested.canonicalize().ok() {
+                    MessageBoxW(existing, wide(&format!(
+                        "A palette from another location is already running:\n{}\n\nExit that copy with Menu → Exit, then launch this copy.\n\n已有其他位置的面板正在运行。请在旧面板中选择菜单 → 退出，再启动当前副本。",
+                        running.display()
+                    )).as_ptr(), wide("IPA Symbol Palette · Existing copy / 已有实例").as_ptr(), MB_OK | MB_ICONINFORMATION);
+                }
+            }
             return Ok(());
         }
         return Err("Another palette instance is starting; try again shortly".into());
@@ -1558,6 +1644,7 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
         (SETTINGS, "BUTTON", "Settings", 0),
         (RESET, "BUTTON", "Reset", 0),
         (MENU, "BUTTON", "Menu", 0),
+        (QUIT, "BUTTON", "Exit", 0),
         (TARGET_LABEL, "STATIC", "", 0),
         (
             UI_LANGUAGE,
@@ -1595,8 +1682,7 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
     app.tray.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
     app.tray.uCallbackMessage = TRAY;
     app.tray.hIcon = icon.0;
-    let tip = wide("IPA Symbol Palette · Ctrl+Alt+Shift+I");
-    app.tray.szTip[..tip.len()].copy_from_slice(&tip);
+    app.tray.szTip = tray_tip(&app.settings.hotkey);
     if Shell_NotifyIconW(NIM_ADD, &app.tray) == 0 {
         return Err("Cannot add tray icon".into());
     }
@@ -1679,12 +1765,9 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
                 app.fonts();
                 app.layout();
             } else if id == SHOW {
-                if IsWindowVisible(hwnd) == 0 {
-                    app.show();
-                } else {
-                    SetForegroundWindow(hwnd);
-                    SetFocus(app.get(SEARCH));
-                }
+                app.reveal();
+                app.target = None;
+                app.target_hint();
             } else if id == HIDE {
                 if message.hwnd == app.settings_window {
                     ShowWindow(app.settings_window, SW_HIDE);
@@ -1796,6 +1879,8 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
                     }
                 } else if button == Some(MENU) {
                     app.tray_menu();
+                } else if button == Some(QUIT) {
+                    PostQuitMessage(0);
                 } else if button.is_some_and(|id| {
                     matches!(
                         id,
@@ -1914,6 +1999,10 @@ mod tests {
                 null(),
             );
             assert!(!window.is_null());
+            assert_eq!(
+                window_executable(window).unwrap().canonicalize().unwrap(),
+                std::env::current_exe().unwrap().canonicalize().unwrap()
+            );
             let mut process = 0;
             let thread = GetWindowThreadProcessId(window, &mut process);
             assert_ne!(
@@ -1990,7 +2079,8 @@ mod tests {
                     .unwrap();
             }
             for id in [
-                COPY, INSERT, FAVORITE, COMPOSE, CLEAR, STUDIO, SETTINGS, RESET, MENU,
+                COPY, INSERT, FAVORITE, COMPOSE, CLEAR, STUDIO, SETTINGS, RESET, MENU, MAPPING,
+                QUIT,
             ] {
                 app.child(id, "BUTTON", "", 0).unwrap();
             }
@@ -2036,6 +2126,8 @@ mod tests {
                     STUDIO,
                     SETTINGS,
                     MENU,
+                    MAPPING,
+                    QUIT,
                     UI_LANGUAGE,
                     STATUS,
                 ] {
@@ -2085,6 +2177,12 @@ mod tests {
             app.localize();
             app.refresh();
             assert!(text(app.get(SEARCH_LABEL)).contains("搜索"));
+            assert!(text(app.window).contains(env!("CARGO_PKG_VERSION")));
+            assert_eq!(text(app.get(QUIT)), "退出");
+            let tip = tray_tip("Ctrl+Alt+Shift+F6");
+            let tip = String::from_utf16_lossy(&tip[..tip.iter().position(|c| *c == 0).unwrap()]);
+            assert!(tip.contains("Ctrl+Alt+Shift+F6"));
+            assert!(!tip.contains("Ctrl+Alt+Shift+I"));
             assert_eq!(text(app.get(BUFFER)), "t͡ʃ");
             drop(app);
             assert_eq!(

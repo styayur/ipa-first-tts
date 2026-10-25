@@ -74,7 +74,9 @@ def main():
 Run ipa-symbol-palette.exe. No model, Rust, Python, Node or WebView is required.
 Ctrl+Alt+Shift+I toggles the window; search immediately, arrows select, Enter
 inserts (change Enter action to Copy), Esc hides. Tray: show/hide, Studio,
-Settings, Exit. Closing hides; Exit ends the background app.
+Settings, Exit. Closing hides; the visible Exit button ends the background app.
+The title shows the version and the tray tooltip shows your saved shortcut.
+Launching another location warns when an older copy already owns the instance.
 Settings changes the shortcut; conflicts preserve the previous registration.
 English / 简体中文 switches the interface. All languages is a catalog filter,
 not a speech capability. The catalog is a curated selection, not full coverage.

@@ -50,6 +50,6 @@
       "es": "3/3"
     },
     "interpretation": "Selected fixture agreement only; not whole-language accuracy or coverage. Stress/dots removed only in external segmental metric.",
-    "native": "User confirmed candidate mapping, Copy, composition and editor insertion; full extracted-package native regression still pending."
+    "native": "Initial mapping/Copy/composition confirmed by user. Later lifecycle group 2 and repeat-launch group 4 reported failed; editor group 1 untested. Native fixes pending fresh-candidate retest."
   }
 }

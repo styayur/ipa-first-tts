@@ -4,7 +4,7 @@
   "date": "2026-10-25",
   "source_revision": null,
   "environment": "Windows x64; native helper launch failed GetCursorPos: access denied (0x80070005); recovered window capture did not provide reliable usable state. No further app input attempted.",
-  "blocker": "Mapping interaction confirmed by user; remaining new-version editor/tray/exit regression checks and extracted-package smoke test are pending.",
+  "blocker": "User reported group 2 (shortcut/tray/exit) and group 4 (repeat launch) failed; group 1 editor tests not performed. Native fixes and a fresh candidate require user retest.",
   "tested_candidate_executable_sha256": "0c25b38168f8d7a0ca643f53cd50af6e4b5a8a2a5bd1818108ce6c597ee9f1c0",
   "baseline_reference": "v0.2.0-alpha.1 native evidence is historical and not relabeled as this release.",
   "checks": {
@@ -25,13 +25,13 @@
     },
     "hotkey_toggle": {
       "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "method": "user regression group failed; pending isolated retest",
+      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
     },
     "tray": {
       "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "method": "user regression group failed; pending isolated retest",
+      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
     },
     "focus_restore": {
       "status": "unverified",
@@ -65,13 +65,13 @@
     },
     "exit_cleanup": {
       "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "method": "user regression group failed; pending isolated retest",
+      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
     },
     "single_instance": {
-      "status": "passed",
-      "method": "native API automated, scoped",
-      "evidence": "Isolated session-local mutex excludes duplicates and releases after Drop. Interactive second-process reveal is separately unverified."
+      "status": "unverified",
+      "method": "user regression group failed; pending isolated retest",
+      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
     },
     "mapping_ui": {
       "status": "passed",
@@ -109,13 +109,37 @@
       "evidence": "No new physical or external interactive certification."
     },
     "interactive_duplicate_reveal": {
-      "status": "unverified",
-      "evidence": "No new physical or external interactive certification."
+      "status": "failed",
+      "method": "user regression, group 4",
+      "evidence": "User reported repeated-launch group failed; exact symptom pending. This is distinct from the passing native mutex API test."
     },
     "owned_studio_exit": {
       "status": "unverified",
       "evidence": "No new physical or external interactive certification."
+    },
+    "native_lifecycle_group": {
+      "status": "failed",
+      "method": "user regression, group 2",
+      "evidence": "User reported shortcut/tray/exit/restart group failed; exact failing substep pending."
     }
   },
-  "user_report": "上述映射和面板操作均正常"
+  "user_report": "上述映射和面板操作均正常",
+  "user_regression_report": {
+    "verbatim": "2，4 失败，1未测试",
+    "group_1": "not tested",
+    "group_2": "failed, exact substep not yet specified",
+    "group_4": "failed, exact symptom not yet specified",
+    "other_groups": "No additional pass inferred from omission."
+  },
+  "investigation": {
+    "running_process": "Only the initial .cache/native-v030/target/release/ipa-symbol-palette.exe F6 test instance was observed (PID 26272), not the extracted package.",
+    "cleanup": "The application-provided --quit command exited this owned test process; no palette process remained. This is CLI cleanup, not a tray/manual pass.",
+    "changes_pending_retest": [
+      "Visible Exit button and versioned title",
+      "Configured shortcut in tray tooltip",
+      "Hotkey hides owned mapping/settings windows",
+      "Repeated launch grants foreground permission to the existing owner, restores its window and explains a different executable location",
+      "Keyboard menu has a window-anchor fallback when cursor query fails"
+    ]
+  }
 }

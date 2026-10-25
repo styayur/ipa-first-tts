@@ -14,6 +14,12 @@ inject input. Recall the palette from the intended editor before Insert.
 Copy explicitly replaces the clipboard. Opening/searching/mapping with embedded
 data does not require a speech model, server or network.
 
+The palette's visible **Exit / 退出** button ends the app; the title-bar × hides it.
+The shortcut hides the palette together with its mapping/settings windows.
+The title identifies the version and the tray tooltip reflects the saved shortcut.
+Repeated launch restores the existing palette. If another executable location is
+running, a bilingual notice identifies it so you can exit the old copy first.
+
 The light ZIP contains `ipa-symbol-palette.exe` and `ipa-map.exe`; the console
 program does not link Kokoro/sherpa. The full ZIP additionally provides eSpeak
 and Studio. Set ESPEAK_NG only to a trusted local executable if using an override.
