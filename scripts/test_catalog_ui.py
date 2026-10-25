@@ -55,7 +55,11 @@ with sync_playwright() as p:
     assert page.locator('#symbol-results button[aria-pressed=true]').count()==1
     selected = page.locator('#symbol-results button[aria-pressed=true]').inner_text()
     page.locator('#ipa').fill('a')
+    # Editing the destination and returning to search must preserve selection.
+    # Keep each assertion separate so CI reports which transition changed it.
+    expect(page.locator('#symbol-results button[aria-pressed=true]')).to_have_text(selected)
     page.locator('#symbol-search').focus()
+    expect(page.locator('#symbol-results button[aria-pressed=true]')).to_have_text(selected)
     page.locator('#symbol-search').press('Enter')
     expect(page.locator('#ipa')).to_have_value('a'+selected)
     page.locator('#symbol-search').press('Escape')
