@@ -1,19 +1,16 @@
 {
-  "verified_on": "2026-10-07",
+  "verified_on": "2026-10-25",
   "platform": "Windows x64",
   "rustc": "1.98.1",
   "sherpa_onnx": "1.13.8",
   "kokoro_bundle": "kokoro-multi-lang-v1_0",
   "build_workspace": "passed",
-  "build_workspace_offline_locked": "passed",
+  "build_workspace_offline_locked": "passed from both candidate source ZIPs with empty CARGO_HOME and vendored sources; full uses included native archive",
   "clippy_all_targets_deny_warnings": "passed",
-  "unit_tests_passed": 16,
-  "real_integration_tests_passed": 2,
+  "unit_tests_passed": 37,
+  "real_integration_tests_passed": 3,
   "real_integrations_run_explicitly": true,
   "ipa_core_offline_tests_passed": 6,
-  "no_default_features_offline_espeak_pipeline": "passed",
-  "portable_espeak_setup_script": "passed",
-  "original_model_matches_downloaded_archive": true,
   "example_text": "The quick brown fox jumps over the lazy dog.",
   "canonical_ipa": "ðə kwˈɪk bɹˈa͡ʊn fˈɑːks d͡ʒˈʌmps ˌo͡ʊvɚ ðə lˈe͡ɪzi dˈɑːɡ",
   "audio": {
@@ -24,7 +21,7 @@
     "sample_width_bytes": 2,
     "frames": 144600,
     "duration_seconds": 6.025,
-    "sha256": "e5f993cc7624a9a4fcc888e490fbc81c9e0e1e13eb208a8bdf5e34b7839c343a"
+    "sha256": "e32e3bc0d103ef2435dae251f9fc695aa27e6cdc6d41cd0d15d9005035b92fcc"
   },
   "ui": {
     "test": "scripts/test_ui.py",
@@ -38,5 +35,21 @@
     "responsive_390px": true,
     "page_errors": []
   },
-  "timing_quality": "Estimated; not model-derived or forced alignment"
+  "timing_quality": "Estimated; not model-derived or forced alignment",
+  "version": "0.3.0-alpha.1",
+  "source_candidate": "bb72399ee0472b8d75a811cf23c7b8def843a307",
+  "mapping": {
+    "embedded_fixtures": {
+      "en-US": "6/6",
+      "ja": "9/9",
+      "ru": "5/5",
+      "cmn-Hans": "5/5"
+    },
+    "independent_segmental_references": {
+      "fr": "3/3",
+      "es": "3/3"
+    },
+    "interpretation": "Selected fixture agreement only; not whole-language accuracy or coverage. Stress/dots removed only in external segmental metric.",
+    "native": "User confirmed candidate mapping, Copy, composition and editor insertion; full extracted-package native regression still pending."
+  }
 }

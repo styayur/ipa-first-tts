@@ -12,6 +12,20 @@ def main():
   assert result.returncode==0,result.stdout+result.stderr
   return json.loads(result.stdout)
  metadata=call('languages');assert len(metadata['languages'])==6
+ # Public CLI failures must remain machine-readable, with a failing exit code.
+ for argv,payload in [
+  (['map','--language','xx','--input','cat'],None),
+  (['map','--language','ja','--input','か','--scheme','unknown'],None),
+  (['map','--language','en-US','--language','fr','--input','cat'],None),
+  (['map','--typo','en-US'],None),
+  (['map','--json'],'{'),
+  (['map','--json'],json.dumps({'language':'ja','input':'か','surprise':True})),
+  (['map','--json'],' '*16385),
+ ]:
+  failed=subprocess.run([str(executable),*argv],input=payload,cwd=ROOT,env=env,capture_output=True,text=True,encoding='utf-8',timeout=20)
+  assert failed.returncode==2,(argv,failed.stdout,failed.stderr)
+  failure=json.loads(failed.stdout)
+  assert failure['status']=='unsupported' and (failure.get('error') or failure.get('unsupported_reason'))
  scores=collections.defaultdict(lambda:{'cases':0,'passed':0,'definition':'Exact expected candidate set on the declared manually selected fixture vocabulary/subset; not a held-out whole-language estimate.'})
  observations=[]
  fixtures=json.loads((ROOT/'crates/language-mapping/tests/fixtures/builtin.json').read_text(encoding='utf-8'))

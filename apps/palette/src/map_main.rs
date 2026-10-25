@@ -2,6 +2,10 @@
 #![forbid(unsafe_code)]
 fn main() {
     let args: Vec<_> = std::env::args().skip(1).collect();
+    if args.len() == 1 && matches!(args[0].as_str(), "help" | "--help" | "-h") {
+        print!("{}", include_str!("mapping_help.txt"));
+        return;
+    }
     match language_mapping::cli::run(&args) {
         Ok(value) => {
             println!(

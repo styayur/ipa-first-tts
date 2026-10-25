@@ -12,7 +12,13 @@ fn run() -> Result<(), String> {
     if language_mapping::cli::COMMANDS.contains(&command.as_str()) {
         let mut mapping_args = vec![command];
         mapping_args.extend(args);
-        let value = language_mapping::cli::run(&mapping_args)?;
+        let value = match language_mapping::cli::run(&mapping_args) {
+            Ok(value) => value,
+            Err(error) => {
+                eprintln!("{error}");
+                serde_json::json!({"status":"unsupported","error":error})
+            }
+        };
         println!(
             "{}",
             serde_json::to_string_pretty(&value).map_err(|e| e.to_string())?
@@ -26,6 +32,7 @@ fn run() -> Result<(), String> {
         return Ok(());
     }
     if matches!(command.as_str(), "help" | "--help" | "-h") {
+        print!("{}\n\n", include_str!("../../palette/src/mapping_help.txt"));
         println!("IPA-first TTS\nRun from the project root.\n\n  ipa-tts serve [port]                       Local UI (default port 17842)\n  ipa-tts doctor                             Check local assets\n  ipa-tts g2p \"text\"                         Print canonical English IPA\n  ipa-tts synth \"edited IPA\" out.wav [kokoro|espeak]\n  ipa-tts demo [out.wav] [kokoro|espeak]       Pangram -> IPA -> WAV\n\nESPEAK_NG: eSpeak executable path\nKOKORO_MODEL_DIR: Kokoro asset directory\nIPA_TTS_DEBUG=1: native token diagnostics");
         return Ok(());
     }
