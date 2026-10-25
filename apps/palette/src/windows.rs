@@ -1072,11 +1072,20 @@ impl App {
         SendMessageW(self.get(SEARCH), 0x00b1, 0, -1);
     }
     unsafe fn show(&mut self) {
-        if IsWindowVisible(self.window) != 0 && self.owns_window(GetForegroundWindow()) {
+        let minimized = IsIconic(self.window) != 0;
+        if !minimized
+            && IsWindowVisible(self.window) != 0
+            && self.owns_window(GetForegroundWindow())
+        {
             self.hide();
             return;
         }
         self.target = Target::capture(self.window);
+        // GetWindowRect on an iconic window describes the minimized icon, not
+        // the palette. Capture the editor first, then restore before sizing it.
+        if minimized {
+            ShowWindow(self.window, SW_SHOWNOACTIVATE);
+        }
         let mut point = zeroed();
         if GetCursorPos(&mut point) == 0 {
             ShowWindow(self.window, SW_SHOWNORMAL);
