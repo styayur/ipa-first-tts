@@ -72,6 +72,8 @@ def main():
     shutil.copy2(ROOT/'apps/palette/palette.example.json',stage/'palette.example.json')
     (stage/'START.txt').write_text(f'''IPA Symbol Palette v{VERSION} — Windows x64{' LOCAL CANDIDATE / NOT RELEASE-VERIFIED' if args.candidate else ''}
 Run ipa-symbol-palette.exe. No model, Rust, Python, Node or WebView is required.
+The global shortcut works only while this app is running. Launch the EXE first;
+window × keeps it resident, whereas Exit unregisters the shortcut. No autostart.
 Ctrl+Alt+Shift+I toggles the window; search immediately, arrows select, Enter
 inserts (change Enter action to Copy), Esc hides. Tray: show/hide, Studio,
 Settings, Exit. Closing hides; the visible Exit button ends the background app.

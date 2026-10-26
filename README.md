@@ -70,6 +70,9 @@ The visible **Exit** button ends the app directly. The title shows its version,
 and the tray tooltip follows your saved shortcut. The shortcut hides open mapping
 and settings windows too. Launching a different executable location identifies
 the existing copy so you can exit it before switching builds.
+The global shortcut works only while the palette is running. Launch the EXE
+first; × keeps it resident, while **Exit** unregisters the shortcut. No autostart
+is installed.
 
 Categories include recent, favorites, IPA, language characters, diacritics and combinations. **Copy** explicitly replaces clipboard contents. **Insert** verifies the originally captured target and foreground before sending the entire original UTF-16 string; it never touches the clipboard. Use the hotkey from the target; opening from the tray is copy-only. Windows permissions, remote sessions and target applications may reject input: inspect the error and use Copy explicitly. There is no automatic clipboard paste and no privilege elevation.
 
