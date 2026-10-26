@@ -4,7 +4,7 @@
   "date": "2026-10-26",
   "source_revision": "15a68143563efd160f7982e992faa45b89c6f3af",
   "environment": "Windows x64, native QA on 2026-10-25/26 Asia/Singapore. Sky desktop access recovered; fresh returned windows and screenshots were used. Browser access was stopped by URL safety identification; no browser input continued or alternative browser automation bypass was used.",
-  "blocker": "Awaiting user browser-textarea and actual notification-area tray-entry reports. Other scoped native gates below passed; merge/release remain held.",
+  "blocker": "Browser textarea passed user manual testing. Actual tray left/right clicks failed on the previous candidate; callback dispatch fix awaits a new extracted-package retest. Release remains held.",
   "tested_candidate_executable_sha256": "18aa55307940208d91f042fca85e26108fa7f0b1f737aa3456b240b465725679",
   "baseline_reference": "v0.2.0-alpha.1 native evidence is historical and not relabeled as this release.",
   "checks": {
@@ -14,9 +14,9 @@
       "evidence": "Microsoft.WindowsNotepad_8wekyb3d8bbwe!App, installed 11.2607.14.0. Blank untitled document: real global hotkey, search tsh then Enter, recall and search œ then Enter; visible final t͡ʃœ with character count 4/caret column 5. Notepad3 also showed IPA QA: t͡ʃœ with restored caret. No mocked edit control substituted."
     },
     "browser": {
-      "status": "unverified",
-      "method": "browser Computer Use safety stop; user test requested",
-      "evidence": "Native Chrome capture was stopped because its current browser URL could not be determined with enough confidence to enforce policy. No alternative browser automation was used; a browser-textarea native insert/focus user report is pending."
+      "status": "passed",
+      "method": "user manual report on 2026-10-26; not agent browser automation",
+      "evidence": "User confirmed browser textarea native t͡ʃ/œ insertion, caret return and consecutive insertion: 第一项实际测验通过. Agent Chrome capture had stopped because the current URL could not be reliably identified; no alternative automation bypass was used."
     },
     "vscode": {
       "status": "passed",
@@ -29,14 +29,14 @@
       "evidence": "User confirmed hide/reopen with Ctrl+Alt+Shift+I while running (verbatim: 能). Agent minimized the packaged palette, invoked the real shortcut from Notepad3, observed restored search and captured editor target after animation. After restart, invoking the shortcut while Mapping was foreground hid both palette and Mapping; process remained resident."
     },
     "tray": {
-      "status": "unverified",
-      "method": "actual tray-entry user test pending",
-      "evidence": "Agent tested the shared main Menu popup and visible Exit. The actual notification-area icon click/show/hide/exit entry is separately pending; no pass inferred from shared code."
+      "status": "failed",
+      "method": "actual notification-area left/right click user report on 2026-10-26",
+      "evidence": "User: 第二项不可，左右键单击托盘图标未响应. Shared Menu/visible Exit passes do not establish tray-entry behavior. A real hidden Win32 sent-message regression reproduced the lost callback; the dispatch fix passes that test but actual fixed-package tray retest remains pending."
     },
     "focus_restore": {
       "status": "passed",
       "method": "agent native Computer Use",
-      "evidence": "After native Insert, Microsoft Notepad and Notepad3 retained the intended document/caret; the next shortcut captured the same editor and consecutive strings appended. VS Code received composition at its scratch-file caret and Ctrl+S saved that editor. Browser focus remains independently pending."
+      "evidence": "After native Insert, Microsoft Notepad and Notepad3 retained the intended document/caret; the next shortcut captured the same editor and consecutive strings appended. VS Code received composition at its scratch-file caret and Ctrl+S saved that editor. User subsequently confirmed browser insertion/focus/consecutive operation."
     },
     "continuous_insert": {
       "status": "passed",

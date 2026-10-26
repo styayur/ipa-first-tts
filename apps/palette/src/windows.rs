@@ -11,6 +11,7 @@ use std::{
     path::PathBuf,
     process::{Child, Command},
     ptr::{null, null_mut},
+    sync::OnceLock,
 };
 use symbol_catalog::{Catalog, Symbol};
 #[path = "mapping_window.rs"]
@@ -25,6 +26,10 @@ use windows_sys::Win32::{
 };
 const EVENT: u32 = WM_APP + 1;
 const TRAY: u32 = WM_APP + 2;
+const TRAY_EVENT: u32 = WM_APP + 3;
+const EXPLORER_EVENT: u32 = WM_APP + 4;
+// windows-sys exposes NIN_SELECT and NINF_KEY separately.
+const TRAY_KEYSELECT: u32 = NIN_SELECT | NINF_KEY;
 const SEARCH: usize = 101;
 const CATEGORY: usize = 102;
 const LANGUAGE: usize = 103;
@@ -406,8 +411,22 @@ unsafe fn copy(value: &str, owner: HWND) -> Result<(), String> {
     CloseClipboard();
     result
 }
+fn taskbar_created_message() -> u32 {
+    static MESSAGE: OnceLock<u32> = OnceLock::new();
+    *MESSAGE.get_or_init(|| unsafe { RegisterWindowMessageW(wide("TaskbarCreated").as_ptr()) })
+}
 unsafe extern "system" fn procedure(hwnd: HWND, message: u32, w: WPARAM, l: LPARAM) -> LRESULT {
     match message {
+        TRAY => {
+            // Shell callbacks may be sent, not queued. Defer to the owning
+            // loop rather than borrowing App reentrantly from this procedure.
+            PostMessageW(hwnd, TRAY_EVENT, w, l);
+            0
+        }
+        value if value != 0 && value == taskbar_created_message() => {
+            PostMessageW(hwnd, EXPLORER_EVENT, 0, 0);
+            0
+        }
         WM_COMMAND => {
             PostMessageW(hwnd, EVENT, w, l);
             0
@@ -552,7 +571,6 @@ struct App {
     settings_window: HWND,
     settings_controls: Vec<(usize, HWND)>,
     mapping: Option<MappingWindow>,
-    explorer_message: u32,
 }
 impl Drop for App {
     fn drop(&mut self) {
@@ -1606,7 +1624,6 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
         settings_window: null_mut(),
         settings_controls: vec![],
         mapping: None,
-        explorer_message: RegisterWindowMessageW(wide("TaskbarCreated").as_ptr()),
     };
     for (id, class, title, style) in [
         (SEARCH_LABEL, "STATIC", "Search", 0),
@@ -1717,21 +1734,29 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
         if status == -1 {
             return Err("Windows message loop failed".into());
         }
-        if message.message == app.explorer_message {
-            Shell_NotifyIconW(NIM_ADD, &app.tray);
+        if message.message == EXPLORER_EVENT {
+            if Shell_NotifyIconW(NIM_ADD, &app.tray) == 0 {
+                app.status(app.label("Cannot restore tray icon", "无法恢复托盘图标"));
+            }
             continue;
         }
         if message.message == WM_HOTKEY && matches!(message.wParam, 1 | 2) {
             app.show();
             continue;
         }
-        if message.message == TRAY {
-            if message.lParam as u32 == WM_LBUTTONUP {
-                app.show();
-                app.target = None;
-                app.target_hint();
-            } else if message.lParam as u32 == WM_RBUTTONUP {
-                app.tray_menu();
+        if message.message == TRAY_EVENT {
+            // NIM_SETVERSION is intentionally unused: legacy callbacks carry
+            // the icon ID in wParam and the whole event code in lParam.
+            if message.wParam == app.tray.uID as usize {
+                match message.lParam as u32 {
+                    WM_LBUTTONUP | NIN_SELECT | TRAY_KEYSELECT => {
+                        app.reveal();
+                        app.target = None;
+                        app.target_hint();
+                    }
+                    WM_RBUTTONUP | WM_CONTEXTMENU => app.tray_menu(),
+                    _ => {}
+                }
             }
             continue;
         }
@@ -1935,6 +1960,80 @@ unsafe fn run_native(catalog: Catalog, args: &[String]) -> Result<(), String> {
 mod tests {
     use super::*;
     #[test]
+    fn native_sent_and_posted_shell_callbacks_reach_the_queue() {
+        // Hidden test-owned window; no tray icon, foreground, input or shell
+        // restart. Exercise real Win32 delivery, including nonqueued messages.
+        unsafe {
+            let module = GetModuleHandleW(null());
+            let name = wide(&format!("IPAFirstTrayDeliveryTest-{}", std::process::id()));
+            let class = WNDCLASSW {
+                lpfnWndProc: Some(procedure),
+                hInstance: module,
+                lpszClassName: name.as_ptr(),
+                ..zeroed()
+            };
+            assert_ne!(RegisterClassW(&class), 0);
+            let window = CreateWindowExW(
+                0,
+                name.as_ptr(),
+                wide("Shell delivery test").as_ptr(),
+                0,
+                0,
+                0,
+                20,
+                20,
+                null_mut(),
+                null_mut(),
+                module,
+                null(),
+            );
+            assert!(!window.is_null());
+            let mut message: MSG = zeroed();
+            for event in [
+                WM_LBUTTONUP,
+                WM_RBUTTONUP,
+                WM_CONTEXTMENU,
+                NIN_SELECT,
+                NIN_SELECT | NINF_KEY,
+            ] {
+                SendMessageW(window, TRAY, 1, event as isize);
+                assert_ne!(
+                    PeekMessageW(&mut message, window, TRAY_EVENT, TRAY_EVENT, PM_REMOVE),
+                    0,
+                    "nonqueued shell callback {event:#x} was lost",
+                );
+                assert_eq!((message.wParam, message.lParam), (1, event as isize));
+                assert_eq!(
+                    PeekMessageW(&mut message, window, TRAY_EVENT, TRAY_EVENT, PM_REMOVE),
+                    0
+                );
+            }
+            assert_ne!(PostMessageW(window, TRAY, 1, WM_RBUTTONUP as isize), 0);
+            assert_ne!(PeekMessageW(&mut message, window, TRAY, TRAY, PM_REMOVE), 0);
+            DispatchMessageW(&message);
+            assert_ne!(
+                PeekMessageW(&mut message, window, TRAY_EVENT, TRAY_EVENT, PM_REMOVE),
+                0
+            );
+            assert_eq!((message.wParam, message.lParam), (1, WM_RBUTTONUP as isize));
+            let explorer = RegisterWindowMessageW(wide("TaskbarCreated").as_ptr());
+            assert_ne!(explorer, 0);
+            SendMessageW(window, explorer, 0, 0);
+            assert_ne!(
+                PeekMessageW(
+                    &mut message,
+                    window,
+                    EXPLORER_EVENT,
+                    EXPLORER_EVENT,
+                    PM_REMOVE
+                ),
+                0
+            );
+            assert_ne!(DestroyWindow(window), 0);
+            assert_ne!(UnregisterClassW(name.as_ptr(), module), 0);
+        }
+    }
+    #[test]
     fn native_registration_conflict_and_cleanup() {
         // Rare shortcut reserved only for the duration of this test, no UI input.
         unsafe {
@@ -2075,7 +2174,6 @@ mod tests {
                 settings_window: null_mut(),
                 settings_controls: vec![],
                 mapping: None,
-                explorer_message: 0,
             };
             for id in [SEARCH_LABEL, TARGET_LABEL, COMPOSE_LABEL, STATUS] {
                 app.child(id, "STATIC", "", 0).unwrap();

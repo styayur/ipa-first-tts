@@ -13,6 +13,10 @@
   window with Copy, composition transfer and eligible English Studio transfer.
 - Source/data byte manifests, independent per-language fixtures and evaluation
   policies; light/full packaging retains all license and capability boundaries.
+- Restore minimized shortcut activation and single-instance foregrounding. Route
+  sent tray callbacks through the window procedure so left-click reveals the
+  palette and right-click opens its menu; also forward Explorer's tray recreation
+  broadcast. Keep tray activation in explicit Copy mode.
 
 ## 0.2.0-alpha.1 — experimental preview
 
