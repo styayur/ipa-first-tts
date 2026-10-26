@@ -50,7 +50,7 @@
       "es": "3/3"
     },
     "interpretation": "Selected fixture agreement only; not whole-language accuracy or coverage. Stress/dots removed only in external segmental metric.",
-    "native": "Recovered agent native QA at 15a6814 passed scoped editor, hotkey, copy and mapping checks. User confirmed browser textarea insertion/focus/consecutive operation on 2026-10-26, but actual tray left/right clicks failed. The sent/posted callback regression fails on old code and passes with the dispatch fix; actual fixed-package tray retest remains pending."
+    "native": "Scoped agent editor/clipboard/shortcut/Mapping QA passed at 15a6814; browser insertion/focus/consecutive operation was user-confirmed. User confirmed actual tray left/right Hide/Show, tray Exit and restart passed on the repaired extracted 44553fe candidate (EXE SHA256 978c32677a848f4d619975032a34eda17212e64275c8acc415e88b163a26c146). Optional system scenarios remain unverified; per-check methods and revisions are in the native matrix."
   },
   "native_observations_date": "2026-10-26"
 }
