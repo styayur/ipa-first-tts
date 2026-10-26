@@ -9,5 +9,6 @@ licenses/upstream/** -text -whitespace
 licenses/rust/** -text -whitespace
 third_party/** -text -whitespace
 crates/language-mapping/data/upstream/** -text -whitespace
+docs/validation/v0.3.0-alpha.1-native-observed.txt -text -whitespace
 licenses/*.txt -whitespace
 crates/*/LICENSE -whitespace

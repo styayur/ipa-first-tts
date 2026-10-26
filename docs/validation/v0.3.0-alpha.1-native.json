@@ -1,62 +1,62 @@
 {
   "format_version": 1,
   "version": "0.3.0-alpha.1",
-  "date": "2026-10-25",
-  "source_revision": null,
-  "environment": "Windows x64; native helper launch failed GetCursorPos: access denied (0x80070005); recovered window capture did not provide reliable usable state. No further app input attempted.",
-  "blocker": "User reported group 2 (shortcut/tray/exit) and group 4 (repeat launch) failed; group 1 editor tests not performed. Native fixes and a fresh candidate require user retest.",
-  "tested_candidate_executable_sha256": "0c25b38168f8d7a0ca643f53cd50af6e4b5a8a2a5bd1818108ce6c597ee9f1c0",
+  "date": "2026-10-26",
+  "source_revision": "15a68143563efd160f7982e992faa45b89c6f3af",
+  "environment": "Windows x64, native QA on 2026-10-25/26 Asia/Singapore. Sky desktop access recovered; fresh returned windows and screenshots were used. Browser access was stopped by URL safety identification; no browser input continued or alternative browser automation bypass was used.",
+  "blocker": "Awaiting user browser-textarea and actual notification-area tray-entry reports. Other scoped native gates below passed; merge/release remain held.",
+  "tested_candidate_executable_sha256": "18aa55307940208d91f042fca85e26108fa7f0b1f737aa3456b240b465725679",
   "baseline_reference": "v0.2.0-alpha.1 native evidence is historical and not relabeled as this release.",
   "checks": {
     "notepad": {
-      "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "status": "passed",
+      "method": "agent native Computer Use; genuine Microsoft Notepad and supplemental Notepad3",
+      "evidence": "Microsoft.WindowsNotepad_8wekyb3d8bbwe!App, installed 11.2607.14.0. Blank untitled document: real global hotkey, search tsh then Enter, recall and search œ then Enter; visible final t͡ʃœ with character count 4/caret column 5. Notepad3 also showed IPA QA: t͡ʃœ with restored caret. No mocked edit control substituted."
     },
     "browser": {
       "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "method": "browser Computer Use safety stop; user test requested",
+      "evidence": "Native Chrome capture was stopped because its current browser URL could not be determined with enough confidence to enforce policy. No alternative browser automation was used; a browser-textarea native insert/focus user report is pending."
     },
     "vscode": {
-      "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "status": "passed",
+      "method": "agent native Computer Use plus saved own scratch file",
+      "evidence": "Isolated --user-data-dir/--extensions-dir, all extensions disabled and Restricted Mode left intact. Real hotkey and composition Insert produced t͡ʃœ in .cache/native-vscode-v030/insertion.txt. Saved through Ctrl+S; filesystem decode verified U+0074 U+0361 U+0283 U+0153 exactly. Later native Copy of kōhī was pasted on a second line and saved/verified."
     },
     "hotkey_toggle": {
-      "status": "unverified",
-      "method": "user regression group failed; pending isolated retest",
-      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
+      "status": "passed",
+      "method": "user report plus agent native minimized/auxiliary-window regression",
+      "evidence": "User confirmed hide/reopen with Ctrl+Alt+Shift+I while running (verbatim: 能). Agent minimized the packaged palette, invoked the real shortcut from Notepad3, observed restored search and captured editor target after animation. After restart, invoking the shortcut while Mapping was foreground hid both palette and Mapping; process remained resident."
     },
     "tray": {
       "status": "unverified",
-      "method": "user regression group failed; pending isolated retest",
-      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
+      "method": "actual tray-entry user test pending",
+      "evidence": "Agent tested the shared main Menu popup and visible Exit. The actual notification-area icon click/show/hide/exit entry is separately pending; no pass inferred from shared code."
     },
     "focus_restore": {
-      "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "status": "passed",
+      "method": "agent native Computer Use",
+      "evidence": "After native Insert, Microsoft Notepad and Notepad3 retained the intended document/caret; the next shortcut captured the same editor and consecutive strings appended. VS Code received composition at its scratch-file caret and Ctrl+S saved that editor. Browser focus remains independently pending."
     },
     "continuous_insert": {
-      "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "status": "passed",
+      "method": "agent native Computer Use",
+      "evidence": "Separate native calls inserted tsh/t͡ʃ then œ consecutively in Microsoft Notepad and Notepad3, preserving the tie sequence and appending at the original caret."
     },
     "copy_exact": {
       "status": "passed",
-      "method": "user manual test, independent-config Release candidate",
-      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+      "method": "agent native Copy/paste through actual clipboard plus saved file",
+      "evidence": "Native Mapping Copy reported success for kōhī; transfer filled the palette composition with kōhī. Native main Copy was clicked, then Ctrl+V in isolated VS Code pasted kōhī, saved through Ctrl+S and checked as U+006B U+014D U+0068 U+012B. Actual observed file is retained separately; no expected text was written to that editor via filesystem."
     },
     "favorites_recent": {
-      "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "status": "passed",
+      "method": "agent native UI, actual Exit/restart and config inspection",
+      "evidence": "Ctrl+D favorited vowels-0153; config held that ID and recent order vowels-0153 then combinations-0074-0361-0283. Visible Exit ended the process; restarting loaded Chinese UI and search œ showed Unfavorite/取消收藏. The test-added favorite was then removed and original English UI restored; recent order persisted."
     },
     "bilingual": {
-      "status": "unverified",
-      "method": "pending user/native interaction",
-      "evidence": "No v0.3 desktop pass inferred from earlier releases or headless UI."
+      "status": "passed",
+      "method": "agent native interface selector",
+      "evidence": "English→简体中文 translated native main labels and title while t͡ʃœ composition remained unchanged. Native Mapping opened with Chinese labels and converted コーヒー→kōhī. Chinese preference persisted across restart; English was restored afterward."
     },
     "resize_dpi": {
       "status": "passed",
@@ -64,29 +64,29 @@
       "evidence": "Palette control bounds and mapping window layout/conversion/transfer tested at three sizes. No external UI/input/clipboard controlled. Physical mixed-monitor and 150%/200% DPI remain unverified."
     },
     "exit_cleanup": {
-      "status": "unverified",
-      "method": "user regression group failed; pending isolated retest",
-      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
+      "status": "passed",
+      "method": "agent native visible Exit and actual process inspection",
+      "evidence": "Clicked visible Exit, then inspected zero ipa-symbol-palette processes. Relaunched from the extracted package; one new process reacquired shortcut and responded to the Mapping hide test. This is an actual button lifecycle check, not the earlier --quit-only cleanup."
     },
     "single_instance": {
-      "status": "unverified",
-      "method": "user regression group failed; pending isolated retest",
-      "evidence": "User reported lifecycle group 2 and repeated-launch group 4 failed; group 1 editor insertion untested. Exact failing substep is not yet specified. Scoped API unit passes do not override this report."
+      "status": "passed",
+      "method": "agent real repeated launch and OS process inspection",
+      "evidence": "Repeated launch of the exact extracted executable revealed the existing palette in Copy mode. PID 23260 and one process remained before/after repeated launches; after explicit Exit, a single new PID was created by restart."
     },
     "mapping_ui": {
       "status": "passed",
-      "method": "user manual test, independent-config Release candidate",
-      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+      "method": "agent actual native window plus earlier user mapping examples",
+      "evidence": "Japanese profile exposed named CLDR 49 kana→Latin romanization; コーヒー via Ctrl+Enter produced kōhī. Actual UI showed CLDR commit, Unicode-3.0 attribution, rule traces and limits; no Japanese IPA/TTS button. English read, Han/context and Russian examples were earlier user-confirmed and remain independently tested in CLI fixtures."
     },
     "mapping_copy": {
       "status": "passed",
-      "method": "user manual test, independent-config Release candidate",
-      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+      "method": "agent native Copy plus shared clipboard exact check",
+      "evidence": "Clicked Mapping Copy on kōhī and observed explicit clipboard replacement status. Main palette Copy uses the same Windows clipboard boundary; its copied kōhī was pasted and saved in VS Code with exact macron codepoints verified."
     },
     "mapping_to_palette": {
       "status": "passed",
-      "method": "user manual test, independent-config Release candidate",
-      "evidence": "User confirmed English read candidates, Japanese コーヒー → kōhī, Han 重 candidates/重庆 context, Russian Щука → Ŝuka, Copy, transfer to palette composition and editor insertion. The candidate EXE hash is recorded; this does not claim final-package or every editor certification."
+      "method": "agent native actual transfer",
+      "evidence": "Clicked Mapping→Palette. Mapping hid and composition edit ID 111 held exactly kōhī; no automatic global insertion occurred, Copy mode remained explicit."
     },
     "uipi": {
       "status": "unverified",
@@ -109,18 +109,23 @@
       "evidence": "No new physical or external interactive certification."
     },
     "interactive_duplicate_reveal": {
-      "status": "failed",
-      "method": "user regression, group 4",
-      "evidence": "User reported repeated-launch group failed; exact symptom pending. This is distinct from the passing native mutex API test."
+      "status": "passed",
+      "method": "agent native repeated launch",
+      "evidence": "Existing hidden palette was revealed by launching the same executable; no second palette owner/process remained. Earlier ambiguous group-4 report remains in history."
     },
     "owned_studio_exit": {
       "status": "unverified",
       "evidence": "No new physical or external interactive certification."
     },
     "native_lifecycle_group": {
-      "status": "failed",
-      "method": "user regression, group 2",
-      "evidence": "User reported shortcut/tray/exit/restart group failed; exact failing substep pending."
+      "status": "unverified",
+      "method": "partly resolved by fresh native QA",
+      "evidence": "Real hotkey, minimized restore, auxiliary hide, menu Hide, visible Exit, restart and repeated launch passed. Actual tray icon entry is still pending user report; no whole-group pass inferred."
+    },
+    "menu_popup": {
+      "status": "passed",
+      "method": "agent native popup interaction, scoped",
+      "evidence": "Opened Menu button, inspected actual TrackPopupMenu (Show/Hide/Studio/Settings/Mapping/Exit), clicked Hide via its fresh popup screenshot region and confirmed both native windows absent while process remained. This is the popup shared with the tray, not proof of the notification-area icon entry."
     }
   },
   "user_report": "上述映射和面板操作均正常",
@@ -141,5 +146,45 @@
       "Repeated launch grants foreground permission to the existing owner, restores its window and explains a different executable location",
       "Keyboard menu has a window-anchor fallback when cursor query fails"
     ]
+  },
+  "history": [
+    {
+      "date": "2026-10-25",
+      "initial_candidate_sha256": "0c25b38168f8d7a0ca643f53cd50af6e4b5a8a2a5bd1818108ce6c597ee9f1c0",
+      "user_regression_report": {
+        "verbatim": "2，4 失败，1未测试",
+        "group_1": "not tested",
+        "group_2": "failed, exact substep not yet specified",
+        "group_4": "failed, exact symptom not yet specified",
+        "other_groups": "No additional pass inferred from omission."
+      },
+      "investigation": {
+        "running_process": "Only the initial .cache/native-v030/target/release/ipa-symbol-palette.exe F6 test instance was observed (PID 26272), not the extracted package.",
+        "cleanup": "The application-provided --quit command exited this owned test process; no palette process remained. This is CLI cleanup, not a tray/manual pass.",
+        "changes_pending_retest": [
+          "Visible Exit button and versioned title",
+          "Configured shortcut in tray tooltip",
+          "Hotkey hides owned mapping/settings windows",
+          "Repeated launch grants foreground permission to the existing owner, restores its window and explains a different executable location",
+          "Keyboard menu has a window-anchor fallback when cursor query fails"
+        ]
+      },
+      "initial_helper_environment": "Windows x64; native helper launch failed GetCursorPos: access denied (0x80070005); recovered window capture did not provide reliable usable state. No further app input attempted."
+    }
+  ],
+  "tested_candidate_path": "D:\\GitHub\\styayur\\ipa-first-tts\\.cache\\package-smoke-v030-restore\\ipa-symbol-palette-v0.3.0-alpha.1-windows-x64-candidate\\ipa-symbol-palette.exe",
+  "user_hotkey_confirmation": {
+    "verbatim": "能",
+    "scope": "running repair palette hides/reopens with Ctrl+Alt+Shift+I; F6 was earlier isolated test config"
+  },
+  "observed_artifact": {
+    "path": "docs/validation/v0.3.0-alpha.1-native-observed.txt",
+    "sha256": "b2a8028cbd29ccbd5893cf79a83dca36af8f09acc4c55f7138436db243f99f3f",
+    "lines": [
+      "Native Unicode Insert into VS Code: t͡ʃœ",
+      "Native clipboard Copy/paste: kōhī"
+    ],
+    "line_endings": "VS Code saved CRLF; line break was typed in editor, not produced by mapping. The raw observation file is retained with Git text conversion disabled.",
+    "not_an_oracle": "Actual saved scratch document after native UI actions, not an expected-output generator."
   }
 }
