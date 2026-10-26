@@ -3,6 +3,10 @@
 
 The current work is [v0.3.0-alpha.1](v0.3.0-alpha.1.md), with its own
 [native matrix](v0.3.0-alpha.1-native.json). The v0.2 record below is historical.
+All 16 required v0.3 scoped native gates passed after the user's repaired-package
+tray acceptance on 2026-10-26. Agent, user and hidden-control checks retain their
+actual methods and tested revisions; optional system scenarios remain unverified.
+Final packaging and public download verification are recorded separately.
 
 ## v0.2.0-alpha.1 verification status
 

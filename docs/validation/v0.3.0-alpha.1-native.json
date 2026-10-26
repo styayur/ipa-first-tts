@@ -2,91 +2,107 @@
   "format_version": 1,
   "version": "0.3.0-alpha.1",
   "date": "2026-10-26",
-  "source_revision": "15a68143563efd160f7982e992faa45b89c6f3af",
+  "source_revision": "44553fef98e05a948330a95334efd1e3cf745c16",
   "environment": "Windows x64, native QA on 2026-10-25/26 Asia/Singapore. Sky desktop access recovered; fresh returned windows and screenshots were used. Browser access was stopped by URL safety identification; no browser input continued or alternative browser automation bypass was used.",
-  "blocker": "Browser textarea passed user manual testing. Actual tray left/right clicks failed on the previous candidate; callback dispatch fix awaits a new extracted-package retest. Release remains held.",
-  "tested_candidate_executable_sha256": "18aa55307940208d91f042fca85e26108fa7f0b1f737aa3456b240b465725679",
+  "blocker": null,
+  "tested_candidate_executable_sha256": "978c32677a848f4d619975032a34eda17212e64275c8acc415e88b163a26c146",
   "baseline_reference": "v0.2.0-alpha.1 native evidence is historical and not relabeled as this release.",
   "checks": {
     "notepad": {
       "status": "passed",
       "method": "agent native Computer Use; genuine Microsoft Notepad and supplemental Notepad3",
-      "evidence": "Microsoft.WindowsNotepad_8wekyb3d8bbwe!App, installed 11.2607.14.0. Blank untitled document: real global hotkey, search tsh then Enter, recall and search œ then Enter; visible final t͡ʃœ with character count 4/caret column 5. Notepad3 also showed IPA QA: t͡ʃœ with restored caret. No mocked edit control substituted."
+      "evidence": "Microsoft.WindowsNotepad_8wekyb3d8bbwe!App, installed 11.2607.14.0. Blank untitled document: real global hotkey, search tsh then Enter, recall and search œ then Enter; visible final t͡ʃœ with character count 4/caret column 5. Notepad3 also showed IPA QA: t͡ʃœ with restored caret. No mocked edit control substituted.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "browser": {
       "status": "passed",
       "method": "user manual report on 2026-10-26; not agent browser automation",
-      "evidence": "User confirmed browser textarea native t͡ʃ/œ insertion, caret return and consecutive insertion: 第一项实际测验通过. Agent Chrome capture had stopped because the current URL could not be reliably identified; no alternative automation bypass was used."
+      "evidence": "User confirmed browser textarea native t͡ʃ/œ insertion, caret return and consecutive insertion: 第一项实际测验通过. Agent Chrome capture had stopped because the current URL could not be reliably identified; no alternative automation bypass was used.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "vscode": {
       "status": "passed",
       "method": "agent native Computer Use plus saved own scratch file",
-      "evidence": "Isolated --user-data-dir/--extensions-dir, all extensions disabled and Restricted Mode left intact. Real hotkey and composition Insert produced t͡ʃœ in .cache/native-vscode-v030/insertion.txt. Saved through Ctrl+S; filesystem decode verified U+0074 U+0361 U+0283 U+0153 exactly. Later native Copy of kōhī was pasted on a second line and saved/verified."
+      "evidence": "Isolated --user-data-dir/--extensions-dir, all extensions disabled and Restricted Mode left intact. Real hotkey and composition Insert produced t͡ʃœ in .cache/native-vscode-v030/insertion.txt. Saved through Ctrl+S; filesystem decode verified U+0074 U+0361 U+0283 U+0153 exactly. Later native Copy of kōhī was pasted on a second line and saved/verified.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "hotkey_toggle": {
       "status": "passed",
       "method": "user report plus agent native minimized/auxiliary-window regression",
-      "evidence": "User confirmed hide/reopen with Ctrl+Alt+Shift+I while running (verbatim: 能). Agent minimized the packaged palette, invoked the real shortcut from Notepad3, observed restored search and captured editor target after animation. After restart, invoking the shortcut while Mapping was foreground hid both palette and Mapping; process remained resident."
+      "evidence": "User confirmed hide/reopen with Ctrl+Alt+Shift+I while running (verbatim: 能). Agent minimized the packaged palette, invoked the real shortcut from Notepad3, observed restored search and captured editor target after animation. After restart, invoking the shortcut while Mapping was foreground hid both palette and Mapping; process remained resident.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "tray": {
-      "status": "failed",
-      "method": "actual notification-area left/right click user report on 2026-10-26",
-      "evidence": "User: 第二项不可，左右键单击托盘图标未响应. Shared Menu/visible Exit passes do not establish tray-entry behavior. A real hidden Win32 sent-message regression reproduced the lost callback; the dispatch fix passes that test but actual fixed-package tray retest remains pending."
+      "status": "passed",
+      "method": "user actual extracted-package test on 2026-10-26",
+      "tested_candidate_revision": "44553fef98e05a948330a95334efd1e3cf745c16",
+      "evidence": "After the callback repair candidate was launched, user confirmed all specifically requested tests: actual notification-area left-click reveals, right-click menu Hide/Show, tray Exit and executable restart. Verbatim: 实测全部通过，发布。 Earlier failed result is retained in history. This is user manual acceptance, not inferred from the hidden callback regression."
     },
     "focus_restore": {
       "status": "passed",
       "method": "agent native Computer Use",
-      "evidence": "After native Insert, Microsoft Notepad and Notepad3 retained the intended document/caret; the next shortcut captured the same editor and consecutive strings appended. VS Code received composition at its scratch-file caret and Ctrl+S saved that editor. User subsequently confirmed browser insertion/focus/consecutive operation."
+      "evidence": "After native Insert, Microsoft Notepad and Notepad3 retained the intended document/caret; the next shortcut captured the same editor and consecutive strings appended. VS Code received composition at its scratch-file caret and Ctrl+S saved that editor. User subsequently confirmed browser insertion/focus/consecutive operation.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "continuous_insert": {
       "status": "passed",
       "method": "agent native Computer Use",
-      "evidence": "Separate native calls inserted tsh/t͡ʃ then œ consecutively in Microsoft Notepad and Notepad3, preserving the tie sequence and appending at the original caret."
+      "evidence": "Separate native calls inserted tsh/t͡ʃ then œ consecutively in Microsoft Notepad and Notepad3, preserving the tie sequence and appending at the original caret.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "copy_exact": {
       "status": "passed",
       "method": "agent native Copy/paste through actual clipboard plus saved file",
-      "evidence": "Native Mapping Copy reported success for kōhī; transfer filled the palette composition with kōhī. Native main Copy was clicked, then Ctrl+V in isolated VS Code pasted kōhī, saved through Ctrl+S and checked as U+006B U+014D U+0068 U+012B. Actual observed file is retained separately; no expected text was written to that editor via filesystem."
+      "evidence": "Native Mapping Copy reported success for kōhī; transfer filled the palette composition with kōhī. Native main Copy was clicked, then Ctrl+V in isolated VS Code pasted kōhī, saved through Ctrl+S and checked as U+006B U+014D U+0068 U+012B. Actual observed file is retained separately; no expected text was written to that editor via filesystem.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "favorites_recent": {
       "status": "passed",
       "method": "agent native UI, actual Exit/restart and config inspection",
-      "evidence": "Ctrl+D favorited vowels-0153; config held that ID and recent order vowels-0153 then combinations-0074-0361-0283. Visible Exit ended the process; restarting loaded Chinese UI and search œ showed Unfavorite/取消收藏. The test-added favorite was then removed and original English UI restored; recent order persisted."
+      "evidence": "Ctrl+D favorited vowels-0153; config held that ID and recent order vowels-0153 then combinations-0074-0361-0283. Visible Exit ended the process; restarting loaded Chinese UI and search œ showed Unfavorite/取消收藏. The test-added favorite was then removed and original English UI restored; recent order persisted.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "bilingual": {
       "status": "passed",
       "method": "agent native interface selector",
-      "evidence": "English→简体中文 translated native main labels and title while t͡ʃœ composition remained unchanged. Native Mapping opened with Chinese labels and converted コーヒー→kōhī. Chinese preference persisted across restart; English was restored afterward."
+      "evidence": "English→简体中文 translated native main labels and title while t͡ʃœ composition remained unchanged. Native Mapping opened with Chinese labels and converted コーヒー→kōhī. Chinese preference persisted across restart; English was restored afterward.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "resize_dpi": {
       "status": "passed",
       "method": "hidden native controls, scoped",
-      "evidence": "Palette control bounds and mapping window layout/conversion/transfer tested at three sizes. No external UI/input/clipboard controlled. Physical mixed-monitor and 150%/200% DPI remain unverified."
+      "evidence": "Palette control bounds and mapping window layout/conversion/transfer tested at three sizes. No external UI/input/clipboard controlled. Physical mixed-monitor and 150%/200% DPI remain unverified.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "exit_cleanup": {
       "status": "passed",
       "method": "agent native visible Exit and actual process inspection",
-      "evidence": "Clicked visible Exit, then inspected zero ipa-symbol-palette processes. Relaunched from the extracted package; one new process reacquired shortcut and responded to the Mapping hide test. This is an actual button lifecycle check, not the earlier --quit-only cleanup."
+      "evidence": "Clicked visible Exit, then inspected zero ipa-symbol-palette processes. Relaunched from the extracted package; one new process reacquired shortcut and responded to the Mapping hide test. This is an actual button lifecycle check, not the earlier --quit-only cleanup.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "single_instance": {
       "status": "passed",
       "method": "agent real repeated launch and OS process inspection",
-      "evidence": "Repeated launch of the exact extracted executable revealed the existing palette in Copy mode. PID 23260 and one process remained before/after repeated launches; after explicit Exit, a single new PID was created by restart."
+      "evidence": "Repeated launch of the exact extracted executable revealed the existing palette in Copy mode. PID 23260 and one process remained before/after repeated launches; after explicit Exit, a single new PID was created by restart.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "mapping_ui": {
       "status": "passed",
       "method": "agent actual native window plus earlier user mapping examples",
-      "evidence": "Japanese profile exposed named CLDR 49 kana→Latin romanization; コーヒー via Ctrl+Enter produced kōhī. Actual UI showed CLDR commit, Unicode-3.0 attribution, rule traces and limits; no Japanese IPA/TTS button. English read, Han/context and Russian examples were earlier user-confirmed and remain independently tested in CLI fixtures."
+      "evidence": "Japanese profile exposed named CLDR 49 kana→Latin romanization; コーヒー via Ctrl+Enter produced kōhī. Actual UI showed CLDR commit, Unicode-3.0 attribution, rule traces and limits; no Japanese IPA/TTS button. English read, Han/context and Russian examples were earlier user-confirmed and remain independently tested in CLI fixtures.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "mapping_copy": {
       "status": "passed",
       "method": "agent native Copy plus shared clipboard exact check",
-      "evidence": "Clicked Mapping Copy on kōhī and observed explicit clipboard replacement status. Main palette Copy uses the same Windows clipboard boundary; its copied kōhī was pasted and saved in VS Code with exact macron codepoints verified."
+      "evidence": "Clicked Mapping Copy on kōhī and observed explicit clipboard replacement status. Main palette Copy uses the same Windows clipboard boundary; its copied kōhī was pasted and saved in VS Code with exact macron codepoints verified.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "mapping_to_palette": {
       "status": "passed",
       "method": "agent native actual transfer",
-      "evidence": "Clicked Mapping→Palette. Mapping hid and composition edit ID 111 held exactly kōhī; no automatic global insertion occurred, Copy mode remained explicit."
+      "evidence": "Clicked Mapping→Palette. Mapping hid and composition edit ID 111 held exactly kōhī; no automatic global insertion occurred, Copy mode remained explicit.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "uipi": {
       "status": "unverified",
@@ -111,7 +127,8 @@
     "interactive_duplicate_reveal": {
       "status": "passed",
       "method": "agent native repeated launch",
-      "evidence": "Existing hidden palette was revealed by launching the same executable; no second palette owner/process remained. Earlier ambiguous group-4 report remains in history."
+      "evidence": "Existing hidden palette was revealed by launching the same executable; no second palette owner/process remained. Earlier ambiguous group-4 report remains in history.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     },
     "owned_studio_exit": {
       "status": "unverified",
@@ -125,7 +142,8 @@
     "menu_popup": {
       "status": "passed",
       "method": "agent native popup interaction, scoped",
-      "evidence": "Opened Menu button, inspected actual TrackPopupMenu (Show/Hide/Studio/Settings/Mapping/Exit), clicked Hide via its fresh popup screenshot region and confirmed both native windows absent while process remained. This is the popup shared with the tray, not proof of the notification-area icon entry."
+      "evidence": "Opened Menu button, inspected actual TrackPopupMenu (Show/Hide/Studio/Settings/Mapping/Exit), clicked Hide via its fresh popup screenshot region and confirmed both native windows absent while process remained. This is the popup shared with the tray, not proof of the notification-area icon entry.",
+      "tested_candidate_revision": "15a68143563efd160f7982e992faa45b89c6f3af"
     }
   },
   "user_report": "上述映射和面板操作均正常",
@@ -170,9 +188,20 @@
         ]
       },
       "initial_helper_environment": "Windows x64; native helper launch failed GetCursorPos: access denied (0x80070005); recovered window capture did not provide reliable usable state. No further app input attempted."
+    },
+    {
+      "date": "2026-10-26",
+      "source_revision": "15a68143563efd160f7982e992faa45b89c6f3af",
+      "tested_candidate_executable_sha256": "18aa55307940208d91f042fca85e26108fa7f0b1f737aa3456b240b465725679",
+      "tray_report_before_fix": {
+        "status": "failed",
+        "method": "actual notification-area left/right click user report on 2026-10-26",
+        "evidence": "User: 第二项不可，左右键单击托盘图标未响应. Shared Menu/visible Exit passes do not establish tray-entry behavior. A real hidden Win32 sent-message regression reproduced the lost callback; the dispatch fix passes that test but actual fixed-package tray retest remains pending."
+      },
+      "resolution": "44553fe forwards sent shell callbacks through WndProc; user confirmed all requested fixed-package tray tests passed."
     }
   ],
-  "tested_candidate_path": "D:\\GitHub\\styayur\\ipa-first-tts\\.cache\\package-smoke-v030-restore\\ipa-symbol-palette-v0.3.0-alpha.1-windows-x64-candidate\\ipa-symbol-palette.exe",
+  "tested_candidate_path": "D:\\GitHub\\styayur\\ipa-first-tts\\.cache\\package-smoke-v030-tray-callback\\ipa-symbol-palette-v0.3.0-alpha.1-windows-x64-candidate\\ipa-symbol-palette.exe",
   "user_hotkey_confirmation": {
     "verbatim": "能",
     "scope": "running repair palette hides/reopens with Ctrl+Alt+Shift+I; F6 was earlier isolated test config"
@@ -186,5 +215,182 @@
     ],
     "line_endings": "VS Code saved CRLF; line break was typed in editor, not produced by mapping. The raw observation file is retained with Git text conversion disabled.",
     "not_an_oracle": "Actual saved scratch document after native UI actions, not an expected-output generator."
-  }
+  },
+  "required_native_gates": "All 16 scoped gates passed; individual methods and tested revisions are retained. Optional scenarios below remain unverified.",
+  "native_mapping_source_fingerprint": "9c6b399b348cb47f14f1fb3c33483ff2853faf244085a2b2f57c1e52f87a5d67",
+  "fingerprint_method": "SHA256 of compact sorted-key JSON manifest of sorted repository paths and SHA256 of exact git HEAD blobs",
+  "fingerprint_files": [
+    {
+      "path": "Cargo.lock",
+      "git_blob_sha256": "057d65cd320243c4f79586fe22a10879b85044082f14367c572b77912d19bb84"
+    },
+    {
+      "path": "Cargo.toml",
+      "git_blob_sha256": "3ff626af2a95983bf38c80a0cc782ee195fcf0a9647ae625e9ac8c70ab177cd7"
+    },
+    {
+      "path": "apps/palette/Cargo.toml",
+      "git_blob_sha256": "6dfeb476eb4b7955214841d603d740cab22139082a96b0c2055eb07751f26d2f"
+    },
+    {
+      "path": "apps/palette/build.rs",
+      "git_blob_sha256": "68048a2dbbdd617251be4c0929854f1e76a352a45530e8abaa13436256cb59d7"
+    },
+    {
+      "path": "apps/palette/palette.manifest",
+      "git_blob_sha256": "ee04b0a8d1d8d09c05d5ea4109fa7ac934820069badeca6657e70acf42c17c5f"
+    },
+    {
+      "path": "apps/palette/src/config.rs",
+      "git_blob_sha256": "e8cc708c92b5378191d04f0d10db63d3546de26a5f7af714a588a75907ece49c"
+    },
+    {
+      "path": "apps/palette/src/lib.rs",
+      "git_blob_sha256": "2b088bafd3fe48ef0f7f44ceafd4bedc2335ac27ec8c1ee7e550b7b274ff7291"
+    },
+    {
+      "path": "apps/palette/src/main.rs",
+      "git_blob_sha256": "1368dcbf7d5c912ff0365f03e322dc711284b0827bf57f021732aca2833c7262"
+    },
+    {
+      "path": "apps/palette/src/mapping_window.rs",
+      "git_blob_sha256": "1fee1871715531f365c95b6cf3732c70f3353a950fe170e671d9826877ea2a79"
+    },
+    {
+      "path": "apps/palette/src/windows.rs",
+      "git_blob_sha256": "6c7eadc10298b8ab2333d59120675394192810487a7643b2396d785409583d02"
+    },
+    {
+      "path": "crates/ipa-core/Cargo.toml",
+      "git_blob_sha256": "b0dbcd7470a3dc0895ed1b36a44ed4fa8360278656e67bbc0235bccc3284d510"
+    },
+    {
+      "path": "crates/ipa-core/LICENSE",
+      "git_blob_sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+    },
+    {
+      "path": "crates/ipa-core/src/lib.rs",
+      "git_blob_sha256": "ec486dbbbdd4c6379766e9594e959948c2941e25c64db81755f73df5b02b12bd"
+    },
+    {
+      "path": "crates/language-mapping/Cargo.toml",
+      "git_blob_sha256": "a480a4e12d510b81503429748f5185c50e1d522f3c96e1584220ae3c8aba92d8"
+    },
+    {
+      "path": "crates/language-mapping/data/README.md",
+      "git_blob_sha256": "5ec8eb0914db3d3b205fa20578c846d2b2d78a720b4112c855d1f539d57d22c2"
+    },
+    {
+      "path": "crates/language-mapping/data/registry.json",
+      "git_blob_sha256": "81720e9f82beb5836d73198e76cc284438d0a8b57b62e08702b22ac0f4e342f1"
+    },
+    {
+      "path": "crates/language-mapping/data/sources.json",
+      "git_blob_sha256": "94a558567b8ac056508377549d1157affd2b17449254306ba6cb2e85371868f5"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/Hiragana-Katakana.xml",
+      "git_blob_sha256": "e34df2a945fa4a136241c7356e7de357ea803acdd99e3d82f3ec9741aafb966a"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/Latin-Katakana.xml",
+      "git_blob_sha256": "3b69b71ff72b25431c2b3e74d459ae61e0e914700d2afc5bcf18fad6e3ea8017"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cldr-Cyrillic-Latin.xml",
+      "git_blob_sha256": "c2ee7f8abdfbd36b7eb3b3f248e53889a23f9d1fbd4e6a6749bfeb6c98bc98d5"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cldr-Han-Latin.xml",
+      "git_blob_sha256": "99994c296037d251178f599b0acff242d2d4d0f4be6fdd2e1d64672a6802e9f2"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cldr-Hiragana-Latin.xml",
+      "git_blob_sha256": "202fd8b8405518f8730f8ac19ecc150294af822b51cd1f964c3899c5bafee414"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cldr-LICENSE",
+      "git_blob_sha256": "65eb33419e22a297550a811b5b535f5e532f9a7e0114b516c0ea18afd53c3804"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cldr-Latin-NumericPinyin.xml",
+      "git_blob_sha256": "828d0cb02f87e9d324653d42de4731ee4d820816e9392b9a3c6014d246135b20"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cmudict-LICENSE",
+      "git_blob_sha256": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cmudict-selected.dict",
+      "git_blob_sha256": "c90e67b985f2b27ec4e23209dd094bb76cd1aba0beb4219dae6730356a87c60b"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/cmudict.phones",
+      "git_blob_sha256": "ffb588a5e55684723582c7256e1d2f9fadb130011392d9e59237c76e34c2cfd6"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/iana-selected.txt",
+      "git_blob_sha256": "be018465cb191b596ae6c6a58fa80b53ea04374d5c8d47daa45bfd780bc3277f"
+    },
+    {
+      "path": "crates/language-mapping/data/upstream/iso15924-selected.txt",
+      "git_blob_sha256": "7206e9b2be81ca32f42795b55a190195d167a7963d4744237c0cc59556b399ff"
+    },
+    {
+      "path": "crates/language-mapping/src/espeak.rs",
+      "git_blob_sha256": "c6c981486bbed796681c5e4e2c7bfed909a4ee1d8421cb1cb895c6e9dca4a6e9"
+    },
+    {
+      "path": "crates/language-mapping/src/lib.rs",
+      "git_blob_sha256": "264c2d24d0391a6e6cbfd5f1553fed4d724cab331317fac98553816b542c88aa"
+    },
+    {
+      "path": "crates/language-mapping/src/model.rs",
+      "git_blob_sha256": "763eafc9eb530964fbd9ec8fa0411f26689b415074e5e58fb141deb8ea7391b3"
+    },
+    {
+      "path": "crates/language-mapping/src/registry.rs",
+      "git_blob_sha256": "1e1eace5eccb9fe16f7f0b4f4756fe856e91748ccb802d1ad6eb5cf493c2e8ab"
+    },
+    {
+      "path": "crates/language-mapping/src/romanization.rs",
+      "git_blob_sha256": "212d48891917cc443e23ce22182016a105fdcaf87d432ec98c258f0948d7a136"
+    },
+    {
+      "path": "crates/symbol-catalog/Cargo.toml",
+      "git_blob_sha256": "640886c33492c29eaef36aed7b6b66edba66ccaee61402fd030241520ed39b7f"
+    },
+    {
+      "path": "crates/symbol-catalog/LICENSE",
+      "git_blob_sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+    },
+    {
+      "path": "crates/symbol-catalog/build.rs",
+      "git_blob_sha256": "e14456a3af26cf603b780b44451f323da7ac73904944b187367269923e4f75e0"
+    },
+    {
+      "path": "crates/symbol-catalog/data/LICENSE",
+      "git_blob_sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744"
+    },
+    {
+      "path": "crates/symbol-catalog/data/ipa.json",
+      "git_blob_sha256": "ef0d5f9403c8a4cc9c03b244bce11eb0a2dd7984694df2b00e0e9a3b8613c166"
+    },
+    {
+      "path": "crates/symbol-catalog/data/orthography.json",
+      "git_blob_sha256": "47fb50eeb112fad5c86bcd2fd917e3a8da8cb18dffddb79807c0c8ceacb57f4f"
+    },
+    {
+      "path": "crates/symbol-catalog/src/lib.rs",
+      "git_blob_sha256": "e675295771d808b050f79c899c148394a1bf3a6ff6c4483aa1be062ddfdf13ce"
+    }
+  ],
+  "user_tray_confirmation": {
+    "date": "2026-10-26",
+    "verbatim": "实测全部通过，发布。",
+    "scope": "The requested tray left-click, right-click Hide/Show, tray Exit and restart retest. Earlier editor/browser/Mapping results retain their actual observations; optional gates are not promoted.",
+    "tested_candidate_revision": "44553fef98e05a948330a95334efd1e3cf745c16",
+    "tested_candidate_executable_sha256": "978c32677a848f4d619975032a34eda17212e64275c8acc415e88b163a26c146"
+  },
+  "production_delta": "Compared with the earlier 15a6814 editor/Mapping observations, only tray and TaskbarCreated message dispatch changed. The real Win32 sent/posted regression, 38 workspace tests, fmt, Clippy and four CI checks passed; tray interactions were user-retested on 44553fe. Final packaging separately checks the unchanged production-source fingerprint against the merged release commit."
 }
