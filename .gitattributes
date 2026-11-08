@@ -12,3 +12,5 @@ crates/language-mapping/data/upstream/** -text -whitespace
 docs/validation/v0.3.0-alpha.1-native-observed.txt -text -whitespace
 licenses/*.txt -whitespace
 crates/*/LICENSE -whitespace
+
+.github/workflows/*.lock.yml linguist-generated=true
