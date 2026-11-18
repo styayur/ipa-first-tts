@@ -16,6 +16,9 @@ APPROVED = {
     'Apache-2.0 OR ISC OR MIT','Apache-2.0 AND ISC','(MIT OR Apache-2.0) AND Unicode-3.0',
     '0BSD OR MIT OR Apache-2.0','Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT',
     'MIT OR Apache-2.0 OR LGPL-2.1-or-later','Zlib OR Apache-2.0 OR MIT',
+    # constant_time_eq 0.6.1 offers the same Apache-2.0 option already approved
+    # above, alongside CC0 and MIT-0; retain every upstream notice verbatim.
+    'CC0-1.0 OR MIT-0 OR Apache-2.0',
 }
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
